@@ -1,10 +1,10 @@
 {
   "name": "@tabtabgo/core",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "React core services and utilities ",
   "publishConfig": {
     "access": "public"
-},
+  },
   "keywords": [
     "react",
     "core",

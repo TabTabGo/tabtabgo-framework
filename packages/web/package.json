@@ -1,6 +1,6 @@
 {
   "name": "@tabtabgo/web",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "TabTabGo web components",
   "keywords": [
     "components"
@@ -10,7 +10,7 @@
   "license": "ISC",
   "publishConfig": {
     "access": "public"
-},
+  },
   "main": "lib/web.js",
   "directories": {
     "lib": "lib",
