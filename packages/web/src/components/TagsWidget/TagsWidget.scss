@@ -1,0 +1,10 @@
+@import '../../assets/scss/media-queries.scss';
+@import '../../assets/scss/colors.scss';
+
+.tags-widget {
+  display: flex;
+
+  a {
+    color: $brand-dark;
+  }
+}

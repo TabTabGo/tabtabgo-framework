@@ -1,0 +1,29 @@
+@import '../../../assets/scss/media-queries.scss';
+
+.content-widget {
+  margin-bottom: 24px;
+
+  .content-widget-body {
+    h2 {
+      margin-top: 0;
+    }
+  }
+
+  .content-widget-img {
+    width: 120px;
+    height: 120px;
+
+    @include respond-to(mobile-portrait) {
+      width: 80px;
+      height: 80px;
+    }
+  }
+}
+
+.search-result {
+  .content-widget {
+    h2 {
+      font-weight: bold;
+    }
+  }
+}

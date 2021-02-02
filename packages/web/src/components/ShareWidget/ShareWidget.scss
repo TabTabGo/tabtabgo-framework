@@ -1,0 +1,31 @@
+@import '../../assets/scss/colors.scss';
+@import '../../assets/scss/media-queries.scss';
+.share-widget {
+  display: flex;
+  .SocialMediaShareButton {
+    svg {
+      width: 24px !important;
+      height: 24px !important;
+    }
+
+    color: $brand-dark;
+    margin: 6px;
+    margin-left: 4px;
+    margin-right: 4px;
+    padding: 0;
+
+    &:hover,
+    &:focus {
+      color: $brand-dark-darker;
+      outline: none;
+    }
+  }
+
+  .SocialMediaShareButton:first-child {
+    margin-right: -6px;
+  }
+
+  .SocialMediaShareButton:last-child {
+    margin-right: 12px;
+  }
+}

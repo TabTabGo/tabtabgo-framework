@@ -1,0 +1,56 @@
+/* ========================================================================
+     Component: media-queries
+ ========================================================================== */
+@media only screen and (max-width: 767px) and (orientation: portrait) {
+  .hidden-xs-portrait {
+    display: none !important; } }
+
+@media only screen and (max-width: 767px) and (orientation: portrait) {
+  .visible-xs-portrait {
+    display: block !important; } }
+
+@media only screen and (max-width: 767px) and (orientation: landscape) {
+  .hidden-xs-landscape {
+    display: none !important; } }
+
+@media only screen and (max-width: 767px) and (orientation: landscape) {
+  .visible-xs-landscape {
+    display: block !important; } }
+
+.text-primary {
+  color: #c30e2e; }
+
+.text-primary-80 {
+  color: #f24564; }
+
+.text-primary-60 {
+  color: #f9a4b3; }
+
+.text-primary-40 {
+  color: white; }
+
+.text-primary-20 {
+  color: white; }
+
+.text-secondary {
+  color: #bc8e0c; }
+
+.text-dark {
+  color: #6c6e70; }
+
+.text-darker {
+  color: #3a3b3c; }
+
+.text-black {
+  color: black; }
+
+.text-white {
+  color: white; }
+
+.text-muted {
+  color: lightgray; }
+
+.tags-widget {
+  display: flex; }
+  .tags-widget a {
+    color: #6c6e70; }

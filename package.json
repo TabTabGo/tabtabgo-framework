@@ -1,0 +1,28 @@
+{
+  "name": "@tabtabgo/react-core",
+  "version": "1.0.0",
+  "description": "Core libraries and fancutions used for React and React Native project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TabTabGo/ttg-framework.git"
+  },
+  "keywords": [
+    "react",
+    "react-native",
+    "framework",
+    "core"
+  ],
+  "author": "TabTabGo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TabTabGo/ttg-framework/issues"
+  },
+  "homepage": "https://github.com/TabTabGo/ttg-framework#readme",
+  "devDependencies": {
+    "lerna": "^3.22.1"
+  }
+}

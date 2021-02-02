@@ -1,0 +1,3 @@
+export const AJAX_CALL_BEGIN = 'AJAX_CALL/BEGIN';
+export const AJAX_CALL_END = 'AJAX_CALL/END';
+export const AJAX_CALL_ERROR = 'AJAX_CALL/ERROR';

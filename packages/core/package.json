@@ -1,0 +1,64 @@
+{
+  "name": "@tabtabgo/core",
+  "version": "0.0.1",
+  "description": "React core services and utilities ",
+  "keywords": [
+    "react",
+    "core",
+    "service",
+    "utilities"
+  ],
+  "author": "Ghassan Samara <gmsamara@gmail.com>",
+  "homepage": "https://github.com/TabTabGo/ttg-framework/tree/master/packages/core#readme",
+  "license": "ISC",
+  "main": "lib/index.ts",
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "files": [
+    "lib"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TabTabGo/ttg-framework.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: run tests from root\" && exit 1",
+    "storybook": "start-storybook -p 9001",
+    "build-lib": "babel src --out-dir lib --extensions .ts"
+  },
+  "bugs": {
+    "url": "https://github.com/TabTabGo/ttg-framework/issues"
+  },
+  "dependencies": {
+    "@storybook/react": "^6.1.15",
+    "axios": "^0.21.1",
+    "fs": "^0.0.1-security",
+    "immutability-helper": "^3.1.1",
+    "jwt-decode": "^3.1.2",
+    "lodash": "^4.17.20",
+    "moment": "^2.29.1",
+    "qs": "^6.9.6",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-i18next": "^11.8.5",
+    "react-router-dom": "^5.2.0",
+    "redux": "^4.0.5",
+    "universal-cookie": "^4.0.4"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.12.10",
+    "@babel/plugin-proposal-class-properties": "^7.12.1",
+    "@babel/plugin-proposal-decorators": "^7.12.12",
+    "@babel/plugin-syntax-class-properties": "^7.12.1",
+    "@babel/plugin-transform-arrow-functions": "^7.12.1",
+    "@babel/preset-env": "^7.12.11",
+    "@babel/preset-react": "^7.12.10",
+    "@babel/preset-typescript": "^7.12.7",
+    "@types/lodash": "^4.14.168",
+    "@types/react-router-dom": "^5.1.7",
+    "babel-loader": "^8.2.2",
+    "prettier": "^2.2.1"
+  }
+}

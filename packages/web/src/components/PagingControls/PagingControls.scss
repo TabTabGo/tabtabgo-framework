@@ -1,0 +1,21 @@
+.paging-controls {
+  font-size: 0.85em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .pages {
+    margin-top: 3px;
+    font-size: 1.5em;
+
+    > span {
+      margin-left: 6px;
+      margin-right: 6px;
+    }
+  }
+
+  > span {
+    margin-left: 12px;
+    margin-right: 12px;
+  }
+}

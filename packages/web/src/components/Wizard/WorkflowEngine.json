@@ -1,0 +1,134 @@
+{
+  "status": {
+    "initilize": {
+      "order": 1,
+      "description": "Add main info",
+      "componentName": "intView",
+      "events": {
+        "next": "$NEXT"
+      }
+    },
+    "personalData": {
+      "order": 2,
+      "description": "tesr",
+      "componentName": "personalData",
+      "events": {
+        "confirm": [
+          {
+            "order": 1,
+            "if": true,
+            "action": [
+              {
+                "order": 1,
+                "action": "dispatch",
+                "data": {
+                  "type": "XX_UPDATE",
+                  "playload": {
+                    "$set": "<jsonPath>"
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "order": 2,
+            "if": "x.workExperiance == 0",
+            "then": [
+              {
+                "order": 1,
+                "action": "goto",
+                "data": "final",
+                "halt": true
+              }
+            ]
+          },
+          {
+            "if": "x.workExperiance > 0",
+            "then": "$NEXT"
+          }
+        ],
+        "prev": "$PREV"
+      }
+    },
+    "WorkExperiance": {
+      "order": 3,
+      "description": "add Work experiance Details",
+      "componentName": "workExpView",
+      "events": {
+        "next": "$NEXT",
+        "prev": "$PREV"
+      }
+    },
+    "final": {
+      "order": 4,
+      "description": "tesr",
+      "componentName": "finalView",
+      "events": {
+        "save": [
+          {
+            "if": true,
+            "then": [
+              {
+                "action": "dispatch",
+                "data": {
+                  "order": 1,
+                  "action": "dispatch",
+                  "data": {
+                    "type": "XX_SAVE",
+                    "playload": {
+                      "$set": "<jsonPath>"
+                    }
+                  }
+                },
+                "halt": true
+              }
+            ]
+          }
+        ],
+        "prev": [
+          {
+            "order": 1,
+            "if": "x.workExperiance == 0",
+            "then": [
+              {
+                "order": 1,
+                "action": "goto",
+                "data": "personalData",
+                "halt": true
+              }
+            ]
+          },
+          {
+            "order": 2,
+            "if": "x.workExperiance > 0",
+            "then": {
+              "action": "$PREV"
+            }
+          }
+        ],
+        "reset": [
+          {
+            "if": true,
+            "then": [
+              {
+                "order": 1,
+                "action": "dispatch",
+                "data": {
+                  "type": "XX_RESET_DATA"
+                }
+              },
+              {
+                "order": 2,
+                "action": "goto",
+                "data": "initilize",
+                "halt": true
+              }
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "name": "example01",
+  "description": "Example of wofklow strucre"
+}

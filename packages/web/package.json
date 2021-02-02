@@ -1,0 +1,70 @@
+{
+  "name": "@tabtabgo/web",
+  "version": "0.0.1",
+  "description": "TabTabGo web components",
+  "keywords": [
+    "components"
+  ],
+  "author": "Ghassan Samara <gmsamara@gmail.com>",
+  "homepage": "https://github.com/TabTabGo/ttg-framework/tree/master/packages/web#readme",
+  "license": "ISC",
+  "main": "lib/web.js",
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "files": [
+    "lib"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TabTabGo/ttg-framework.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: run tests from root\" && exit 1",
+    "storybook": "start-storybook -p 9002",
+    "build-lib": "babel src -out-dir lib"
+  },
+  "bugs": {
+    "url": "https://github.com/TabTabGo/ttg-framework/issues"
+  },
+  "dependencies": {
+    "@babel/plugin-syntax-class-properties": "^7.12.1",
+    "@material-ui/core": "^4.11.3",
+    "@material-ui/icons": "^4.11.2",
+    "@storybook/react": "^6.1.15",
+    "@types/react": "^17.0.0",
+    "classnames": "^2.2.6",
+    "draft-js": "^0.11.7",
+    "draftjs-to-html": "^0.9.1",
+    "immutability-helper": "^3.1.1",
+    "lodash": "^4.17.20",
+    "moment": "^2.29.1",
+    "mui-rte": "^1.26.2",
+    "notistack": "^1.0.3",
+    "prop-types": "^15.7.2",
+    "qs": "^6.9.6",
+    "react": "^17.0.1",
+    "react-avatar-editor": "^11.1.0",
+    "react-cropper": "^2.1.4",
+    "react-dom": "^17.0.1",
+    "react-file-reader-input": "^2.0.0",
+    "react-helmet": "^6.1.0",
+    "react-i18next": "^11.8.5",
+    "react-image": "^4.0.3",
+    "react-image-gallery": "^1.0.8",
+    "react-pdf": "^5.1.0",
+    "react-redux": "^7.2.2",
+    "react-router-dom": "^5.2.0",
+    "react-share": "^4.3.1",
+    "sweetalert": "^2.1.2"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.12.10",
+    "@babel/preset-env": "^7.12.11",
+    "@babel/preset-react": "^7.12.10",
+    "@types/lodash": "^4.14.168",
+    "@types/react-router-dom": "^5.1.7",
+    "babel-loader": "^8.2.2"
+  }
+}

@@ -1,0 +1,25 @@
+@import '../../../assets/scss/media-queries.scss';
+
+$loading-color: #d6d6d6;
+
+.loading-text-paragraph {
+  .loading-text-shape {
+    background: $loading-color;
+    color: $loading-color;
+    width: 75%;
+    height: 22px;
+    margin-bottom: 12px;
+
+    @include respond-to(mobile) {
+      width: 100%;
+    }
+  }
+
+  :nth-last-child(1) {
+    width: 50% !important;
+
+    @include respond-to(mobile) {
+      width: 75%;
+    }
+  }
+}

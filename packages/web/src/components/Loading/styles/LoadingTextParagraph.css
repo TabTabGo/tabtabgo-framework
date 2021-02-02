@@ -1,0 +1,34 @@
+/* ========================================================================
+     Component: media-queries
+ ========================================================================== */
+@media only screen and (max-width: 767px) and (orientation: portrait) {
+  .hidden-xs-portrait {
+    display: none !important; } }
+
+@media only screen and (max-width: 767px) and (orientation: portrait) {
+  .visible-xs-portrait {
+    display: block !important; } }
+
+@media only screen and (max-width: 767px) and (orientation: landscape) {
+  .hidden-xs-landscape {
+    display: none !important; } }
+
+@media only screen and (max-width: 767px) and (orientation: landscape) {
+  .visible-xs-landscape {
+    display: block !important; } }
+
+.loading-text-paragraph .loading-text-shape {
+  background: #d6d6d6;
+  color: #d6d6d6;
+  width: 75%;
+  height: 22px;
+  margin-bottom: 12px; }
+  @media only screen and (max-width: 767px) {
+    .loading-text-paragraph .loading-text-shape {
+      width: 100%; } }
+
+.loading-text-paragraph :nth-last-child(1) {
+  width: 50% !important; }
+  @media only screen and (max-width: 767px) {
+    .loading-text-paragraph :nth-last-child(1) {
+      width: 75%; } }

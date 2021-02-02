@@ -1,0 +1,70 @@
+.text-primary {
+  color: #c30e2e; }
+
+.text-primary-80 {
+  color: #f24564; }
+
+.text-primary-60 {
+  color: #f9a4b3; }
+
+.text-primary-40 {
+  color: white; }
+
+.text-primary-20 {
+  color: white; }
+
+.text-secondary {
+  color: #bc8e0c; }
+
+.text-dark {
+  color: #6c6e70; }
+
+.text-darker {
+  color: #3a3b3c; }
+
+.text-black {
+  color: black; }
+
+.text-white {
+  color: white; }
+
+.text-muted {
+  color: lightgray; }
+
+/* ========================================================================
+     Component: media-queries
+ ========================================================================== */
+@media only screen and (max-width: 767px) and (orientation: portrait) {
+  .hidden-xs-portrait {
+    display: none !important; } }
+
+@media only screen and (max-width: 767px) and (orientation: portrait) {
+  .visible-xs-portrait {
+    display: block !important; } }
+
+@media only screen and (max-width: 767px) and (orientation: landscape) {
+  .hidden-xs-landscape {
+    display: none !important; } }
+
+@media only screen and (max-width: 767px) and (orientation: landscape) {
+  .visible-xs-landscape {
+    display: block !important; } }
+
+.share-widget {
+  display: flex; }
+  .share-widget .SocialMediaShareButton {
+    color: #6c6e70;
+    margin: 6px;
+    margin-left: 4px;
+    margin-right: 4px;
+    padding: 0; }
+    .share-widget .SocialMediaShareButton svg {
+      width: 24px !important;
+      height: 24px !important; }
+    .share-widget .SocialMediaShareButton:hover, .share-widget .SocialMediaShareButton:focus {
+      color: #3a3b3c;
+      outline: none; }
+  .share-widget .SocialMediaShareButton:first-child {
+    margin-right: -6px; }
+  .share-widget .SocialMediaShareButton:last-child {
+    margin-right: 12px; }

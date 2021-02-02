@@ -1,0 +1,29 @@
+.loading-text-shape {
+  background: #d6d6d6;
+  color: #d6d6d6;
+  border-radius: 36px;
+  animation: loading-text-pulse 1.5s infinite;
+  padding-right: 10px; }
+
+h1 .loading-text-shape {
+  width: 300px; }
+
+h2 .loading-text-shape {
+  width: 150px; }
+
+h3 .loading-text-shape {
+  width: 120px; }
+
+h4 .loading-text-shape {
+  width: 100px; }
+
+p .loading-text-shape {
+  width: 100%; }
+
+@keyframes loading-text-pulse {
+  0% {
+    opacity: 0.6; }
+  50% {
+    opacity: 1; }
+  100% {
+    opacity: 0.6; } }
