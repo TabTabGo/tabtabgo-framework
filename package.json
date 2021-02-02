@@ -6,7 +6,8 @@
   "private":"true",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build" :"lerna run --parallel --scope \"@tabtabgo/*\" build"
+    "build" :"lerna run --parallel --scope \"@tabtabgo/*\" build",
+    "publish": "lerna publish --dist-tag next --contents build"
   },
   "repository": {
     "type": "git",
@@ -53,7 +54,7 @@
     "@typescript-eslint/eslint-plugin": "^4.11.1",
     "@typescript-eslint/parser": "^4.11.1",
     "argos-cli": "^0.3.3",
-    "babel-loader": "^8.0.0",
+    "babel-loader": "8.1.0",
     "babel-plugin-istanbul": "^6.0.0",
     "babel-plugin-macros": "^3.0.0",
     "babel-plugin-module-resolver": "^4.0.0",

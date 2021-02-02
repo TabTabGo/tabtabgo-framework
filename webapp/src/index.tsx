@@ -12,7 +12,7 @@ import { Provider } from 'react-redux';
 import Notifier from '@tabtabgo/web/components/Notifications/Notifier';
 import indexRoutes from 'routes/index';
 
-import AuthenticationProvider from 'ttg-identity/components/Routes/node_modules/ttg-identity/core/AuthenticationProvider';
+import AuthenticationProvider from '@tabtabgo/core/providers/AuthenticationProvider';
 
 import { MuiPickersUtilsProvider } from '@material-ui/pickers';
 import MomentUtils from '@date-io/moment';
