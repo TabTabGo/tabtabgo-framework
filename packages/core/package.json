@@ -2,7 +2,9 @@
   "name": "@tabtabgo/core",
   "version": "0.0.5",
   "description": "React core services and utilities ",
-  "private": false,
+  "publishConfig": {
+    "access": "public"
+},
   "keywords": [
     "react",
     "core",
@@ -62,5 +64,5 @@
     "babel-loader": "^8.2.2",
     "prettier": "^2.2.1"
   },
-  "gitHead": "1bfc45c16c7e66f8728a28cab53454ffcafbb8e3"
+  "gitHead": "5a57dfbd33804d87d69bd2e5619758180e4404d9"
 }

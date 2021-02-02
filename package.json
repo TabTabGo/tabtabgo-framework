@@ -3,7 +3,10 @@
   "version": "1.0.0",
   "description": "Core libraries and fancutions used for React and React Native project",
   "main": "index.js",
-  "private": false,
+  
+  "publishConfig": {
+        "access": "public"
+    },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
