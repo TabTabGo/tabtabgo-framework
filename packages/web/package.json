@@ -25,7 +25,9 @@
   "scripts": {
     "test": "echo \"Error: run tests from root\" && exit 1",
     "storybook": "start-storybook -p 9002",
-    "build": "yarn node ../../scripts/build"
+    "build" :"yarn build:default && yarn build:copy-files",
+    "build:default": "yarn node ../../scripts/build",
+    "build:copy-files": "node ../../scripts/copy-files.js"
   },
   "bugs": {
     "url": "https://github.com/TabTabGo/ttg-framework/issues"
@@ -61,5 +63,5 @@
     "react-share": "^4.3.1",
     "sweetalert": "^2.1.2"
   },
-  "gitHead": "5a57dfbd33804d87d69bd2e5619758180e4404d9"
+  "gitHead": "d09c22286fbd05a34622ec461e88970b713ee1a9"
 }

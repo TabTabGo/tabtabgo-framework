@@ -27,7 +27,9 @@
   },
   "scripts": {
     "test": "echo \"Error: run tests from root\" && exit 1",
-    "build": "yarn node ../../scripts/build"
+    "build" :"yarn build:default && yarn build:copy-files",
+    "build:default": "yarn node ../../scripts/build",
+    "build:copy-files": "node ../../scripts/copy-files.js"
   },
   "bugs": {
     "url": "https://github.com/TabTabGo/ttg-framework/issues"
@@ -49,5 +51,5 @@
     "redux": "^4.0.5",
     "universal-cookie": "^4.0.4"
   },
-  "gitHead": "5a57dfbd33804d87d69bd2e5619758180e4404d9"
+  "gitHead": "d09c22286fbd05a34622ec461e88970b713ee1a9"
 }
