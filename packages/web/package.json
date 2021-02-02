@@ -5,9 +5,10 @@
   "keywords": [
     "components"
   ],
-  "author": "Ghassan Samara <gmsamara@gmail.com>",
+  "author": "TabTabGo",
   "homepage": "https://github.com/TabTabGo/ttg-framework/tree/master/packages/web#readme",
   "license": "ISC",
+
   "publishConfig": {
     "access": "public"
   },
