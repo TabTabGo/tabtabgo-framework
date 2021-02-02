@@ -8,8 +8,8 @@ import {
   Checkbox,
   Tooltip,
 } from '@material-ui/core';
-import { HeaderProps } from 'ttg-react/core/types/DataTable';
-import { Property } from 'ttg-react/core/types';
+import { HeaderProps } from '@tabtabgo/core/types/DataTable';
+import { Property } from '@tabtabgo/core/types';
 
 const Header = (props: HeaderProps<any>) => {
   const createSortHandler = (property: Property) => (event: any) => {

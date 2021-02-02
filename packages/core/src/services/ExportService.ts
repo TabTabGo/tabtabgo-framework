@@ -1,10 +1,7 @@
 import moment from 'moment';
 import { datetimeFormat } from '../DateFormats';
-import { IExportService } from 'ttg-react/core/Services/contracts';
-import {
-  ExportConfiguration,
-  ExportColumnConfiguration,
-} from '../types/ExportConfiguration';
+import { IExportService } from '../services/contracts';
+import { ExportConfiguration, ExportColumnConfiguration } from '../types/ExportConfiguration';
 
 //TODO user lazy loading
 //import pdfMake from "pdfmake/build/pdfmake";
@@ -49,8 +46,7 @@ export default class ExportService implements IExportService<any> {
   constructor(config: ExportConfiguration) {
     this.config = config;
     if (!this.config.fileName)
-      this.config.fileName =
-        config.namePlural + '_' + moment().format('YYYYMMDDhhmmss');
+      this.config.fileName = config.namePlural + '_' + moment().format('YYYYMMDDhhmmss');
   }
 
   //#region private functions
@@ -73,10 +69,7 @@ export default class ExportService implements IExportService<any> {
 
     let headers = [];
     for (let prop in entity) {
-      if (
-        typeof entity[prop] !== 'object' &&
-        typeof entity[prop] !== 'function'
-      ) {
+      if (typeof entity[prop] !== 'object' && typeof entity[prop] !== 'function') {
         headers.push(prop);
       }
     }
@@ -101,24 +94,18 @@ export default class ExportService implements IExportService<any> {
     let lines = [];
 
     var columns = config.columns.filter(
-      (c) => c.export && (c.export.includes('csv') || c.export.includes('all'))
+      (c) => c.export && (c.export.includes('csv') || c.export.includes('all')),
     );
     //Add column
     lines.push(columns.map((c) => c.title).join(','));
     //Add Values
     for (let entityIndex in entities) {
-      lines.push(
-        columns.map((c) => this.getValue(entities[entityIndex], c)).join(',')
-      );
+      lines.push(columns.map((c) => this.getValue(entities[entityIndex], c)).join(','));
     }
     return lines.join('\n');
   };
 
-  downloadFile = (
-    content: any,
-    fileName: string,
-    waitTime?: number
-  ): Promise<void> => {
+  downloadFile = (content: any, fileName: string, waitTime?: number): Promise<void> => {
     return new Promise((resolve) => {
       setTimeout(
         () => {
@@ -131,16 +118,12 @@ export default class ExportService implements IExportService<any> {
           link.click(); // This will download the data file named "my_data.csv".
           //return resolve(link);
         },
-        waitTime ? waitTime : 1
+        waitTime ? waitTime : 1,
       );
     });
   };
 
-  openFile = (
-    content: any,
-    fileName: string,
-    waitTime?: number
-  ): Promise<void> => {
+  openFile = (content: any, fileName: string, waitTime?: number): Promise<void> => {
     return new Promise((resolve) => {
       setTimeout(
         () => {
@@ -152,7 +135,7 @@ export default class ExportService implements IExportService<any> {
           link.click(); // This will download the data file named "my_data.csv".
           link.target = '_tab';
         },
-        waitTime ? waitTime : 1
+        waitTime ? waitTime : 1,
       );
     });
   };
@@ -160,8 +143,7 @@ export default class ExportService implements IExportService<any> {
   exportCsv = (entities: Array<any>): Promise<void> => {
     let config = this.getConfig(entities[0]);
     const content = this.generateCsvFile(entities);
-    let csvContent =
-      'data:text/csv;charset=utf-8,' + encodeURIComponent(content);
+    let csvContent = 'data:text/csv;charset=utf-8,' + encodeURIComponent(content);
     //var encodedUri = encodeURI(csvContent);
 
     return this.downloadFile(csvContent, config.fileName + '.csv');
@@ -175,7 +157,7 @@ export default class ExportService implements IExportService<any> {
     }
 
     var columns = config.columns.filter(
-      (c) => c.export && (c.export.includes('pdf') || c.export.includes('all'))
+      (c) => c.export && (c.export.includes('pdf') || c.export.includes('all')),
     );
     if (columns) {
       let body = [],
@@ -183,7 +165,7 @@ export default class ExportService implements IExportService<any> {
       body.push(
         columns.map((c) => {
           return { text: c.title, style: 'tableHeader' };
-        })
+        }),
       );
 
       for (let index = 0; index < entities.length; index++) {
@@ -244,11 +226,7 @@ export default class ExportService implements IExportService<any> {
     let strBody = entities
       .map((row) => {
         return (
-          '<tr>' +
-          config.columns
-            .map((c) => `<td>${this.getValue(row, c)}</td>`)
-            .join('') +
-          '</tr>'
+          '<tr>' + config.columns.map((c) => `<td>${this.getValue(row, c)}</td>`).join('') + '</tr>'
         );
       })
       .join('');

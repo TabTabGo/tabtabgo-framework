@@ -12,7 +12,7 @@ import {
   CircularProgress,
 } from '@material-ui/core';
 import { useTranslation } from 'react-i18next';
-import { UserSettingsContext } from 'ttg-react/core/contexts/UserSettingsContext';
+import { UserSettingsContext } from '@tabtabgo/core/contexts/UserSettingsContext';
 import classnames from 'classnames';
 import TablePaginationActions from '@material-ui/core/TablePagination/TablePaginationActions';
 
@@ -81,7 +81,7 @@ const TableData = ({
   onTablePageChanged,
   selectedId,
   loading = false,
-  forceShowIds = false
+  forceShowIds = false,
 }: TableDataProps) => {
   const classes = useStyles();
   const { t } = useTranslation(['information', 'internet', 'economy']);

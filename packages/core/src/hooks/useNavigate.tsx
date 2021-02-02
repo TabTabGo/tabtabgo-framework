@@ -9,7 +9,7 @@ const useNavigate = () => {
   const getUrl = (link: string) => {
     var finalTokens = [];
 
-    var urlTokens = url.split('/').filter((u : string) => nonEmpty(u));
+    var urlTokens = url.split('/').filter((u: string) => nonEmpty(u));
     var linkTokens = link.split('/').filter((l) => nonEmpty(l));
     let linkIndex = 0;
 

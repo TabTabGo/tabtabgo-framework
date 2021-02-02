@@ -1,15 +1,17 @@
-"use strict";
+'use strict';
 
-Object.defineProperty(exports, "__esModule", {
-  value: true
+Object.defineProperty(exports, '__esModule', {
+  value: true,
 });
 exports.url = exports.number = exports.equalTo = exports.range = exports.equalValue = exports.minValue = exports.maxValue = exports.equalLength = exports.minLength = exports.maxLength = exports.isAfterToday = exports.isTodayAndAfter = exports.email = exports.ip = exports.regex = exports.required = void 0;
 
-var _Utilities = require("./Utilities");
+var _Utilities = require('./Utilities');
 
-var _moment = _interopRequireDefault(require("moment"));
+var _moment = _interopRequireDefault(require('moment'));
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+function _interopRequireDefault(obj) {
+  return obj && obj.__esModule ? obj : { default: obj };
+}
 
 var isNumber = function isNumber(n) {
   return !isNaN(parseFloat(n)) && isFinite(n);
@@ -36,7 +38,6 @@ var ip = function ip(value) {
   return regex(ipRegex, value);
 }; // function to validate email
 
-
 exports.ip = ip;
 
 var email = function email(value) {
@@ -49,7 +50,7 @@ exports.email = email;
 var isTodayAndAfter = function isTodayAndAfter(value) {
   if (!value) return false;
   var today = new Date().setHours(0, 0, 0, 0);
-  var valueDate = (0, _moment["default"])(value).toDate().setHours(0, 0, 0, 0);
+  var valueDate = (0, _moment['default'])(value).toDate().setHours(0, 0, 0, 0);
   return valueDate >= today;
 };
 
@@ -58,10 +59,9 @@ exports.isTodayAndAfter = isTodayAndAfter;
 var isAfterToday = function isAfterToday(value) {
   if (!value) return false;
   var today = new Date().setHours(0, 0, 0, 0);
-  var valueDate = (0, _moment["default"])(value).toDate().setHours(0, 0, 0, 0);
+  var valueDate = (0, _moment['default'])(value).toDate().setHours(0, 0, 0, 0);
   return valueDate > today;
 }; // function that verifies if a string has a length less than or equal length
-
 
 exports.isAfterToday = isAfterToday;
 
@@ -73,7 +73,6 @@ var maxLength = function maxLength(length, value) {
   return false;
 }; // function that verifies if a string has a length more than or equal length
 
-
 exports.maxLength = maxLength;
 
 var minLength = function minLength(length, value) {
@@ -83,7 +82,6 @@ var minLength = function minLength(length, value) {
 
   return false;
 }; // function that verifies if value are equal in length
-
 
 exports.minLength = minLength;
 
@@ -105,7 +103,6 @@ var maxValue = function maxValue(length, value) {
   return false;
 }; // function that verifies if a string has a length more than or equal length
 
-
 exports.maxValue = maxValue;
 
 var minValue = function minValue(length, value) {
@@ -115,7 +112,6 @@ var minValue = function minValue(length, value) {
 
   return false;
 }; // function that verifies if value are equal in length
-
 
 exports.minValue = minValue;
 
@@ -145,7 +141,6 @@ var range = function range() {
   return false;
 }; // function that verifies if two strings are equal
 
-
 exports.range = range;
 
 var equalTo = function equalTo(string1, value) {
@@ -164,7 +159,6 @@ var equalTo = function equalTo(string1, value) {
   return false;
 }; // function that verifies if value contains only numbers
 
-
 exports.equalTo = equalTo;
 
 var number = function number(value) {
@@ -176,7 +170,6 @@ var number = function number(value) {
 
   return false;
 }; // verifies if value is a valid URL
-
 
 exports.number = number;
 

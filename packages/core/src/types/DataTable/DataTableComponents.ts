@@ -1,12 +1,12 @@
-import { RowProps, RowOptions } from "./RowProps";
-import { FilterProps } from "./FilterProps";
-import { SelectionToolbarProps } from "./SelectionToolbarProps";
-import { SelectedFilterProps } from "./SelectedFilterProps";
-import { TableProps } from "./TableProps";
-import { FunctionComponent, ComponentClass } from "react";
-import { HeaderProps } from "./HeaderProps";
-import { PagingProps } from "./PagingProps";
-import { ToolbarProps } from "./ToolbarProps";
+import { RowProps, RowOptions } from './RowProps';
+import { FilterProps } from './FilterProps';
+import { SelectionToolbarProps } from './SelectionToolbarProps';
+import { SelectedFilterProps } from './SelectedFilterProps';
+import { TableProps } from './TableProps';
+import { FunctionComponent, ComponentClass } from 'react';
+import { HeaderProps } from './HeaderProps';
+import { PagingProps } from './PagingProps';
+import { ToolbarProps } from './ToolbarProps';
 
 export interface DataTableComponents<T> {
   toolbar?: FunctionComponent<ToolbarProps<T>> | boolean;

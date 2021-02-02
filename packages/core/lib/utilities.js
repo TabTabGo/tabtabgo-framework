@@ -1,7 +1,7 @@
-"use strict";
+'use strict';
 
-Object.defineProperty(exports, "__esModule", {
-  value: true
+Object.defineProperty(exports, '__esModule', {
+  value: true,
 });
 exports.difference = difference;
 exports.getToken = getToken;
@@ -10,19 +10,41 @@ exports.isEmpty = isEmpty;
 exports.populatePageList = populatePageList;
 exports.getJsonPatchDocument = exports.getUniqueId = exports.getFriendlyString = exports.getPersonInitials = exports.getPersonName = exports.getDisplayValue = exports.getPropertyValue = exports.arrayUnique = exports.getInputValue = exports.hexToRgb = exports.parseDataUrl = exports.camelCase = exports.isEqual = exports.getImageUrl = void 0;
 
-var _Appsettings = require("./Appsettings");
+var _Appsettings = require('./Appsettings');
 
-var _qs = _interopRequireDefault(require("qs"));
+var _qs = _interopRequireDefault(require('qs'));
 
-var _lodash = _interopRequireDefault(require("lodash"));
+var _lodash = _interopRequireDefault(require('lodash'));
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+function _interopRequireDefault(obj) {
+  return obj && obj.__esModule ? obj : { default: obj };
+}
 
-function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+function _typeof(obj) {
+  '@babel/helpers - typeof';
+  if (typeof Symbol === 'function' && typeof Symbol.iterator === 'symbol') {
+    _typeof = function _typeof(obj) {
+      return typeof obj;
+    };
+  } else {
+    _typeof = function _typeof(obj) {
+      return obj &&
+        typeof Symbol === 'function' &&
+        obj.constructor === Symbol &&
+        obj !== Symbol.prototype
+        ? 'symbol'
+        : typeof obj;
+    };
+  }
+  return _typeof(obj);
+}
 
 var getImageUrl = function getImageUrl(mediaFileId) {
   var imageSize = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 'Provided';
-  return "".concat(_Appsettings.AppSettings.baseApiUrl, "/mediaFiles/Image/").concat(mediaFileId, "/").concat(imageSize);
+  return ''
+    .concat(_Appsettings.AppSettings.baseApiUrl, '/mediaFiles/Image/')
+    .concat(mediaFileId, '/')
+    .concat(imageSize);
 };
 
 exports.getImageUrl = getImageUrl;
@@ -47,18 +69,17 @@ var isEqual = function isEqual(value, other) {
       if (!isEqual(item1, item2)) return false;
     } // Otherwise, do a simple comparison
     else {
-        // If the two items are not the same type, return false
-        if (itemType !== Object.prototype.toString.call(item2)) return false; // Else if it's a function, convert to a string and compare
-        // Otherwise, just compare
+      // If the two items are not the same type, return false
+      if (itemType !== Object.prototype.toString.call(item2)) return false; // Else if it's a function, convert to a string and compare
+      // Otherwise, just compare
 
-        if (itemType === '[object Function]') {
-          if (item1.toString() !== item2.toString()) return false;
-        } else {
-          if (item1 !== item2) return false;
-        }
+      if (itemType === '[object Function]') {
+        if (item1.toString() !== item2.toString()) return false;
+      } else {
+        if (item1 !== item2) return false;
       }
+    }
   }; // Compare properties
-
 
   if (type === '[object Array]') {
     for (var i = 0; i < valueLen; i++) {
@@ -71,7 +92,6 @@ var isEqual = function isEqual(value, other) {
       }
     }
   } // If nothing failed, return true
-
 
   return true;
 };
@@ -96,12 +116,12 @@ var parseDataUrl = function parseDataUrl(url) {
     return {
       mediaType: m[1],
       base64: m[2] === 'base64',
-      data: m[3]
+      data: m[3],
     };
   }
 
   return {
-    data: url
+    data: url,
   };
 };
 
@@ -114,15 +134,17 @@ var hexToRgb = function hexToRgb(hex) {
     return r + r + g + g + b + b;
   });
   var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
-  return result ? {
-    r: parseInt(result[1], 16),
-    g: parseInt(result[2], 16),
-    b: parseInt(result[3], 16)
-  } : {
-    r: 0,
-    g: 0,
-    b: 0
-  };
+  return result
+    ? {
+        r: parseInt(result[1], 16),
+        g: parseInt(result[2], 16),
+        b: parseInt(result[3], 16),
+      }
+    : {
+        r: 0,
+        g: 0,
+        b: 0,
+      };
 };
 
 exports.hexToRgb = hexToRgb;
@@ -149,9 +171,10 @@ exports.getInputValue = getInputValue;
 
 var arrayUnique = function arrayUnique(array, equalCompare) {
   var a = array.concat();
-  if (!equalCompare) equalCompare = function equalCompare(a, b) {
-    return isEqual(a, b);
-  };
+  if (!equalCompare)
+    equalCompare = function equalCompare(a, b) {
+      return isEqual(a, b);
+    };
 
   for (var i = 0; i < a.length; ++i) {
     for (var j = i + 1; j < a.length; ++j) {
@@ -195,7 +218,10 @@ exports.getDisplayValue = getDisplayValue;
 
 var getPersonName = function getPersonName(entity) {
   if (entity && entity.person && (entity.person.firstName || entity.person.lastName)) {
-    return "".concat(entity.person.title ? entity.person.title + ' ' : '').concat(entity.person.firstName || '', " ").concat(entity.person.lastName || '');
+    return ''
+      .concat(entity.person.title ? entity.person.title + ' ' : '')
+      .concat(entity.person.firstName || '', ' ')
+      .concat(entity.person.lastName || '');
   }
 
   return '';
@@ -205,14 +231,18 @@ exports.getPersonName = getPersonName;
 
 var getPersonInitials = function getPersonInitials(entity) {
   if (entity && entity.person && entity.person.firstName && entity.person.lastName) {
-    return "".concat(entity.person.firstName.substring(0, 1).toUpperCase()).concat(entity.person.lastName.substring(0, 1).toUpperCase());
+    return ''
+      .concat(entity.person.firstName.substring(0, 1).toUpperCase())
+      .concat(entity.person.lastName.substring(0, 1).toUpperCase());
   }
 
   if (entity && entity.person && entity.person.displayName) {
     var names = entity.person.displayName.split(' ');
 
     if (names.length > 1) {
-      return "".concat(names[0].substring(0, 1).toUpperCase()).concat(names[names.length - 1].substring(0, 1).toUpperCase());
+      return ''
+        .concat(names[0].substring(0, 1).toUpperCase())
+        .concat(names[names.length - 1].substring(0, 1).toUpperCase());
     }
 
     if (names.length === 1) {
@@ -229,14 +259,16 @@ var getPersonInitials = function getPersonInitials(entity) {
  * @return {Object}        Return a new object who represent the diff
  */
 
-
 exports.getPersonInitials = getPersonInitials;
 
 function difference(object, base) {
   function changes(object, base) {
-    return _lodash["default"].transform(object, function (result, value, key) {
-      if (!_lodash["default"].isEqual(value, base[key])) {
-        result[key] = _lodash["default"].isObject(value) && _lodash["default"].isObject(base[key]) ? changes(value, base[key]) : value;
+    return _lodash['default'].transform(object, function (result, value, key) {
+      if (!_lodash['default'].isEqual(value, base[key])) {
+        result[key] =
+          _lodash['default'].isObject(value) && _lodash['default'].isObject(base[key])
+            ? changes(value, base[key])
+            : value;
       }
     });
   }
@@ -257,12 +289,12 @@ function getToken(hash) {
 }
 
 function getSearchParams(query) {
-  return _qs["default"].parse(query);
+  return _qs['default'].parse(query);
 }
 
 function isEmpty(value) {
-  if (_lodash["default"].isDate(value) && value) return false;
-  if (_typeof(value) === 'object' && _lodash["default"].isEmpty(value)) return true;
+  if (_lodash['default'].isDate(value) && value) return false;
+  if (_typeof(value) === 'object' && _lodash['default'].isEmpty(value)) return true;
   if (value === null || value === undefined || value === '') return true;
   return false;
 }
@@ -314,13 +346,13 @@ var getJsonPatchDocument = function getJsonPatchDocument(originalValue, newValue
       return {
         op: originalValue ? 'replace' : 'add',
         path: path,
-        value: newValue
+        value: newValue,
       };
     } else {
       return {
         op: 'remove',
         path: path,
-        value: undefined
+        value: undefined,
       };
     }
   }

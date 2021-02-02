@@ -1,13 +1,13 @@
 /* eslint-disable no-console */
-import axios, { AxiosInstance, CancelTokenSource, AxiosRequestConfig } from "axios";
-import { AppSettings } from "../../Appsettings";
-import * as fs from "fs";
-import { currentServiceProvider } from "../../providers/ServiceProvider";
-import * as ActionTypes from "./actionTypes";
-import BaseAjaxService from "./baseAjaxService";
-import { TTGError } from "../../types/TTGError";
-import { IRestApiService } from "../contractss";
-import { Dispatch } from "redux";
+import axios, { AxiosInstance, CancelTokenSource, AxiosRequestConfig } from 'axios';
+import { AppSettings } from '../../Appsettings';
+import * as fs from 'fs';
+import { currentServiceProvider } from '../../providers/ServiceProvider';
+import * as ActionTypes from './actionTypes';
+import BaseAjaxService from './baseAjaxService';
+import { TTGError } from '../../types/TTGError';
+import { IRestApiService } from '../contractss';
+import { Dispatch } from 'redux';
 export default class Axios extends BaseAjaxService {
   currentAxios: AxiosInstance;
   cancelSource: CancelTokenSource;
@@ -16,17 +16,17 @@ export default class Axios extends BaseAjaxService {
 
     let self = this;
     this.currentAxios = axios.create({
-      baseUrl: AppSettings.baseApiUrl ? `${AppSettings.baseApiUrl}/${this.prefixUrl}` : "/",
+      baseUrl: AppSettings.baseApiUrl ? `${AppSettings.baseApiUrl}/${this.prefixUrl}` : '/',
       timeout: AppSettings.timeout || 60000,
       headers: {
-        Accept: "*/*"
-      }
+        Accept: '*/*',
+      },
     } as AxiosRequestConfig);
 
     this.cancelSource = axios.CancelToken.source();
 
     this.currentAxios.interceptors.request.use(
-      async requestConfig => {
+      async (requestConfig) => {
         if (!self.appSettings.disableTokenAuthorization) {
           var token = await self.sessionManger.getToken();
           var tokenType = await this.sessionManger.getTokenType();
@@ -40,7 +40,7 @@ export default class Axios extends BaseAjaxService {
                 token = await this.sessionManger.getToken();
                 addToken = true;
               } catch (error) {
-                console.warn("Refresh token Failed. ", error?.message, error);
+                console.warn('Refresh token Failed. ', error?.message, error);
                 addToken = false;
               }
             } else {
@@ -51,24 +51,26 @@ export default class Axios extends BaseAjaxService {
           }
 
           if (addToken) {
-            requestConfig.headers[headerKey ?? "Authorization"] = `${tokenType ? tokenType + ' ' : ''}${token}`;
+            requestConfig.headers[headerKey ?? 'Authorization'] = `${
+              tokenType ? tokenType + ' ' : ''
+            }${token}`;
           } else {
             self.resetPage();
             throw new TTGError(
               `Your session is expired. Please Login Again.`,
-              "REST_API_ERROR_SESSION_EXPIRED"
+              'REST_API_ERROR_SESSION_EXPIRED',
             );
           }
         }
         return requestConfig;
       },
-      error => {
+      (error) => {
         return error;
-      }
+      },
     );
 
     this.currentAxios.interceptors.response.use(
-      response => {
+      (response) => {
         return response;
       },
       async function (error) {
@@ -79,47 +81,61 @@ export default class Axios extends BaseAjaxService {
         if (
           // TODO move to setup
           error.response &&
-          (error.response.status === 401
-            || (error.response.status === 403 && error.response?.data?.messageCode === "tokenIsExpired")
-            || (error.response.status === 400 && error.response?.data?.messageCode === "userNotFound")
-          )
+          (error.response.status === 401 ||
+            (error.response.status === 403 &&
+              error.response?.data?.messageCode === 'tokenIsExpired') ||
+            (error.response.status === 400 && error.response?.data?.messageCode === 'userNotFound'))
           //&& !originalRequest._retry
         ) {
           originalRequest._retry = true;
-          return self.refreshToken().then(res => {
-            //console.log('refreshToken', res)
-            if (res) {
-              // 2) Change Authorization header
-              return self.sessionManger.getToken().then(token => {
-                self.currentAxios.defaults.headers.common[headerKey ?? "Authorization"] = `${tokenType ? tokenType + ' ' : ''}${token}`
-                //axios.defaults.headers.common['Authorization'] = 'Bearer ' + localStorageService.getAccessToken();
-                //console.log("try again", originalRequest);
-                // 3) return originalRequest object with Axios.
-                return self.currentAxios.request(originalRequest);
-              });
-            } else {
-              console.warn('failed to get token from refresh token;', error?.message, error);
+          return self
+            .refreshToken()
+            .then((res) => {
+              //console.log('refreshToken', res)
+              if (res) {
+                // 2) Change Authorization header
+                return self.sessionManger.getToken().then((token) => {
+                  self.currentAxios.defaults.headers.common[headerKey ?? 'Authorization'] = `${
+                    tokenType ? tokenType + ' ' : ''
+                  }${token}`;
+                  //axios.defaults.headers.common['Authorization'] = 'Bearer ' + localStorageService.getAccessToken();
+                  //console.log("try again", originalRequest);
+                  // 3) return originalRequest object with Axios.
+                  return self.currentAxios.request(originalRequest);
+                });
+              } else {
+                console.warn('failed to get token from refresh token;', error?.message, error);
+                self.resetPage();
+              }
+            })
+            .catch((refreshError) => {
+              console.warn(
+                'failed to get token from refresh token;',
+                refreshError?.message,
+                refreshError,
+              );
               self.resetPage();
-            }
-          }).catch(refreshError => {
-            console.warn('failed to get token from refresh token;', refreshError?.message, refreshError);
-            self.resetPage();
-          });
+            });
         } else if (
           error.response &&
           error.response.status === 401
           //&& originalRequest._retry
         ) {
-          console.log("reset Page")
+          console.log('reset Page');
           self.resetPage();
         }
         // return Error object with Promise
         return Promise.reject(error);
-      }
+      },
     );
   }
 
-  _new(controller: string, prefixUrl?: string, dispatch?: Dispatch, appSettings?: any): IRestApiService {
+  _new(
+    controller: string,
+    prefixUrl?: string,
+    dispatch?: Dispatch,
+    appSettings?: any,
+  ): IRestApiService {
     return new Axios(controller, prefixUrl, dispatch, appSettings);
   }
 
@@ -130,27 +146,26 @@ export default class Axios extends BaseAjaxService {
 
   async Abort(allRequests = true) {
     // TODO handle cancel specific API
-    if (allRequests)
-      this.cancelSource.cancel("Operation canceled by the user.");
+    if (allRequests) this.cancelSource.cancel('Operation canceled by the user.');
   }
 
   async restApi(
-    method = "GET",
-    url = "",
+    method = 'GET',
+    url = '',
     parameters = {},
     body = {},
     header = {},
-    responseType = "json",
-    responseEncoding = "utf8",
-    actionDescription = "",
+    responseType = 'json',
+    responseEncoding = 'utf8',
+    actionDescription = '',
     notifyOnError = false,
-    isFormData = false
+    isFormData = false,
   ) {
-    if (!url) url = "";
+    if (!url) url = '';
     if (!parameters) parameters = {};
 
     if (!header) header = {};
-    if (!actionDescription) actionDescription = "";
+    if (!actionDescription) actionDescription = '';
     if (notifyOnError === undefined) notifyOnError = false;
 
     let requestUrl = this.parseUrl(url, parameters, false);
@@ -158,13 +173,13 @@ export default class Axios extends BaseAjaxService {
     //Setup Header
     //console.log('header', header);
     let headerProps = Object.assign({}, header) as any;
-    if (headerProps["Content-Type"]) {
+    if (headerProps['Content-Type']) {
       headerProps = Object.assign({}, headerProps, {
-        "Content-Type": "application/x-www-form-urlencoded"
+        'Content-Type': 'application/x-www-form-urlencoded',
       });
     } else if (!isFormData) {
       headerProps = Object.assign({}, headerProps, {
-        "Content-Type": "application/json; charset=UTF-8"
+        'Content-Type': 'application/json; charset=UTF-8',
       });
     }
     //console.log('headerProps', headerProps);
@@ -181,7 +196,7 @@ export default class Axios extends BaseAjaxService {
         return status >= 200 && status < 300; // default
       },
       data: body,
-      cancelToken: this.cancelSource ? this.cancelSource.token : null
+      cancelToken: this.cancelSource ? this.cancelSource.token : null,
     } as any;
 
     this.reduxDispatch({ type: ActionTypes.AJAX_CALL_BEGIN });
@@ -189,7 +204,7 @@ export default class Axios extends BaseAjaxService {
       //console.log("requestConfig :", requestConfig);
       var response = await this.currentAxios.request(requestConfig);
       this.reduxDispatch({ type: ActionTypes.AJAX_CALL_END });
-      if (responseType === "stream") {
+      if (responseType === 'stream') {
         response.data.pipe(fs.createWriteStream(this.getFilename(response)));
       }
       // TODO do we need to validate status

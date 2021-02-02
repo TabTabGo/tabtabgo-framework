@@ -1,10 +1,10 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable no-console */
-import { currentServiceProvider } from "../../providers/ServiceProvider";
-import { AppSettings } from "../../Appsettings";
-import { TTGError } from "../../types/TTGError";
-import { IRestApiService, IStorageService, RequestProps, HTTPMethod } from "../contractss";
-import { Dispatch } from "redux";
+import { currentServiceProvider } from '../../providers/ServiceProvider';
+import { AppSettings } from '../../Appsettings';
+import { TTGError } from '../../types/TTGError';
+import { IRestApiService, IStorageService, RequestProps, HTTPMethod } from '../contractss';
+import { Dispatch } from 'redux';
 
 export default class BaseAjaxService implements IRestApiService {
   protected sessionManger: IStorageService;
@@ -18,20 +18,23 @@ export default class BaseAjaxService implements IRestApiService {
     this.controller = controller;
     this.appSettings = Object.assign({}, AppSettings, appSettings ?? {});
     this.dispatch = dispatch;
-    this.prefixUrl = "";
-    if (prefixUrl && !prefixUrl.endsWith("/")) this.prefixUrl = prefixUrl + "/";
+    this.prefixUrl = '';
+    if (prefixUrl && !prefixUrl.endsWith('/')) this.prefixUrl = prefixUrl + '/';
   }
 
-  _new(controller: string, prefixUrl?: string, dispatch?: Dispatch, appSettings?: any): IRestApiService {
-    throw new Error("Method not implemented.");
+  _new(
+    controller: string,
+    prefixUrl?: string,
+    dispatch?: Dispatch,
+    appSettings?: any,
+  ): IRestApiService {
+    throw new Error('Method not implemented.');
   }
 
-  destroy() {
-
-  };
+  destroy() {}
 
   async Abort(allRequests: boolean) {
-    throw new TTGError("Abort is not implemented");
+    throw new TTGError('Abort is not implemented');
   }
 
   Get({
@@ -41,10 +44,10 @@ export default class BaseAjaxService implements IRestApiService {
     actionDescription,
     notifyOnError,
     responseType,
-    responseEncoding
+    responseEncoding,
   }: RequestProps) {
     return this.restApi(
-      "GET",
+      'GET',
       url,
       parameters,
       undefined,
@@ -52,9 +55,9 @@ export default class BaseAjaxService implements IRestApiService {
       responseType,
       responseEncoding,
       actionDescription,
-      notifyOnError
+      notifyOnError,
     );
-  };
+  }
 
   Put({
     url,
@@ -64,10 +67,10 @@ export default class BaseAjaxService implements IRestApiService {
     actionDescription,
     notifyOnError,
     responseType,
-    responseEncoding
+    responseEncoding,
   }: RequestProps) {
     return this.restApi(
-      "PUT",
+      'PUT',
       url,
       parameters,
       body,
@@ -75,9 +78,9 @@ export default class BaseAjaxService implements IRestApiService {
       responseType,
       responseEncoding,
       actionDescription,
-      notifyOnError
+      notifyOnError,
     );
-  };
+  }
 
   Patch({
     url,
@@ -87,10 +90,10 @@ export default class BaseAjaxService implements IRestApiService {
     actionDescription,
     notifyOnError,
     responseType,
-    responseEncoding
+    responseEncoding,
   }: RequestProps) {
     return this.restApi(
-      "PATCH",
+      'PATCH',
       url,
       parameters,
       body,
@@ -98,9 +101,9 @@ export default class BaseAjaxService implements IRestApiService {
       responseType,
       responseEncoding,
       actionDescription,
-      notifyOnError
+      notifyOnError,
     );
-  };
+  }
 
   Post({
     url,
@@ -111,10 +114,10 @@ export default class BaseAjaxService implements IRestApiService {
     notifyOnError,
     isFormData,
     responseType,
-    responseEncoding
+    responseEncoding,
   }: RequestProps) {
     return this.restApi(
-      "POST",
+      'POST',
       url,
       parameters,
       body,
@@ -123,9 +126,9 @@ export default class BaseAjaxService implements IRestApiService {
       responseEncoding,
       actionDescription,
       notifyOnError,
-      isFormData
+      isFormData,
     );
-  };
+  }
 
   Delete({
     url,
@@ -135,10 +138,10 @@ export default class BaseAjaxService implements IRestApiService {
     actionDescription,
     notifyOnError,
     responseType,
-    responseEncoding
+    responseEncoding,
   }: RequestProps) {
     return this.restApi(
-      "DELETE",
+      'DELETE',
       url,
       parameters,
       body,
@@ -146,9 +149,9 @@ export default class BaseAjaxService implements IRestApiService {
       responseType,
       responseEncoding,
       actionDescription,
-      notifyOnError
+      notifyOnError,
     );
-  };
+  }
 
   async restApi(
     method?: HTTPMethod,
@@ -160,9 +163,9 @@ export default class BaseAjaxService implements IRestApiService {
     responseEncoding?: string,
     actionDescription?: string,
     notifyOnError?: boolean,
-    isFormData?: boolean
+    isFormData?: boolean,
   ): Promise<any> {
-    throw new TTGError("restApi is not implemented");
+    throw new TTGError('restApi is not implemented');
   }
 
   resetPage = () => {
@@ -178,10 +181,10 @@ export default class BaseAjaxService implements IRestApiService {
   }
 
   protected parseUrl = (
-    url: string = "",
+    url: string = '',
     parameters: any = {},
     buildQuery: boolean = true,
-    concatBaseUrl: boolean = true
+    concatBaseUrl: boolean = true,
   ) => {
     const regex = /:(\w+)\/?/g;
 
@@ -203,44 +206,43 @@ export default class BaseAjaxService implements IRestApiService {
       }
     }
     if (buildQuery) {
-      let prefix = url.lastIndexOf("?") > 0 ? "&" : "?";
+      let prefix = url.lastIndexOf('?') > 0 ? '&' : '?';
 
       for (let propName in parameters) {
         url = url.concat(`${prefix}${propName}=${parameters[propName]}`);
-        if (prefix === "?") {
-          prefix = "&";
+        if (prefix === '?') {
+          prefix = '&';
         }
       }
-
     }
 
-    let finialUrl = "";
-    if (url.startsWith("//")) {
+    let finialUrl = '';
+    if (url.startsWith('//')) {
       finialUrl = url.slice(2);
     } else {
-      if (url.startsWith("/")) {
+      if (url.startsWith('/')) {
         url = url.slice(1);
       }
-      if (url.startsWith("?")) finialUrl = `${this.controller}${url}`;
+      if (url.startsWith('?')) finialUrl = `${this.controller}${url}`;
       else finialUrl = `${this.controller}/${url}`;
     }
 
     if (concatBaseUrl) {
-      finialUrl = `${AppSettings.baseApiUrl ?? ""}/${this.prefixUrl}${finialUrl}`;
+      finialUrl = `${AppSettings.baseApiUrl ?? ''}/${this.prefixUrl}${finialUrl}`;
     }
     return finialUrl;
   };
 
   protected getFilename(response: any) {
-    var filename = "";
-    var disposition = response.headers.get("Content-Disposition");
+    var filename = '';
+    var disposition = response.headers.get('Content-Disposition');
     //console.log("response.headers", response.headers);
     //console.log("disposition", disposition);
-    if (disposition && disposition.indexOf("inline") !== -1) {
+    if (disposition && disposition.indexOf('inline') !== -1) {
       var filenameRegex = /filename=((['"]).*?\2|[^;\n]*)/;
       var matches = filenameRegex.exec(disposition);
       if (matches != null && matches[1]) {
-        filename = matches[1].replace(/['"]/g, "");
+        filename = matches[1].replace(/['"]/g, '');
       }
     }
     return filename;

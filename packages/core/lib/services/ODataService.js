@@ -1,24 +1,57 @@
-"use strict";
+'use strict';
 
-Object.defineProperty(exports, "__esModule", {
-  value: true
+Object.defineProperty(exports, '__esModule', {
+  value: true,
 });
 exports.ODataFilterService = exports.QueryPredicate = exports.QueryOperator = exports.PropertyMetaData = void 0;
 
-var _lodash = _interopRequireDefault(require("lodash"));
+var _lodash = _interopRequireDefault(require('lodash'));
 
-var _types = require("types");
+var _types = require('types');
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+function _interopRequireDefault(obj) {
+  return obj && obj.__esModule ? obj : { default: obj };
+}
 
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+function _classCallCheck(instance, Constructor) {
+  if (!(instance instanceof Constructor)) {
+    throw new TypeError('Cannot call a class as a function');
+  }
+}
 
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+function _defineProperties(target, props) {
+  for (var i = 0; i < props.length; i++) {
+    var descriptor = props[i];
+    descriptor.enumerable = descriptor.enumerable || false;
+    descriptor.configurable = true;
+    if ('value' in descriptor) descriptor.writable = true;
+    Object.defineProperty(target, descriptor.key, descriptor);
+  }
+}
 
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+function _createClass(Constructor, protoProps, staticProps) {
+  if (protoProps) _defineProperties(Constructor.prototype, protoProps);
+  if (staticProps) _defineProperties(Constructor, staticProps);
+  return Constructor;
+}
 
-var PropertyMetaData = /*#__PURE__*/function () {
-  function PropertyMetaData(name, label, type, searchPath, displayPath, isRequired, isIdentity, isSearchable, isDisplayable, maxLength, valueFormat, iOrder, customQueryOperators, inputInitialize) {
+var PropertyMetaData = /*#__PURE__*/ (function () {
+  function PropertyMetaData(
+    name,
+    label,
+    type,
+    searchPath,
+    displayPath,
+    isRequired,
+    isIdentity,
+    isSearchable,
+    isDisplayable,
+    maxLength,
+    valueFormat,
+    iOrder,
+    customQueryOperators,
+    inputInitialize,
+  ) {
     _classCallCheck(this, PropertyMetaData);
 
     this.name = void 0;
@@ -45,7 +78,8 @@ var PropertyMetaData = /*#__PURE__*/function () {
     this.isSearchable = isSearchable ? isSearchable : false;
     this.isDisplayable = isDisplayable ? isDisplayable : false;
     this.propertySearchPath = searchPath;
-    this.propertyDisplayPath = displayPath !== null && displayPath !== void 0 ? displayPath : searchPath;
+    this.propertyDisplayPath =
+      displayPath !== null && displayPath !== void 0 ? displayPath : searchPath;
     this.valueFormat = valueFormat ? valueFormat : '.*';
     this.index = iOrder ? iOrder : 0;
     this.inputTemplate = '';
@@ -53,16 +87,18 @@ var PropertyMetaData = /*#__PURE__*/function () {
     this.inputInitialize = inputInitialize;
   }
 
-  _createClass(PropertyMetaData, [{
-    key: "validate",
-    value: function validate(value) {
-      var regTest = new RegExp(this.valueFormat);
-      return regTest.test(value);
-    }
-  }]);
+  _createClass(PropertyMetaData, [
+    {
+      key: 'validate',
+      value: function validate(value) {
+        var regTest = new RegExp(this.valueFormat);
+        return regTest.test(value);
+      },
+    },
+  ]);
 
   return PropertyMetaData;
-}();
+})();
 
 exports.PropertyMetaData = PropertyMetaData;
 
@@ -79,7 +115,16 @@ var QueryOperator = function QueryOperator(displayOperator, key, expression) {
 
 exports.QueryOperator = QueryOperator;
 
-var QueryPredicate = function QueryPredicate(logicalOperator, modelField, predicateOperator, predicateValue, predicateIndex, groupKey, allowToRemove, addedPredicateOnce) {
+var QueryPredicate = function QueryPredicate(
+  logicalOperator,
+  modelField,
+  predicateOperator,
+  predicateValue,
+  predicateIndex,
+  groupKey,
+  allowToRemove,
+  addedPredicateOnce,
+) {
   _classCallCheck(this, QueryPredicate);
 
   this.logical = void 0;
@@ -105,20 +150,29 @@ var QueryPredicate = function QueryPredicate(logicalOperator, modelField, predic
   this.index = predicateIndex !== null && predicateIndex !== void 0 ? predicateIndex : 0;
   this.group = groupKey ? groupKey : 0;
   this.allowToRemove = allowToRemove != null || allowToRemove !== undefined ? allowToRemove : true;
-  this.addedPredicateOnce = addedPredicateOnce != null || addedPredicateOnce !== undefined ? addedPredicateOnce : false;
+  this.addedPredicateOnce =
+    addedPredicateOnce != null || addedPredicateOnce !== undefined ? addedPredicateOnce : false;
   this.operatorOptions = [];
 };
 
 exports.QueryPredicate = QueryPredicate;
 
 var compareOperator = function compareOperator(operator, left, leftType, right, rightType) {
-  return reformatExpression(left, leftType) + ' ' + operator + ' ' + reformatExpression(right, rightType);
+  return (
+    reformatExpression(left, leftType) + ' ' + operator + ' ' + reformatExpression(right, rightType)
+  );
 };
 
 var methodOneParameter = function methodOneParameter(operator, left, leftType, right, rightType) {
-  return operator + '(' + reformatExpression(left, leftType) + ',' + reformatExpression(right, rightType) + ')';
+  return (
+    operator +
+    '(' +
+    reformatExpression(left, leftType) +
+    ',' +
+    reformatExpression(right, rightType) +
+    ')'
+  );
 }; // eslint-disable-next-line no-unused-vars
-
 
 var logicalExpression = function logicalExpression(operator, left, leftType, right, rightType) {
   return left + ' ' + operator + ' ' + right;
@@ -151,7 +205,7 @@ var ODataFilterService = function ODataFilterService(defaultSearch, defaultFilte
   this.prePredicates = void 0;
   this.logicalOperators = {
     and: new QueryOperator('And', 'and', logicalExpression),
-    or: new QueryOperator('Or', 'or', logicalExpression)
+    or: new QueryOperator('Or', 'or', logicalExpression),
   };
   this.predicateOperators = {
     eq: new QueryOperator('Equal', 'eq', compareOperator),
@@ -162,7 +216,7 @@ var ODataFilterService = function ODataFilterService(defaultSearch, defaultFilte
     ne: new QueryOperator('Not equal', 'ne', compareOperator),
     endswith: new QueryOperator('Ends with', 'endswith', methodOneParameter),
     startswith: new QueryOperator('Starts with', 'startswith', methodOneParameter),
-    contains: new QueryOperator('Contains', 'contains', methodOneParameter)
+    contains: new QueryOperator('Contains', 'contains', methodOneParameter),
   };
 
   this.getOperator = function (operator) {
@@ -206,35 +260,76 @@ var ODataFilterService = function ODataFilterService(defaultSearch, defaultFilte
     var index = _this.prePredicates.length;
     var groupIndex = 1;
 
-    if (search && !_lodash["default"].isEmpty(search)) {
-      if (search.field.path && _lodash["default"].isArray(search.field.path)) {
+    if (search && !_lodash['default'].isEmpty(search)) {
+      if (search.field.path && _lodash['default'].isArray(search.field.path)) {
         search.field.path.forEach(function (fieldPath) {
-          predicate.push(new QueryPredicate(orOperator, new PropertyMetaData(search.key, search.field.label, search.field.type, fieldPath), _this.predicateOperators[_this.getOperator(search.operator)], search.value ? search.value.trim() : '', index++, groupIndex++, true));
+          predicate.push(
+            new QueryPredicate(
+              orOperator,
+              new PropertyMetaData(search.key, search.field.label, search.field.type, fieldPath),
+              _this.predicateOperators[_this.getOperator(search.operator)],
+              search.value ? search.value.trim() : '',
+              index++,
+              groupIndex++,
+              true,
+            ),
+          );
         });
       } else {
-        predicate.push(new QueryPredicate(addOperator, new PropertyMetaData(search.field.key, search.field.label, search.field.type, search.field.path), _this.predicateOperators[_this.getOperator(search.operator)], search.value ? search.value.trim() : '', index++, groupIndex++, true));
+        predicate.push(
+          new QueryPredicate(
+            addOperator,
+            new PropertyMetaData(
+              search.field.key,
+              search.field.label,
+              search.field.type,
+              search.field.path,
+            ),
+            _this.predicateOperators[_this.getOperator(search.operator)],
+            search.value ? search.value.trim() : '',
+            index++,
+            groupIndex++,
+            true,
+          ),
+        );
       }
     }
 
     if (filters && Array.isArray(filters) && filters.length > 0) {
-      var filterByKey = _lodash["default"].groupBy(filters, function (f) {
+      var filterByKey = _lodash['default'].groupBy(filters, function (f) {
         return f.field.key;
       });
 
       Object.keys(filterByKey).forEach(function (key, gIndex) {
         var filterGroup = filterByKey[key];
         filterGroup.forEach(function (filter, g) {
-          predicate.push(new QueryPredicate(g === 0 ? addOperator : orOperator, new PropertyMetaData(filter.field.key, filter.field.label, filter.field.type, filter.field.path), _this.predicateOperators[filter.operator], filter.value, index++, groupIndex + gIndex, true));
+          predicate.push(
+            new QueryPredicate(
+              g === 0 ? addOperator : orOperator,
+              new PropertyMetaData(
+                filter.field.key,
+                filter.field.label,
+                filter.field.type,
+                filter.field.path,
+              ),
+              _this.predicateOperators[filter.operator],
+              filter.value,
+              index++,
+              groupIndex + gIndex,
+              true,
+            ),
+          );
         });
       });
     } //console.log("predicate", predicate);
-
 
     return predicate;
   };
 
   this.getODataFilter = function (search, filters) {
-    var newPredicates = _this.prePredicates.concat(_this.createPredicatesFromSearchFilters(search, filters));
+    var newPredicates = _this.prePredicates.concat(
+      _this.createPredicatesFromSearchFilters(search, filters),
+    );
 
     return _this.getODataFilterByPredicates(newPredicates);
   };
@@ -259,16 +354,32 @@ var ODataFilterService = function ODataFilterService(defaultSearch, defaultFilte
             if (p.operator && p.operator.expression && p.value) {
               var _p$field;
 
-              if (typeof ((_p$field = p.field) === null || _p$field === void 0 ? void 0 : _p$field.propertySearchPath) === 'function') {
+              if (
+                typeof ((_p$field = p.field) === null || _p$field === void 0
+                  ? void 0
+                  : _p$field.propertySearchPath) === 'function'
+              ) {
                 var _p$field2;
 
-                currentQuery = (_p$field2 = p.field) === null || _p$field2 === void 0 ? void 0 : _p$field2.propertySearchPath(p.operator, p.value, p.field.type);
+                currentQuery =
+                  (_p$field2 = p.field) === null || _p$field2 === void 0
+                    ? void 0
+                    : _p$field2.propertySearchPath(p.operator, p.value, p.field.type);
               } else {
                 var _p$field3, _p$field4;
 
-                currentQuery = p.operator.expression(p.operator.key, (_p$field3 = p.field) === null || _p$field3 === void 0 ? void 0 : _p$field3.propertySearchPath, 'expr', p.value, ((_p$field4 = p.field) === null || _p$field4 === void 0 ? void 0 : _p$field4.type) || 'string');
+                currentQuery = p.operator.expression(
+                  p.operator.key,
+                  (_p$field3 = p.field) === null || _p$field3 === void 0
+                    ? void 0
+                    : _p$field3.propertySearchPath,
+                  'expr',
+                  p.value,
+                  ((_p$field4 = p.field) === null || _p$field4 === void 0
+                    ? void 0
+                    : _p$field4.type) || 'string',
+                );
               } //#region handle grouping the query
-
 
               var nextPredicate = {};
               var nextIndex = Number(pIndex) + 1;
@@ -278,7 +389,7 @@ var ODataFilterService = function ODataFilterService(defaultSearch, defaultFilte
               }
 
               var addGroup = '',
-                  endGroup = '';
+                endGroup = '';
 
               if (currentGroupKey !== p.group) {
                 addGroup = ' ( ';
@@ -286,19 +397,31 @@ var ODataFilterService = function ODataFilterService(defaultSearch, defaultFilte
                 openGroup++;
               }
 
-              if (nextPredicate && !_lodash["default"].isEmpty(nextPredicate) && currentGroupKey !== nextPredicate.group) {
+              if (
+                nextPredicate &&
+                !_lodash['default'].isEmpty(nextPredicate) &&
+                currentGroupKey !== nextPredicate.group
+              ) {
                 endGroup = ' ) ';
                 currentGroupKey = p.group;
                 openGroup--;
               } //#endregion
-
 
               if (pIndex === '0' || filterQuery === '') {
                 filterQuery = addGroup + currentQuery + endGroup;
               } else {
                 var _p$logical;
 
-                filterQuery = (_p$logical = p.logical) === null || _p$logical === void 0 ? void 0 : _p$logical.expression(p.logical.key, filterQuery, 'expr', addGroup + currentQuery + endGroup, 'expr');
+                filterQuery =
+                  (_p$logical = p.logical) === null || _p$logical === void 0
+                    ? void 0
+                    : _p$logical.expression(
+                        p.logical.key,
+                        filterQuery,
+                        'expr',
+                        addGroup + currentQuery + endGroup,
+                        'expr',
+                      );
               }
 
               if (nextIndex >= sortedPredicate.length && openGroup > 0) {
@@ -316,11 +439,13 @@ var ODataFilterService = function ODataFilterService(defaultSearch, defaultFilte
       } else if (!Array.isArray(newPredicates)) {
         // one predicate passed
         if (newPredicates.field && newPredicates.operator && newPredicates.value) {
-          filterQuery = newPredicates.operator.expression(newPredicates.field.propertySearchPath, newPredicates.value);
+          filterQuery = newPredicates.operator.expression(
+            newPredicates.field.propertySearchPath,
+            newPredicates.value,
+          );
         }
       }
     } //console.log('filterQuery :', filterQuery);
-
 
     return filterQuery;
   };
@@ -345,7 +470,10 @@ var ODataFilterService = function ODataFilterService(defaultSearch, defaultFilte
     return operators;
   };
 
-  this.prePredicates = defaultSearch || defaultFilters ? this.createPredicatesFromSearchFilters(defaultSearch, defaultFilters) : [];
+  this.prePredicates =
+    defaultSearch || defaultFilters
+      ? this.createPredicatesFromSearchFilters(defaultSearch, defaultFilters)
+      : [];
 };
 
 exports.ODataFilterService = ODataFilterService;

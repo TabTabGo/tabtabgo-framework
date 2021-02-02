@@ -1,19 +1,19 @@
 /* eslint-disable no-console */
-import { AppSettings } from "../../Appsettings";
+import { AppSettings } from '../../Appsettings';
 //import { Promise } from "es6-promise";
-import * as ActionTypes from "./actionTypes";
-import { TTGError } from "../../types/TTGError";
-import BaseAjaxService from "./baseAjaxService";
-import { Dispatch } from "redux";
-import { HTTPMethod, IRestApiService } from "../contractss";
+import * as ActionTypes from './actionTypes';
+import { TTGError } from '../../types/TTGError';
+import BaseAjaxService from './baseAjaxService';
+import { Dispatch } from 'redux';
+import { HTTPMethod, IRestApiService } from '../contractss';
 
 export type ResponseData = {
-  statusText: string,
-  status: number,
-  ok: boolean,
-  contentType: string,
-  data?: any
-}
+  statusText: string;
+  status: number;
+  ok: boolean;
+  contentType: string;
+  data?: any;
+};
 
 export default class RestApi extends BaseAjaxService {
   header: any;
@@ -21,13 +21,18 @@ export default class RestApi extends BaseAjaxService {
   constructor(controller: string, prefixUrl?: string, dispatch?: Dispatch, appSettings = {}) {
     super(controller, prefixUrl, dispatch, appSettings);
     this.header = {
-      "Content-Type": "application/json",
-      Accept: "*/*"
+      'Content-Type': 'application/json',
+      Accept: '*/*',
     };
     this.isRefreshTokenCalled = false;
   }
 
-  _new(controller: string, prefixUrl?: string, dispatch?: Dispatch, appSettings?: any): IRestApiService {
+  _new(
+    controller: string,
+    prefixUrl?: string,
+    dispatch?: Dispatch,
+    appSettings?: any,
+  ): IRestApiService {
     return new RestApi(controller, prefixUrl, dispatch, appSettings);
   }
 
@@ -41,21 +46,21 @@ export default class RestApi extends BaseAjaxService {
     responseEncoding?: string,
     actionDescription?: string,
     notifyOnError?: boolean,
-    isFormData?: boolean
+    isFormData?: boolean,
   ): Promise<any> {
-    if (!url) url = "";
+    if (!url) url = '';
     if (!parameters) parameters = {};
 
     //if(!body) body = {};
     if (!header) header = {};
-    if (!actionDescription) actionDescription = "";
+    if (!actionDescription) actionDescription = '';
     if (notifyOnError === undefined) notifyOnError = false;
 
     let requestUrl = this.parseUrl(url, parameters);
     //Setup Header
     let headerProps = Object.assign({}, this.header, header);
     if (isFormData) {
-      delete headerProps["Content-Type"];
+      delete headerProps['Content-Type'];
     }
 
     //handle token
@@ -72,7 +77,7 @@ export default class RestApi extends BaseAjaxService {
             token = await this.sessionManger.getToken();
             addToken = true;
           } catch (error) {
-            console.warn("Refresh token Failed. ", error);
+            console.warn('Refresh token Failed. ', error);
             addToken = false;
           }
         } else {
@@ -83,13 +88,13 @@ export default class RestApi extends BaseAjaxService {
       }
       if (addToken) {
         headerProps = Object.assign(headerProps, {
-          Authorization: `${tokenType} ${token}`
+          Authorization: `${tokenType} ${token}`,
         }); //Se tup custom header
       } else {
         this.resetPage();
         throw new TTGError(
           `Your session is expired. Please Login Again.`,
-          "REST_API_ERROR_SESSION_EXPIRED"
+          'REST_API_ERROR_SESSION_EXPIRED',
         );
       }
     }
@@ -99,14 +104,14 @@ export default class RestApi extends BaseAjaxService {
     let requestInit = {
       method: method,
       headers: customHeader,
-      credentials: "include"
+      credentials: 'include',
     } as any;
     if (AppSettings.excludeCredential) {
       delete requestInit.credentials;
     }
     if (body) {
       Object.assign(requestInit, {
-        body: typeof body === "string" ? body : isFormData ? body : JSON.stringify(body)
+        body: typeof body === 'string' ? body : isFormData ? body : JSON.stringify(body),
       });
     }
     //console.info(actionDescription);
@@ -115,7 +120,11 @@ export default class RestApi extends BaseAjaxService {
     return await this.internalApiCall(request, actionDescription, notifyOnError);
   }
 
-  internalApiCall = async (request: Request, actionDescription?: string, notifyOnError?: boolean) => {
+  internalApiCall = async (
+    request: Request,
+    actionDescription?: string,
+    notifyOnError?: boolean,
+  ) => {
     this.reduxDispatch({ type: ActionTypes.AJAX_CALL_BEGIN });
     try {
       var response = await fetch(request);
@@ -123,9 +132,9 @@ export default class RestApi extends BaseAjaxService {
 
       var validate = await this.validateResponseStatus(
         responseObj,
-        actionDescription || "",
+        actionDescription || '',
         notifyOnError || false,
-        request
+        request,
       );
       if (validate === true) return responseObj.data;
     } catch (error) {
@@ -136,64 +145,64 @@ export default class RestApi extends BaseAjaxService {
   };
 
   parseResponse = async (response: Response): Promise<ResponseData> => {
-    var contentType = "unknown";
+    var contentType = 'unknown';
     let data;
 
-    if (response.headers && response.headers?.has("Content-Type")) {
-      var contentTypeParts = response.headers.get("Content-Type")?.split(";");
-      var mimeType = contentTypeParts ? contentTypeParts[0] : "";
+    if (response.headers && response.headers?.has('Content-Type')) {
+      var contentTypeParts = response.headers.get('Content-Type')?.split(';');
+      var mimeType = contentTypeParts ? contentTypeParts[0] : '';
       // var charset, boundary;
       // if (contentTypeParts.length > 0) charset = contentTypeParts[1];
       // if (contentTypeParts.length > 2) boundary = contentTypeParts[2];
 
-      var type = mimeType.split("/")[0];
-      var subType = mimeType.split("/")[1];
+      var type = mimeType.split('/')[0];
+      var subType = mimeType.split('/')[1];
       // TODO handle json , text , html etc
       switch (type) {
-        case "text":
+        case 'text':
           switch (subType) {
-            case "plain":
+            case 'plain':
               data = await response.text();
-              contentType = "text";
+              contentType = 'text';
               break;
-            case "css":
-            case "html":
+            case 'css':
+            case 'html':
             //TODO return html view
             // eslint-disable-next-line no-fallthrough
-            case "markdown":
+            case 'markdown':
             default:
               console.log(`Error: ${type}/${subType} handle not supported yet`);
               break;
           }
           break;
-        case "image":
-        case "audio":
-        case "video":
+        case 'image':
+        case 'audio':
+        case 'video':
           data = { blob: await response.blob(), filename: this.getFilename(response) };
           contentType = type;
           // return stream
           break;
-        case "application":
+        case 'application':
           switch (subType) {
-            case "octet-stream":
-            case "pdf":
+            case 'octet-stream':
+            case 'pdf':
               data = { blob: await response.blob(), filename: this.getFilename(response) };
               contentType = subType;
               break;
-            case "json":
+            case 'json':
               data = await response.json();
-              contentType = "json";
+              contentType = 'json';
               break;
-            case "javascript":
-            case "ecmascript":
+            case 'javascript':
+            case 'ecmascript':
             default:
               console.log(`Error: ${type}/${subType} handle not supported yet`);
               break;
           }
           break;
-        case "multipart":
+        case 'multipart':
           data = await response.formData();
-          contentType = "FormData";
+          contentType = 'FormData';
           break;
         default:
           var text = await response.text();
@@ -214,41 +223,62 @@ export default class RestApi extends BaseAjaxService {
       status: response.status,
       ok: response.ok,
       contentType: contentType,
-      data: data
+      data: data,
     } as ResponseData;
   };
 
   // eslint-disable-next-line no-unused-vars
-  private validateStatus1xx = async (parsedResponse: ResponseData, actionDescription?: string, notifyOnError?: boolean, request?: Request) => {
+  private validateStatus1xx = async (
+    parsedResponse: ResponseData,
+    actionDescription?: string,
+    notifyOnError?: boolean,
+    request?: Request,
+  ) => {
     this.reduxDispatch({ type: ActionTypes.AJAX_CALL_END });
     return true;
   };
 
   // eslint-disable-next-line no-unused-vars
-  private validateStatus2xx = async (response: ResponseData, actionDescription?: string, notifyOnError?: boolean, request?: Request) => {
+  private validateStatus2xx = async (
+    response: ResponseData,
+    actionDescription?: string,
+    notifyOnError?: boolean,
+    request?: Request,
+  ) => {
     this.reduxDispatch({ type: ActionTypes.AJAX_CALL_END });
     return true;
   };
 
   // eslint-disable-next-line no-unused-vars
-  private validateStatus3xx = async (response: ResponseData, actionDescription?: string, notifyOnError?: boolean, request?: Request) => {
+  private validateStatus3xx = async (
+    response: ResponseData,
+    actionDescription?: string,
+    notifyOnError?: boolean,
+    request?: Request,
+  ) => {
     return true;
   };
 
-  private validateStatus4xx = async (response: ResponseData, exception: any, actionDescription: string, notifyOnError: boolean, request: Request) => {
+  private validateStatus4xx = async (
+    response: ResponseData,
+    exception: any,
+    actionDescription: string,
+    notifyOnError: boolean,
+    request: Request,
+  ) => {
     var isErrorHandled = false;
 
     if (response.status === 403 || response.status === 405) {
       //this.resetPage();
       throw new TTGError(
-        `You are not authorized ${actionDescription ? "to " + actionDescription : ""}.`,
-        "REST_API_ERROR_NOT_AUTHORIZED"
+        `You are not authorized ${actionDescription ? 'to ' + actionDescription : ''}.`,
+        'REST_API_ERROR_NOT_AUTHORIZED',
       );
 
       // window.history.back();
       // isErrorHandled = true;
-    } else if (response.status === 401 && exception?.code === "invalid_token") {
-      console.log("Session is expired");
+    } else if (response.status === 401 && exception?.code === 'invalid_token') {
+      console.log('Session is expired');
       if (this.appSettings.allowRefreshToken) {
         this.isRefreshTokenCalled = true;
         var refreshResponse = await this.refreshToken();
@@ -262,7 +292,7 @@ export default class RestApi extends BaseAjaxService {
       }
       // eslint-disable-next-line no-empty
     } else if (response.status === 400) {
-    } else if (response.status === 401 && exception?.code !== "LOGIN_INVALID") {
+    } else if (response.status === 401 && exception?.code !== 'LOGIN_INVALID') {
       //this.resetPage();
       isErrorHandled = true;
     }
@@ -273,19 +303,36 @@ export default class RestApi extends BaseAjaxService {
   };
 
   // eslint-disable-next-line no-unused-vars
-  private validateStatus5xx = async (response: ResponseData, exception: any, actionDescription: string, notifyOnError: boolean, request: Request) => {
+  private validateStatus5xx = async (
+    response: ResponseData,
+    exception: any,
+    actionDescription: string,
+    notifyOnError: boolean,
+    request: Request,
+  ) => {
     this.reduxDispatch({ type: ActionTypes.AJAX_CALL_ERROR, error: exception });
-    throw new TTGError(exception.message, "500", { ...exception, isErrorHandled: false });
+    throw new TTGError(exception.message, '500', { ...exception, isErrorHandled: false });
   };
 
   /// Validate status
   // eslint-disable-next-line no-unused-vars
-  private validateCustomStatus = async (response: ResponseData, exception: any, actionDescription: string, notifyOnError: boolean, request: Request) => {
+  private validateCustomStatus = async (
+    response: ResponseData,
+    exception: any,
+    actionDescription: string,
+    notifyOnError: boolean,
+    request: Request,
+  ) => {
     this.reduxDispatch({ type: ActionTypes.AJAX_CALL_ERROR, error: exception });
-    throw new TTGError(exception.message, "500", { ...exception, isErrorHandled: false });
+    throw new TTGError(exception.message, '500', { ...exception, isErrorHandled: false });
   };
 
-  validateResponseStatus = async (response: ResponseData, actionDescription: string, notifyOnError: boolean, request: Request) => {
+  validateResponseStatus = async (
+    response: ResponseData,
+    actionDescription: string,
+    notifyOnError: boolean,
+    request: Request,
+  ) => {
     //TODO handle error
     if (response.ok) {
       if (response.status < 200)
@@ -295,8 +342,8 @@ export default class RestApi extends BaseAjaxService {
     }
     let exception = {
       status: response.status || 500,
-      code: response.data ? response.data.code : response.statusText || "InternalError",
-      message: response.data ? response.data.message : response.statusText || "Unhandled Error" // TODO unhandled error,
+      code: response.data ? response.data.code : response.statusText || 'InternalError',
+      message: response.data ? response.data.message : response.statusText || 'Unhandled Error', // TODO unhandled error,
     };
 
     var responseBody = response.data;
@@ -306,8 +353,8 @@ export default class RestApi extends BaseAjaxService {
       if (responseBody.code) exception.code = responseBody.code;
     }
 
-    console.group("Non success response");
-    console.log("exception :", exception);
+    console.group('Non success response');
+    console.log('exception :', exception);
     console.groupEnd();
     if (response.status < 500)
       return await this.validateStatus4xx(
@@ -315,7 +362,7 @@ export default class RestApi extends BaseAjaxService {
         exception,
         actionDescription,
         notifyOnError,
-        request
+        request,
       );
     if (response.status < 600)
       return await this.validateStatus4xx(
@@ -323,28 +370,28 @@ export default class RestApi extends BaseAjaxService {
         exception,
         actionDescription,
         notifyOnError,
-        request
+        request,
       );
     return await this.validateCustomStatus(
       response,
       exception,
       actionDescription,
       notifyOnError,
-      request
+      request,
     );
   };
 
   //TODO move to authService and should be an interface and inject the code somehow
   private refreshToken = async () => {
-    let refreshToken = await this.sessionManger.getItem("refresh_token");
+    let refreshToken = await this.sessionManger.getItem('refresh_token');
     var refresh_token = JSON.parse(refreshToken);
     if (refresh_token) {
       try {
         var token = await this.Get({
-          url: "token/refresh",
-          parameters: { token: refresh_token }
+          url: 'token/refresh',
+          parameters: { token: refresh_token },
         });
-        await this.sessionManger.setToken(token, token.type || "Bearer", token.expiredAt);
+        await this.sessionManger.setToken(token, token.type || 'Bearer', token.expiredAt);
         return true;
       } catch (error) {
         console.log(`Failed to refresh Token ${error}`);

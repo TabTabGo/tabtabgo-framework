@@ -2,7 +2,7 @@
 // // // Button styles
 // #############################
 
-import { hexToRgb } from 'ttg-react/core/utilities';
+import { hexToRgb } from '@tabtabgo/core/utilities';
 
 const getButtonBoxShadow = (hexColor) => {
   const rgb = hexToRgb(hexColor);

@@ -51,7 +51,7 @@ const BaseModal = ({
                       key={`${index}-${action.label}`}
                       disabled={action.disabled}
                       onClick={action.function}
-                      type={action.type}                      
+                      type={action.type}
                     >
                       {(() => {
                         if (loading && index === 1) {

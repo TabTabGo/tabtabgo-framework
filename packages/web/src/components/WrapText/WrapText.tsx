@@ -11,7 +11,7 @@ const useStyles = makeStyles((theme: any) => ({
     whiteSpace: 'nowrap',
   },
   textWrap: {
-    whiteSpace: 'normal'
+    whiteSpace: 'normal',
   },
   tooltip: { fontSize: '0.875rem' },
 }));

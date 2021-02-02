@@ -1,7 +1,7 @@
 import React from 'react';
 import VisibilityIcon from '@material-ui/icons/Visibility';
 import { mergeButtons } from '../../Buttons/utilities';
-import { getDisplayValue } from 'ttg-react/core/utilities';
+import { getDisplayValue } from '@tabtabgo/core/utilities';
 import EditIcon from '@material-ui/icons/Edit';
 
 export const rowButtons = {

@@ -1,11 +1,11 @@
-import { SessionUser } from "../../types/SessionUser";
+import { SessionUser } from '../../types/SessionUser';
 
 export interface IStorageService {
   setToken: (
     accessToken: string,
     tokenType: string,
     tokenExpired?: number,
-    refresh?: string
+    refresh?: string,
   ) => Promise<void>;
   setTokenType: (tokenType: string) => Promise<void>;
   setAccessToken: (accessToken: any) => Promise<void>;

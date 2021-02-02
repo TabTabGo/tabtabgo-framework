@@ -8,10 +8,10 @@ import {
   createStyles,
   makeStyles,
 } from '@material-ui/core';
-import { getPropertyValue } from 'ttg-react/core/utilities';
+import { getPropertyValue } from '@tabtabgo/core/utilities';
 import { ToolbarButtons } from '../../Buttons';
 
-import { RowProps } from 'ttg-react/core/types/DataTable';
+import { RowProps } from '@tabtabgo/core/types/DataTable';
 import cx from 'classnames';
 
 export const useRowStyles = makeStyles((theme: Theme) =>

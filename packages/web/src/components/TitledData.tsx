@@ -1,8 +1,8 @@
 import React, { useContext } from 'react';
 import { makeStyles } from '@material-ui/core';
 import { useTranslation } from 'react-i18next';
-import { UserSettingsContext } from 'ttg-react/core/contexts/UserSettingsContext';
-import WrapText from 'ttg-react/web/components/WrapText/WrapText';
+import { UserSettingsContext } from '@tabtabgo/core/contexts/UserSettingsContext';
+import WrapText from '../WrapText/WrapText';
 import cx from 'classnames';
 const useStyles = makeStyles((theme: any) => ({
   root: {

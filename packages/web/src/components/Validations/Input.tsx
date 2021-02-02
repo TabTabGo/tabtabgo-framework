@@ -6,7 +6,7 @@ import Validator from './Validator';
 import { makeStyles } from '@material-ui/core/styles';
 import { ValidationFormContext } from './Form';
 import { useTranslation } from 'react-i18next';
-import { AppSettings } from 'ttg-react/core/Appsettings';
+import { AppSettings } from '@tabtabgo/core/Appsettings';
 import { KeyboardDatePicker } from '@material-ui/pickers';
 
 const useStyles = makeStyles((theme: any) => ({

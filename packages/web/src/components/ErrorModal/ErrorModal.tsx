@@ -1,6 +1,6 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import { AppSettings } from 'ttg-react/core/Appsettings';
+import { AppSettings } from '@tabtabgo/core/Appsettings';
 import {
   Button,
   Dialog,
@@ -11,7 +11,7 @@ import {
 } from '@material-ui/core';
 import useMediaQuery from '@material-ui/core/useMediaQuery';
 import { useTheme, makeStyles } from '@material-ui/core/styles';
-import { TTGError } from 'ttg-react/core/types/TTGError';
+import { TTGError } from '@tabtabgo/core/types/TTGError';
 import { grey } from '@material-ui/core/colors';
 
 export type ErrorModalProps = {

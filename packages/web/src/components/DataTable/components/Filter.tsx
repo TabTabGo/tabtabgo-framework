@@ -25,13 +25,13 @@ import {
   SearchProperty,
   FilterProperty,
   OptionsFunc,
-} from 'ttg-react/core/types/DataTable';
+} from '@tabtabgo/core/types/DataTable';
 import {
   Predicate,
   QueryOperator,
   PredicateType,
   LogicalOperator,
-} from 'ttg-react/core/types/Predicate';
+} from '@tabtabgo/core/types/Predicate';
 
 const useFilterStyles = makeStyles((theme: Theme) =>
   createStyles({

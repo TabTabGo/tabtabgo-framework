@@ -1,22 +1,21 @@
 /* eslint-disable no-console */
-import BaseStorageService from "./BaseStorageService";
-import Cookies  from "universal-cookie";
+import BaseStorageService from './BaseStorageService';
+import Cookies from 'universal-cookie';
 export default class CookieStorageService extends BaseStorageService {
-  private cookies : Cookies;
+  private cookies: Cookies;
   constructor() {
     super();
-    this.cookies= new Cookies();
+    this.cookies = new Cookies();
   }
-  
- async reset(key: string) : Promise<void>{
+
+  async reset(key: string): Promise<void> {
     return new Promise((resolve) => {
-      if (key)
-       this.cookies.remove(key);
+      if (key) this.cookies.remove(key);
       resolve();
     });
   }
 
- async getItem(key: string): Promise<any>{
+  async getItem(key: string): Promise<any> {
     return new Promise((resolve) => {
       var strToken = this.cookies.get(key);
       if (strToken) return resolve(JSON.parse(strToken));
@@ -24,7 +23,7 @@ export default class CookieStorageService extends BaseStorageService {
     });
   }
 
-  async setItem(key: string, object? : any ) : Promise<void>{
+  async setItem(key: string, object?: any): Promise<void> {
     return new Promise((resolve) => {
       this.cookies.set(key, JSON.stringify(object));
       resolve();

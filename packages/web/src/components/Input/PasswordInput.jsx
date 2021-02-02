@@ -8,7 +8,7 @@ import Visibility from '@material-ui/icons/Visibility';
 import VisibilityOff from '@material-ui/icons/VisibilityOff';
 
 import { InputAdornment } from '@material-ui/core';
-import ValidationInput from 'ttg-react/web/components/Validations/Input';
+import ValidationInput from '../components/Validations/Input';
 
 import passwordInputStyle from './styles/passwordInputStyle';
 import { Tooltip, Typography, Hidden } from '@material-ui/core';

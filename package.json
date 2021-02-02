@@ -23,6 +23,7 @@
   },
   "homepage": "https://github.com/TabTabGo/ttg-framework#readme",
   "devDependencies": {
-    "lerna": "^3.22.1"
+    "lerna": "^3.22.1",
+    "prettier": "^2.2.1"
   }
 }

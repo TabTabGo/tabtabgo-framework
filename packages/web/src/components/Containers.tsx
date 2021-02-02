@@ -14,8 +14,8 @@ const useStyles = makeStyles((theme: any) => ({
     marginLeft: 0,
     marginRight: 0,
     '& table tr:nth-of-type(even)': {
-      backgroundColor: '#f2f2f2'
-    }
+      backgroundColor: '#f2f2f2',
+    },
   },
 }));
 

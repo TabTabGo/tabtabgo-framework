@@ -1,11 +1,11 @@
 /* eslint-disable no-console */
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import * as StandardValidations from 'ttg-react/core/Validations.js';
-import * as StandardValidationsErrors from 'ttg-react/core/ValidationErrors.js';
+import * as StandardValidations from '@tabtabgo/core/Validations.js';
+import * as StandardValidationsErrors from '@tabtabgo/core/ValidationErrors.js';
 import withValidation from './withValidation';
-import { withComponentProvider } from 'ttg-react/core/ComponentProvider';
-import { getInputValue, isEmpty, getFriendlyString } from 'ttg-react/core/utilities';
+import { withComponentProvider } from '@tabtabgo/core/ComponentProvider';
+import { getInputValue, isEmpty, getFriendlyString } from '@tabtabgo/core/utilities';
 import _ from 'lodash';
 
 class Validator extends Component {

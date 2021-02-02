@@ -1,37 +1,28 @@
-import { IStorageService, IRefreshTokenService } from "../contracts";
-import { SessionUser } from "../../types/SessionUser";
+import { IStorageService, IRefreshTokenService } from '../contracts';
+import { SessionUser } from '../../types/SessionUser';
 
-export default abstract class BaseStorageService
-  implements IStorageService, IRefreshTokenService {
+export default abstract class BaseStorageService implements IStorageService, IRefreshTokenService {
+  protected token_name = 'access_token';
+  protected token_type = 'token_type';
+  protected token_expired = 'token_expired';
+  protected user_info = 'user_info';
+  protected refresh_token = 'refresh_token';
+  protected token_header_key = 'token_header_key';
 
-  protected token_name = "access_token";
-  protected token_type = "token_type";
-  protected token_expired = "token_expired";
-  protected user_info = "user_info";
-  protected refresh_token = "refresh_token";
-  protected token_header_key = "token_header_key";
-
-  setToken = async (
-    accessToken: any,
-    tokenType: string,
-    tokenExpired?: number
-  ) => {
+  setToken = async (accessToken: any, tokenType: string, tokenExpired?: number) => {
     await Promise.all([
       this.setAccessToken(accessToken),
       this.setAccessToken(tokenType),
-      this.setTokenExpire(tokenExpired || -1)
+      this.setTokenExpire(tokenExpired || -1),
     ]);
   };
 
-  setTokenType = (tokenType: string) =>
-    this.setItem(this.token_type, tokenType);
-  setAccessToken = (accessToken: any) =>
-    this.setItem(this.token_name, accessToken);
-  setTokenExpire = (tokenExpired: number) =>
-    this.setItem(this.token_expired, tokenExpired);
+  setTokenType = (tokenType: string) => this.setItem(this.token_type, tokenType);
+  setAccessToken = (accessToken: any) => this.setItem(this.token_name, accessToken);
+  setTokenExpire = (tokenExpired: number) => this.setItem(this.token_expired, tokenExpired);
   setRefreshToken = (refreshToken: any, user?: SessionUser) =>
     this.setItem(this.refresh_token, refreshToken);
-  setTokenHeaderKey = (headerKey: string) => this.setItem(this.token_header_key, headerKey);;
+  setTokenHeaderKey = (headerKey: string) => this.setItem(this.token_header_key, headerKey);
 
   setUser = (user: SessionUser) => this.setItem(this.user_info, user);
 
@@ -60,7 +51,7 @@ export default abstract class BaseStorageService
       this.reset(this.token_type),
       this.reset(this.token_expired),
       this.reset(this.user_info),
-      this.reset(this.refresh_token)
+      this.reset(this.refresh_token),
     ];
     await Promise.all(resetTasks);
   };

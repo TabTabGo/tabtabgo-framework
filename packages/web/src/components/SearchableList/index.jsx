@@ -20,7 +20,7 @@ import InfiniteScroll from 'react-infinite-scroller';
 import update from 'immutability-helper';
 import _ from 'lodash';
 import searchableListStyle from './searchableListStyle';
-import { getPropertyValue } from 'ttg-react/core/utilities';
+import { getPropertyValue } from '@tabtabgo/core/utilities';
 class SearchableList extends Component {
   static propTypes = {
     classes: PropTypes.any,

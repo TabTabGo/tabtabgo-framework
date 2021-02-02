@@ -2,8 +2,8 @@ import React from 'react';
 import { Chip, Tooltip, Theme, makeStyles } from '@material-ui/core';
 import classNames from 'classnames';
 import { Typography } from '@material-ui/core';
-import { SelectedFilterProps } from 'ttg-react/core/types/DataTable';
-import { Predicate, PredicateType } from 'ttg-react/core/types/Predicate';
+import { SelectedFilterProps } from '@tabtabgo/core/types/DataTable';
+import { Predicate, PredicateType } from '@tabtabgo/core/types/Predicate';
 import update from 'immutability-helper';
 
 //TODO how currently override styles

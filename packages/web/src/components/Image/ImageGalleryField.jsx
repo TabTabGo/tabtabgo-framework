@@ -1,7 +1,7 @@
 import React from 'react';
 import ImageGallery from './ImageGallery';
 import { BaseValidationField } from './ValidationField';
-import { currentServiceProvider } from 'ttg-react/core/ServiceProvider';
+import { currentServiceProvider } from '@tabtabgo/core/ServiceProvider';
 
 import swal from 'sweetalert';
 export default class ImageGalleryField extends React.Component {

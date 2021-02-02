@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import ConfirmationModal from 'ttg-react/web/components/Modals/ConfirmationModal';
+import ConfirmationModal from '../components/Modals/ConfirmationModal';
 
 export const ConfirmationContext = React.createContext({
   // eslint-disable-next-line no-unused-vars

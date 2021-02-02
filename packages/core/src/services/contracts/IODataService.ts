@@ -1,3 +1,1 @@
-export interface IODataService {
-
-}
+export interface IODataService {}

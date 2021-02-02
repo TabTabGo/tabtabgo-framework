@@ -1,7 +1,7 @@
-import { IEntity } from "..";
-import { SelectionButtons } from "./Buttons";
-import { Actions } from "./Actions";
-import { Column } from "./Column";
+import { IEntity } from '..';
+import { SelectionButtons } from './Buttons';
+import { Actions } from './Actions';
+import { Column } from './Column';
 export interface SelectionToolbarProps<T> extends IEntity<T> {
   selectionTitle?: string;
   selectedItems: Array<T>;

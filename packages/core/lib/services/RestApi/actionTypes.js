@@ -1,7 +1,7 @@
-"use strict";
+'use strict';
 
-Object.defineProperty(exports, "__esModule", {
-  value: true
+Object.defineProperty(exports, '__esModule', {
+  value: true,
 });
 exports.AJAX_CALL_ERROR = exports.AJAX_CALL_END = exports.AJAX_CALL_BEGIN = void 0;
 var AJAX_CALL_BEGIN = 'AJAX_CALL/BEGIN';

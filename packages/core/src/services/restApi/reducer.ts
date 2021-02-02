@@ -1,6 +1,6 @@
-import * as ActionTypes from "./actionTypes";
+import * as ActionTypes from './actionTypes';
 
-export default function ajaxStatusReducer(state = 0, action : any) {
+export default function ajaxStatusReducer(state = 0, action: any) {
   switch (action.type) {
     case ActionTypes.AJAX_CALL_BEGIN:
       return state + 1;

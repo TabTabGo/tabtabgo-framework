@@ -3,5 +3,5 @@
 const web = require('..');
 
 describe('web', () => {
-    it('needs tests');
+  it('needs tests');
 });

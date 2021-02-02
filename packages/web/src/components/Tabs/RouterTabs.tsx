@@ -49,14 +49,14 @@ const RouterTab = ({ className = '', tabs, subRouteName, routeParameters }: Rout
         });
         //path += '/' + Object.values(routeParameters).join('/');
       }
-      setRoutePath(path);      
+      setRoutePath(path);
     } else {
       setRoutePath(match.url);
     }
   }, [subRouteName, routeParameters, match.params]);
 
   // To select tab from route ( base on tab route )
-  useEffect(() => {    
+  useEffect(() => {
     if (subRouteName && match.params) {
       var subRouteValue = (match.params as any)[subRouteName];
       //console.log('subRouteValue', subRouteValue, tabs, match.params as any, routePath);

@@ -23,13 +23,12 @@
   "scripts": {
     "test": "echo \"Error: run tests from root\" && exit 1",
     "storybook": "start-storybook -p 9002",
-    "build-lib": "babel src -out-dir lib"
+    "build-lib": "babel src --out-dir lib"
   },
   "bugs": {
     "url": "https://github.com/TabTabGo/ttg-framework/issues"
   },
-  "dependencies": {
-    "@babel/plugin-syntax-class-properties": "^7.12.1",
+  "dependencies": {    
     "@material-ui/core": "^4.11.3",
     "@material-ui/icons": "^4.11.2",
     "@storybook/react": "^6.1.15",
@@ -60,9 +59,14 @@
     "sweetalert": "^2.1.2"
   },
   "devDependencies": {
-    "@babel/cli": "^7.12.10",
+    "@babel/cli": "^7.12.10",    
+    "@babel/plugin-proposal-class-properties": "^7.12.1",
+    "@babel/plugin-proposal-decorators": "^7.12.12",
+    "@babel/plugin-syntax-class-properties": "^7.12.1",
+    "@babel/plugin-transform-arrow-functions": "^7.12.1",
     "@babel/preset-env": "^7.12.11",
     "@babel/preset-react": "^7.12.10",
+    "@babel/preset-typescript": "^7.12.7",
     "@types/lodash": "^4.14.168",
     "@types/react-router-dom": "^5.1.7",
     "babel-loader": "^8.2.2"

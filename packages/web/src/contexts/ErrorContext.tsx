@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import { TTGError } from 'ttg-react/core/types/TTGError';
+import { TTGError } from '@tabtabgo/core/types/TTGError';
 import { ErrorModal } from '../components/ErrorModal/ErrorModal';
 const ErrorContext = React.createContext({
   showError: (error: TTGError) => {},

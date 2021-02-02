@@ -1,13 +1,13 @@
-import { Column } from "./Column";
-import { Buttons } from "./Buttons";
+import { Column } from './Column';
+import { Buttons } from './Buttons';
 
-import { IEntity } from "..";
-import { FilterOptions } from "./FilterProps";
-import { TableOptions } from "./TableProps";
-import { DataTableComponents } from "./DataTableComponents";
-import { RowOptions } from "./RowProps";
-import { Actions } from "./Actions";
-import { PagingProps } from "./PagingProps";
+import { IEntity } from '..';
+import { FilterOptions } from './FilterProps';
+import { TableOptions } from './TableProps';
+import { DataTableComponents } from './DataTableComponents';
+import { RowOptions } from './RowProps';
+import { Actions } from './Actions';
+import { PagingProps } from './PagingProps';
 
 export type DisplayField = (item: any) => string;
 

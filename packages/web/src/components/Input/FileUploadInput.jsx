@@ -6,8 +6,8 @@ import { IconButton, InputAdornment, CircularProgress } from '@material-ui/core'
 
 import CloudDownload from '@material-ui/icons/CloudDownload';
 
-import ValidationInput from 'ttg-react/web/components/Validations/Input.jsx';
-import FileService from 'ttg-react/core/Services/FileService';
+import ValidationInput from '../components/Validations/Input.jsx';
+import FileService from '@tabtabgo/core/Services/FileService';
 import fileUploadInputStyle from './styles/fileUploadInputStyleutStyle';
 
 class FileUploadInput extends React.Component {
