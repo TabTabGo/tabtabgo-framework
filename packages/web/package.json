@@ -72,5 +72,6 @@
     "@types/lodash": "^4.14.168",
     "@types/react-router-dom": "^5.1.7",
     "babel-loader": "^8.2.2"
-  }
+  },
+  "gitHead": "458ba509ff6c196cfece83fcf816ca85bf0b57e3"
 }
