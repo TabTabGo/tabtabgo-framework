@@ -14,13 +14,6 @@
   "author": "TabTabGo",
   "homepage": "https://github.com/TabTabGo/ttg-framework/tree/master/packages/core#readme",
   "license": "ISC",
-  "directories": {
-    "build": "build",
-    "test": "tests"
-  },
-  "files": [
-    "build"
-  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/TabTabGo/ttg-framework.git"
@@ -50,6 +43,9 @@
     "qs": "^6.9.6",
     "redux": "^4.0.5",
     "universal-cookie": "^4.0.4"
+  },
+  "engines": {
+    "node": ">=10.0.0"
   },
   "gitHead": "d09c22286fbd05a34622ec461e88970b713ee1a9"
 }
