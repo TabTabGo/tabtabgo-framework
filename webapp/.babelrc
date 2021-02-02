@@ -1,0 +1,22 @@
+{
+  "env": {
+    "production": {
+      "plugins": ["transform-remove-console"]
+    },
+    "development": {
+      "plugins": ["@babel/transform-react-jsx-source"]
+    }
+  },
+  "plugins": [
+    [
+      "module-resolver",
+      {
+        "root": ["./src"],
+        "alias": {
+          "test": "./test",
+          "underscore": "lodash"
+        }
+      }
+    ]
+  ]
+}
