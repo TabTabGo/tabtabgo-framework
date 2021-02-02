@@ -1,6 +1,6 @@
 import * as Localization from 'expo-localization';
 
-import { currentServiceProvider } from '../../@tabtabgo/core/ServiceProvider';
+import { currentServiceProvider } from '@tabtabgo/core/providers/ServiceProvider';
 const languageSelector = {
   type: 'languageDetector',
   async: true,

@@ -1,6 +1,6 @@
 import { createMuiTheme } from '@material-ui/core';
 import deepPurple from '@material-ui/core/colors/deepPurple';
-import { hexToRgb } from 'ttg-identity/views/Users/node_modules/ttg-identity/pages/ResetPassword/node_modules/@tabtabgo/core/utilities';
+import { hexToRgb } from '@tabtabgo/core/utilities';
 
 import logo from 'assets/img/logo.png';
 import logoWhite from 'assets/img/logo-white.png';

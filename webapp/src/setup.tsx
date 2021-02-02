@@ -1,7 +1,7 @@
 import React from 'react';
 import { currentServiceProvider } from '@tabtabgo/core/ServiceProvider';
-import FileService from './@tabtabgo/core/Services/FileService';
-import ExportService from './@tabtabgo/core/Services/ExportService';
+import FileService from '@tabtabgo/core/Services/FileService';
+import ExportService from '@tabtabgo/core/Services/ExportService';
 import { WebComponentProvider } from '@tabtabgo/web/ComponentProvider';
 import Axios from '@tabtabgo/core/RestApi/axios';
 import SessionStorageService from '@tabtabgo/core/Services/StorageServices/SessionStorageService';

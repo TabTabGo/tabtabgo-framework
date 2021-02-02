@@ -1,18 +1,18 @@
 /* eslint-disable no-console */
-import { currentServiceProvider } from '../@tabtabgo/core/ServiceProvider';
-import { TTGError } from '../@tabtabgo/core/types/TTGError';
+import { currentServiceProvider } from '@tabtabgo/core/provider/ServiceProvider';
+import { TTGError } from '@tabtabgo/core/types/TTGError';
 import qs from 'qs';
-import { AuthenticateData, SessionData } from '../@tabtabgo/core/types/Identity/SessionData';
-import { AuthenticateResponse } from '../@tabtabgo/core/types/Identity/AuthenticateResponse';
-import IAuthService from '../@tabtabgo/core/Services/IAuthService';
+import { AuthenticateData, SessionData } from '@tabtabgo/core/types/Identity/SessionData';
+import { AuthenticateResponse } from '@tabtabgo/core/types/Identity/AuthenticateResponse';
+import IAuthService from '@tabtabgo/core/services/IAuthService';
 import {
   IStorageService,
   IRefreshTokenService,
   IBasicStorageService,
-} from '../@tabtabgo/core/Services/StorageServices';
-import INotificationService from '../@tabtabgo/core/Services/INotificationService';
-import { AppSettings } from '../@tabtabgo/core/appsettings';
-import { SessionUser } from '../@tabtabgo/core/types';
+} from '@tabtabgo/core/services/StorageServices';
+import INotificationService from '@tabtabgo/core/services/INotificationService';
+import { AppSettings } from '@tabtabgo/core/Appsettings';
+import { SessionUser } from '@tabtabgo/core/types';
 //import { User } from 'types';
 //TODO move to constant file
 const device_token_key = 'DEVICE_NOTIFICATION_TOKEN';

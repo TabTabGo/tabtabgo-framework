@@ -23,8 +23,8 @@ import theme from 'assets/jss/theme.jsx';
 import LoadingPage from './LoadingPage';
 import { setupServices, setupComponents } from './setup';
 import SwitchRoutes from 'ttg-identity/components/Routes/SwitchRoutes';
-import { ErrorProvider } from './@tabtabgo/web/contexts/ErrorContext';
-import { ConfirmationDialogProvider } from './@tabtabgo/web/contexts/ConfirmationContext';
+import { ErrorProvider } from '@tabtabgo/web/contexts/ErrorContext';
+import { ConfirmationDialogProvider } from '@tabtabgo/web/contexts/ConfirmationContext';
 import { LinearProgress } from '@material-ui/core';
 
 import i18n from 'i18next';
@@ -32,7 +32,7 @@ import Backend from 'i18next-xhr-backend';
 import LanguageDetector from 'i18next-browser-languagedetector';
 import { initReactI18next } from 'react-i18next';
 import { UserSettingsProvider } from '@tabtabgo/core/contexts/UserSettingsContext';
-import ComponentProvider from '@tabtabgo/core/ComponentProvider';
+import ComponentProvider from '@tabtabgo/core/providers/ComponentProvider';
 import ErrorBoundary from '@tabtabgo/web/components/ErrorBoundary';
 
 const fallbackLng = ['en'];

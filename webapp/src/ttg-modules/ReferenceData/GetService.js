@@ -1,5 +1,5 @@
 import { apiCall } from '../utilities';
-import { populatePageList } from 'ttg-identity/views/Users/node_modules/ttg-identity/pages/ResetPassword/node_modules/@tabtabgo/core/utilities';
+import { populatePageList } from '@tabtabgo/core/utilities';
 export const yesNoList = [
   { value: false, label: 'No' },
   { value: true, label: 'Yes' },

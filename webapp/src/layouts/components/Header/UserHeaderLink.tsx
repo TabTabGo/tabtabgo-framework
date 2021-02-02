@@ -15,12 +15,12 @@ import {
 } from '@material-ui/core';
 
 import { makeStyles, createStyles, Theme } from '@material-ui/core/styles';
-import { AuthenticationContext } from 'ttg-identity/components/Routes/node_modules/ttg-identity/core/AuthenticationProvider';
+import { AuthenticationContext } from '@tabtabgo/core/AuthenticationProvider';
 import { UserSettingsContext } from '@tabtabgo/core/contexts/UserSettingsContext';
 
 import Avatar from '@material-ui/core/Avatar';
 import FileService from '@tabtabgo/core/Services/FileService';
-import { getPersonInitials } from 'ttg-identity/pages/ResetPassword/node_modules/@tabtabgo/core/utilities';
+import { getPersonInitials } from '@tabtabgo/core/utilities';
 
 //const RouterNavLink = React.forwardRef((props, ref) => <NavLink innerRef={ref} {...props} />);
 

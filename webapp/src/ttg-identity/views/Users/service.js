@@ -1,5 +1,5 @@
 import EntityService from '@tabtabgo/core/Entity/Service';
-import { getPersonName } from 'ttg-identity/pages/ResetPassword/node_modules/@tabtabgo/core/utilities';
+import { getPersonName } from '@tabtabgo/core/utilities';
 
 export default class UsersService extends EntityService {
   constructor() {

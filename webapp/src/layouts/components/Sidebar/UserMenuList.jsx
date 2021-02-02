@@ -16,7 +16,7 @@ import {
 
 import Avatar from '@material-ui/core/Avatar';
 import FileService from '@tabtabgo/core/Services/FileService';
-import { getPersonInitials } from 'ttg-identity/views/Users/node_modules/ttg-identity/pages/ResetPassword/node_modules/@tabtabgo/core/utilities';
+import { getPersonInitials } from '@tabtabgo/core/utilities';
 
 // eslint-disable-next-line react/display-name
 const RouterNavLink = React.forwardRef((props, ref) => <NavLink innerRef={ref} {...props} />);

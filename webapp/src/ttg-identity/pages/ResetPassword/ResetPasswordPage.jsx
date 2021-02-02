@@ -6,14 +6,14 @@ import { withRouter, Link } from 'react-router-dom';
 // @material-ui/core components
 import { withStyles, withTheme } from '@material-ui/core/styles';
 
-import GridContainer from 'ttg-identity/components/Login/node_modules/@tabtabgo/web/components/Grid/GridContainer';
+import GridContainer from '@tabtabgo/web/components/Grid/GridContainer';
 import GridItem from '@tabtabgo/web/components/Grid/GridItem.jsx';
 
 import SuccessIcon from '@tabtabgo/web/components/SweetAlertIcons/SuccessIcon';
 
-import ValidationForm from 'ttg-identity/components/Login/node_modules/@tabtabgo/web/components/Validations/Form';
-import ValidationInput from 'ttg-identity/components/Login/node_modules/@tabtabgo/web/components/Validations/Input';
-import FormButton from 'ttg-identity/components/Login/node_modules/@tabtabgo/web/components/Validations/Button';
+import ValidationForm from '@tabtabgo/web/components/Validations/Form';
+import ValidationInput from '@tabtabgo/web/components/Validations/Input';
+import FormButton from '@tabtabgo/web/components/Validations/Button';
 
 import { Button } from '@material-ui/core';
 
@@ -21,7 +21,7 @@ import Title from '@tabtabgo/web/components/Typography/Title';
 
 import resetPasswordStyle from './ResetPasswordPageStyle';
 import { Collapse } from '@material-ui/core';
-import PasswordInput from 'ttg-identity/components/Login/node_modules/@tabtabgo/web/components/Input/PasswordInput';
+import PasswordInput from '@tabtabgo/web/components/Input/PasswordInput';
 
 import { getToken, getSearchParams } from '@tabtabgo/core/utilities';
 import { email } from '@tabtabgo/core/Validations';
