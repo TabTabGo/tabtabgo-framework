@@ -1,8 +1,8 @@
 {
   "name": "@tabtabgo/core",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "React core services and utilities ",
-  "private":true,
+  "private": true,
   "publishConfig": {
     "access": "public"
   },
@@ -14,7 +14,7 @@
   ],
   "author": "TabTabGo",
   "homepage": "https://github.com/TabTabGo/ttg-framework/tree/master/packages/core#readme",
-  "license": "ISC",  
+  "license": "ISC",
   "directories": {
     "build": "build",
     "test": "tests"
