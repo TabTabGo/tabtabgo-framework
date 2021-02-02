@@ -1,6 +1,6 @@
 {
   "name": "@tabtabgo/framework",
-  "version": "0.0.5",
+  "version": "0.0.8",
   "description": "Core libraries and functions used for React and React Native project",
   "main": "index.js",  
   "private":"true",
