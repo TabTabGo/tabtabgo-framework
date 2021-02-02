@@ -1,6 +1,6 @@
 {
   "name": "@tabtabgo/web",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "TabTabGo web components",
   "keywords": [
     "components"
@@ -8,7 +8,7 @@
   "author": "Ghassan Samara <gmsamara@gmail.com>",
   "homepage": "https://github.com/TabTabGo/ttg-framework/tree/master/packages/web#readme",
   "license": "ISC",
-  "private":false,
+  "private": false,
   "main": "lib/web.js",
   "directories": {
     "lib": "lib",
