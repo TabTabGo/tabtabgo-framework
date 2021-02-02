@@ -1,6 +1,6 @@
 {
   "name": "@tabtabgo/core",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "description": "React core services and utilities ",
   "publishConfig": {
     "access": "public"
@@ -27,7 +27,7 @@
   },
   "scripts": {
     "test": "echo \"Error: run tests from root\" && exit 1",
-    "build" :"yarn build:default && yarn build:copy-files",
+    "build": "yarn build:default && yarn build:copy-files",
     "build:default": "yarn node ../../scripts/build",
     "build:copy-files": "node ../../scripts/copy-files.js"
   },

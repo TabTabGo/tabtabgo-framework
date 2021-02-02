@@ -1,6 +1,6 @@
 {
   "name": "@tabtabgo/web",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "description": "TabTabGo web components",
   "keywords": [
     "components"
@@ -25,7 +25,7 @@
   "scripts": {
     "test": "echo \"Error: run tests from root\" && exit 1",
     "storybook": "start-storybook -p 9002",
-    "build" :"yarn build:default && yarn build:copy-files",
+    "build": "yarn build:default && yarn build:copy-files",
     "build:default": "yarn node ../../scripts/build",
     "build:copy-files": "node ../../scripts/copy-files.js"
   },
