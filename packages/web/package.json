@@ -8,6 +8,7 @@
   "author": "Ghassan Samara <gmsamara@gmail.com>",
   "homepage": "https://github.com/TabTabGo/ttg-framework/tree/master/packages/web#readme",
   "license": "ISC",
+  "private":false,
   "main": "lib/web.js",
   "directories": {
     "lib": "lib",
@@ -73,5 +74,5 @@
     "@types/react-router-dom": "^5.1.7",
     "babel-loader": "^8.2.2"
   },
-  "gitHead": "458ba509ff6c196cfece83fcf816ca85bf0b57e3"
+  "gitHead": "1bfc45c16c7e66f8728a28cab53454ffcafbb8e3"
 }
