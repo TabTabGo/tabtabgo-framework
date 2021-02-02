@@ -1,6 +1,6 @@
 {
   "name": "@tabtabgo/web",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "TabTabGo web components",
   "keywords": [
     "components"
@@ -28,7 +28,7 @@
   "bugs": {
     "url": "https://github.com/TabTabGo/ttg-framework/issues"
   },
-  "dependencies": {    
+  "dependencies": {
     "@material-ui/core": "^4.11.3",
     "@material-ui/icons": "^4.11.2",
     "@storybook/react": "^6.1.15",
@@ -59,7 +59,7 @@
     "sweetalert": "^2.1.2"
   },
   "devDependencies": {
-    "@babel/cli": "^7.12.10",    
+    "@babel/cli": "^7.12.10",
     "@babel/plugin-proposal-class-properties": "^7.12.1",
     "@babel/plugin-proposal-decorators": "^7.12.12",
     "@babel/plugin-syntax-class-properties": "^7.12.1",
