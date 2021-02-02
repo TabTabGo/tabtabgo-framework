@@ -1,6 +1,6 @@
 {
   "name": "@tabtabgo/core",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "React core services and utilities ",
   "keywords": [
     "react",
@@ -41,7 +41,7 @@
     "react-router-dom": "^5.2.0"
   },
   "dependencies": {
-    "fs": "^0.0.1-security",    
+    "fs": "^0.0.1-security",
     "jwt-decode": "^3.1.2",
     "qs": "^6.9.6",
     "redux": "^4.0.5",

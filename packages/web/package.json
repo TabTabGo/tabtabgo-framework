@@ -1,6 +1,6 @@
 {
   "name": "@tabtabgo/web",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "TabTabGo web components",
   "keywords": [
     "components"
@@ -40,23 +40,23 @@
     "react-router-dom": "^5.2.0"
   },
   "dependencies": {
-    "@storybook/react": "^6.1.15",    
+    "@storybook/react": "^6.1.15",
     "classnames": "^2.2.6",
     "draft-js": "^0.11.7",
     "draftjs-to-html": "^0.9.1",
-    "immutability-helper": "^3.1.1",    
+    "immutability-helper": "^3.1.1",
     "mui-rte": "^1.26.2",
     "notistack": "^1.0.3",
     "prop-types": "^15.7.2",
-    "qs": "^6.9.6",    
+    "qs": "^6.9.6",
     "react-avatar-editor": "^11.1.0",
-    "react-cropper": "^2.1.4",    
+    "react-cropper": "^2.1.4",
     "react-file-reader-input": "^2.0.0",
     "react-helmet": "^6.1.0",
     "react-i18next": "^11.8.5",
     "react-image": "^4.0.3",
     "react-image-gallery": "^1.0.8",
-    "react-pdf": "^5.1.0",    
+    "react-pdf": "^5.1.0",
     "react-share": "^4.3.1",
     "sweetalert": "^2.1.2"
   },
