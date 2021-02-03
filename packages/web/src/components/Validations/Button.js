@@ -1,7 +1,7 @@
 /* eslint-disable no-console */
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import CustomButton from 'components/CustomButtons/Button';
+import CustomButton from '../CustomButtons/Button';
 import { Button, CircularProgress } from '@material-ui/core';
 import { ValidationFormConsumer } from './Form';
 
