@@ -1,11 +1,11 @@
 import React from 'react';
-import { currentServiceProvider } from '@tabtabgo/core/ServiceProvider';
-import FileService from '@tabtabgo/core/Services/FileService';
-import ExportService from '@tabtabgo/core/Services/ExportService';
+import { currentServiceProvider } from '@tabtabgo/core/providers/ServiceProvider';
+import FileService from '@tabtabgo/core/services/FileService';
+import ExportService from '@tabtabgo/core/services/ExportService';
 import { WebComponentProvider } from '@tabtabgo/web/ComponentProvider';
-import Axios from '@tabtabgo/core/RestApi/axios';
-import SessionStorageService from '@tabtabgo/core/Services/StorageServices/SessionStorageService';
-import LocalStorageService from "@tabtabgo/core/Services/StorageServices/LocalStorageService";
+import Axios from '@tabtabgo/core/services/restApi/axios';
+import SessionStorageService from '@tabtabgo/core/services/storages/SessionStorageService';
+import LocalStorageService from "@tabtabgo/core/services/storages/LocalStorageService";
 import FormInputLabel from '@tabtabgo/web/components/FormInputLabel/StarLabelRequried';
 import LoadingPage from './LoadingPage';
 
