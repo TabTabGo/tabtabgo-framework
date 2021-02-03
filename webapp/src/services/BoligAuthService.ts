@@ -1,5 +1,5 @@
 /* eslint-disable no-console */
-import { currentServiceProvider } from '@tabtabgo/core/provider/ServiceProvider';
+import { currentServiceProvider } from '@tabtabgo/core/providers/ServiceProvider';
 import { TTGError } from '@tabtabgo/core/types/TTGError';
 import qs from 'qs';
 import { AuthenticateData, SessionData } from '@tabtabgo/core/types/Identity/SessionData';

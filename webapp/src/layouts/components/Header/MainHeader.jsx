@@ -22,7 +22,7 @@ import Button from '@tabtabgo/web/components/CustomButtons/Button';
 import headerStyle from '../styles/headerStyle';
 
 import RecentlyViewedHeader from 'components/RecentlyViewed/RecentlyViewedHeader';
-import { ComponentContext } from '@tabtabgo/core/providers/ComponentProvider';
+import { ComponentContext } from '@tabtabgo/web/ComponentProvider';
 
 function Header({ ...props }) {
   const { classes, color, miniActive, theme, userRoutes } = props;

@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux';
 
-import ajaxCallsInProgress from '@tabtabgo/core/RestApi/reducer';
+import ajaxCallsInProgress from '@tabtabgo/core/services/restApi/reducer';
 import { snackbarReducer } from '@tabtabgo/web/components/Notifications/reducers';
 import DashboardReducer from 'views/Dashboard/reducers';
 
