@@ -1,7 +1,7 @@
 /* eslint-disable no-console */
 import React, { useContext } from 'react';
 import { Route, Redirect, useHistory } from 'react-router-dom';
-import { AuthenticationContext } from 'ttg-identity/core/AuthenticationProvider';
+import { AuthenticationContext } from '@tabtabgo/core/providers/AuthenticationProvider';
 import { SessionUser } from '@tabtabgo/core/types/SessionUser';
 type AuthorizeRouteProps = {
   [key: string]: any;

@@ -1,9 +1,9 @@
 /* eslint-disable no-console */
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import CustomButton from 'components/CustomButtons/Button.jsx';
+import CustomButton from 'components/CustomButtons/Button';
 import { Button, CircularProgress } from '@material-ui/core';
-import { ValidationFormConsumer } from './Form.jsx';
+import { ValidationFormConsumer } from './Form';
 
 export default class ValidationButton extends Component {
   static propTypes = {

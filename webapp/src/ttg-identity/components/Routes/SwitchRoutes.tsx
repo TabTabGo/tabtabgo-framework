@@ -2,7 +2,7 @@ import React from 'react';
 import { Switch, Route, Redirect } from 'react-router-dom';
 import AuthenticateRoute from './AuthenticateRoute';
 import AuthorizeRoute from './AuthorizeRoute';
-import { RouteItem } from 'ttg-identity/core/types/Route';
+import { RouteItem } from '@tabtabgo/core/types/Route';
 
 const routeTypes = (prop: RouteItem, key: any) => {
   if (prop.requiredAuthorization)

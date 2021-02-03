@@ -1703,9 +1703,9 @@
     loader-utils "^2.0.0"
 
 "@tabtabgo/core@^0.0.10":
-  version "0.0.9"
-  resolved "https://registry.yarnpkg.com/@tabtabgo/core/-/core-0.0.9.tgz#351511ce541530a2c01ffe777719d091aaf9b38b"
-  integrity sha512-OMYj7PZ+rRGtJX0uv4FQrhLj+8tJJemOUJIsFv+5p1ngnRi2u6N9YEW4ka0tv19+/b8sfZDbM1NbIwjd6tj9Iw==
+  version "0.0.10"
+  resolved "https://registry.yarnpkg.com/@tabtabgo/core/-/core-0.0.10.tgz#508bc00937c591d7e968e5c299365e2c451595c4"
+  integrity sha512-VeWSz03CS2JI2mhy0lODbalEFMDWvsP0F3/cLg0CYv56RyhfSyAU/ri7GV9GhwZieYIvkOYM/xpvXIuPpyNkgA==
   dependencies:
     fs "^0.0.1-security"
     jwt-decode "^3.1.2"
@@ -1714,9 +1714,9 @@
     universal-cookie "^4.0.4"
 
 "@tabtabgo/web@^0.0.10":
-  version "0.0.9"
-  resolved "https://registry.yarnpkg.com/@tabtabgo/web/-/web-0.0.9.tgz#12c634768b7442484adad58fc7273c65bb6955e5"
-  integrity sha512-t3+G4DIH+IGo0d+srMKinpqo11iIoYgtDl2GcU59ZQc7x9/JfOmOYRL97zUYYpr2d9lWUH5NLSlXWPmbvEDrXg==
+  version "0.0.10"
+  resolved "https://registry.yarnpkg.com/@tabtabgo/web/-/web-0.0.10.tgz#00a48285e55336677b58f6e4e3a0a32efa021c86"
+  integrity sha512-70KjkxebjYcF2arl3psETuVCXTY4KNbXgDmRuCnSMYTrJ7cbKsCXgPgHLJzG5F/TCpLOiYKaj+YqOSydPQRbLQ==
   dependencies:
     classnames "^2.2.6"
     draft-js "^0.11.7"

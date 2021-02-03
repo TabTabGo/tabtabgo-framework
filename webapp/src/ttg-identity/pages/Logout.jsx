@@ -1,38 +1,31 @@
-import React, { Component } from 'react';
+import React, { useEffect, useState, useContext } from 'react';
 import PropTypes from 'prop-types';
 import { Redirect } from 'react-router-dom';
+import { AuthenticationContext } from '@tabtabgo/core/providers/AuthenticationProvider';
 
-import withAuthentication from '../../core/withAuthentication';
-class Logout extends Component {
-  static propTypes = {
-    identity: PropTypes.shape({
-      logout: PropTypes.func,
-    }),
-    redirectPath: PropTypes.string,
-  };
-  state = {
-    processing: false,
-  };
-  componentDidMount() {
-    this.setState({ processing: true });
-
-    this.props.identity
-      .logout()
+const Logout = ({ redirectPath }) => {
+  const [processing, setProcessing] = useState(false);
+  const { logout } = useContext(AuthenticationContext);
+  useEffect(() => {
+    setProcessing(true);
+    logout()
       .catch((error) => {
         // eslint-disable-next-line no-console
         console.log('logout error', error);
       })
       .finally(() => {
-        this.setState({ processing: false });
+        setProcessing(false);
       });
-  }
-  render() {
-    const { redirectPath } = this.props;
-    if (this.state.processing) {
-      return <div>Logout..</div>;
-    }
+  }, []);
 
-    return <Redirect to={redirectPath ? redirectPath : '/login'} />;
+  if (processing) {
+    return <div>Logout..</div>;
   }
-}
-export default withAuthentication(Logout);
+
+  return <Redirect to={redirectPath ? redirectPath : '/login'} />;
+};
+
+Logout.propTypes = {
+  redirectPath: PropTypes.string,
+};
+export default Logout;

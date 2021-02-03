@@ -1,7 +1,7 @@
 /* eslint-disable no-console */
 import React, { useContext } from 'react';
 import { Route, Redirect, useHistory } from 'react-router-dom';
-import { AuthenticationContext } from '../../../core/AuthenticationProvider';
+import { AuthenticationContext } from '@tabtabgo/core/providers/AuthenticationProvider';
 type AuthenticateRouteProps = {
   [key: string]: any;
   redirectPath?: string;
