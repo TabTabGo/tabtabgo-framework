@@ -1,7 +1,7 @@
 import { IStorageService, IRefreshTokenService } from '../contracts';
 import { SessionUser } from '../../types/SessionUser';
 
-export default abstract class BaseStorageService implements IStorageService, IRefreshTokenService {
+abstract class BaseStorageService implements IStorageService, IRefreshTokenService {
   protected token_name = 'access_token';
   protected token_type = 'token_type';
   protected token_expired = 'token_expired';
@@ -60,3 +60,5 @@ export default abstract class BaseStorageService implements IStorageService, IRe
   abstract getItem(key: string): Promise<any>;
   abstract setItem(key: string, object: any): Promise<void>;
 }
+
+export default BaseStorageService;
