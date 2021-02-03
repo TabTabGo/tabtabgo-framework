@@ -16,9 +16,7 @@
     "type": "git",
     "url": "git+https://github.com/TabTabGo/ttg-framework.git"
   },
-  "files": [
-    "build/*"
-  ],
+
   "scripts": {
     "test": "echo \"Error: run tests from root\" && exit 1",
     "build": "yarn build:default && yarn build:copy-files",
