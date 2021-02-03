@@ -14,6 +14,7 @@
   "files": [
     "build/*"
   ],
+  
   "repository": {
     "type": "git",
     "url": "git+https://github.com/TabTabGo/ttg-framework.git"

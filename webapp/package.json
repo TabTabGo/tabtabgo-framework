@@ -2,6 +2,7 @@
   "name": "webapp",
   "version": "0.1.0",
   "private": true,
+  
   "dependencies": {
     "@date-io/core": "^2.10.6",
     "@date-io/moment": "^2.10.6",
@@ -11,8 +12,8 @@
     "@material-ui/pickers": "^3.2.10",
     "@material-ui/styles": "^4.11.3",
     "@n8tb1t/use-scroll-position": "^2.0.3",
-    "@tabtabgo/core": "^0.0.8",
-    "@tabtabgo/web": "^0.0.8",
+    "@tabtabgo/core": "^0.0.13",
+    "@tabtabgo/web": "^0.0.13",
     "@testing-library/dom": "^7.29.4",
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
