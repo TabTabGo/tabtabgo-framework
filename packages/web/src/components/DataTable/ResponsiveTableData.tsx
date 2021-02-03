@@ -1,8 +1,8 @@
 import React from 'react';
 import { makeStyles, Grid } from '@material-ui/core';
-//import CustomDivider from "../../../components/Divider";
+//import CustomDivider from "../Divider";
 import { useTranslation } from 'react-i18next';
-import WrapText from '../components/WrapText/WrapText';
+import WrapText from '../WrapText/WrapText';
 
 const useStyles = makeStyles((theme: any) => ({
   base: {

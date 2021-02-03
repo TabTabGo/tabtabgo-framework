@@ -17,7 +17,7 @@ import {
 } from '@material-ui/core';
 
 // core components
-import Button from 'components/CustomButtons/Button';
+import Button from '../CustomButtons/Button';
 
 import customDropdownStyle from './customDropdownStyle';
 

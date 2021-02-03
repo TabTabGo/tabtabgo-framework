@@ -5,7 +5,6 @@ import { useHistory, useLocation } from 'react-router-dom';
 
 import DataTable, { EntityDataTableProps, EntityDataTableRef } from './DataTable';
 
-import ContentWrapper from 'layouts/components/Content/ContentWrapper';
 import { mergeButtons, mergeButtonSections, ToolbarButtons } from '../components/Buttons';
 
 import Add from '@material-ui/icons/Add';
@@ -21,6 +20,7 @@ type EntityListProps<T> = IEntity<T> &
     onAddButtonClicked?: (event?: any) => void;
     openEditInNewPage?: boolean;
     refreshListAfterEdit?: boolean;
+    ContentWrapper: React.ReactElement<any>;
   };
 
 const EntityList = (props: EntityListProps<any>) => {
@@ -143,7 +143,7 @@ const EntityList = (props: EntityListProps<any>) => {
     },
   } as Buttons;
 
-  const { flags, title, EditComponent, rowOptions, ...rest } = props;
+  const { flags, title, EditComponent, rowOptions, ContentWrapper, ...rest } = props;
   const { loading } = flags;
 
   const dataTableTitle = title || props.namePluralText;

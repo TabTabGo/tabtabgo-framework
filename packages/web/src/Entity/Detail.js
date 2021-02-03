@@ -3,7 +3,6 @@ import React from 'react';
 
 import PropTypes from 'prop-types';
 
-import ContentWrapper from 'layouts/components/Content/ContentWrapper';
 import { mergeButtons, ToolbarButtons } from '../components/Buttons';
 import EditIcon from '@material-ui/icons/Edit';
 import DeleteIcon from '@material-ui/icons/Delete';
@@ -154,6 +153,7 @@ class EntityDetail extends React.Component {
       editComponent,
       forceLoad,
       useCustomProgress,
+      ContentWrapper
     } = this.props;
     let { EditComponent } = this.props;
     if (editComponent) EditComponent = editComponent;
@@ -247,5 +247,6 @@ EntityDetail.propTypes = {
   useCustomProgress: PropTypes.bool,
   onEntityLoaded: PropTypes.func,
   confirmationContext: PropTypes.any,
+  ContentWrapper: PropTypes.element.isRequired
 };
 export default withConfirmation(EntityDetail);

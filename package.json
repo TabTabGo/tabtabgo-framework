@@ -26,7 +26,9 @@
     "url": "https://github.com/TabTabGo/ttg-framework/issues"
   },
   "homepage": "https://github.com/TabTabGo/ttg-framework#readme",
-  "dependencies": {},
+  "dependencies": {
+    "@material-ui/core": "^4.11.3"
+  },
   "devDependencies": {
     "@babel/cli": "^7.10.1",
     "@babel/core": "^7.10.2",
@@ -36,9 +38,9 @@
     "@babel/plugin-transform-object-assign": "^7.10.1",
     "@babel/plugin-transform-react-constant-elements": "^7.10.1",
     "@babel/plugin-transform-runtime": "^7.10.1",
-    "@babel/preset-typescript": "^7.12.7",
     "@babel/preset-env": "^7.10.2",
     "@babel/preset-react": "^7.10.1",
+    "@babel/preset-typescript": "^7.12.7",
     "@babel/register": "^7.10.1",
     "@emotion/react": "^11.0.0",
     "@emotion/styled": "^11.0.0",

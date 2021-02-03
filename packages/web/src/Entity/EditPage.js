@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Prompt } from 'react-router';
 import { Paper, Button } from '@material-ui/core';
 import ValidationForm from '../components/Validations/Form';
-import ContentWrapper from 'layouts/components/Content/ContentWrapper';
+
 import swal from 'sweetalert';
 
 class EntityEdit extends React.Component {
@@ -103,7 +103,7 @@ class EntityEdit extends React.Component {
       dirty,
       pristine,
       invalid,
-
+      ContentWrapper,
       handleSubmit,
       ignoreFormDirty,
       extraActions,
@@ -188,6 +188,7 @@ EntityEdit.propTypes = {
   onCancel: PropTypes.func,
   children: PropTypes.node,
   entity: PropTypes.object.isRequired,
+  ContentWrapper: PropTypes.element.isRequired
 };
 
 export default EntityEdit;

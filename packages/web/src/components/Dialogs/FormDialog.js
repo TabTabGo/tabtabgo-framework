@@ -15,8 +15,8 @@ import {
 import { withStyles } from '@material-ui/core/styles';
 
 import dialogStyle from './styles/dialogStyle';
-import ValidationForm from '../components/Validations/Form';
-import FormButton from '../components/Validations/Button';
+import ValidationForm from '../Validations/Form';
+import FormButton from '../Validations/Button';
 
 function Transition(props) {
   return <Slide direction="up" {...props} />;
