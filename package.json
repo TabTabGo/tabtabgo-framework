@@ -8,7 +8,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "compile": "lerna exec --parallel  tsc",
     "build": "lerna run --parallel --scope \"@tabtabgo/*\" build",
-    "publish": "lerna version && yarn build && lerna publish from-package --contents build"
+    "publish": "lerna version && yarn build && lerna publish from-package --contents build -y"
   },
   "repository": {
     "type": "git",
