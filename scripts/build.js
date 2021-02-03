@@ -40,6 +40,7 @@ async function run(argv) {
     '--ignore',
     // Need to put these patterns in quotes otherwise they might be evaluated by the used terminal.
     `"${ignore.join('","')}"`,
+    '--copy-files'
   ].join(' ');
 
   if (verbose) {
