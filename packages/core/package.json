@@ -1,6 +1,6 @@
 {
   "name": "@tabtabgo/core",
-  "version": "0.0.14",
+  "version": "0.0.15",
   "description": "React core services and utilities ",
   "publishConfig": {
     "access": "public"
