@@ -16,7 +16,7 @@ import InstanceHeaderLink from './InstanceHeaderLink';
 
 import UserHeaderLink from './UserHeaderLink';
 
-import { AuthenticationConsumer } from 'ttg-identity/components/Routes/node_modules/ttg-identity/core/AuthenticationProvider';
+import { AuthenticationConsumer } from '@tabtabgo/core/providers/AuthenticationProvider';
 import _ from 'lodash';
 /// Links that will be displayed in the Header of Layout components
 class HeaderLinks extends React.Component {

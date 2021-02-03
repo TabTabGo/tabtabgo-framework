@@ -1,4 +1,4 @@
-import customCheckboxRadioSwitch from './customCheckboxRadioSwitch.jsx';
+import customCheckboxRadioSwitch from './customCheckboxRadioSwitch';
 
 const checkboxStyle = {
   ...customCheckboxRadioSwitch,

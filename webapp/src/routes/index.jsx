@@ -1,14 +1,14 @@
 import React from 'react';
 // root Route where add special routes such as login auth and etc
-import Pages from 'layouts/Pages.jsx';
-import Main from 'layouts/Main.jsx';
+import Pages from 'layouts/Pages';
+import Main from 'layouts/Main';
 
-import theme from 'assets/jss/theme.jsx';
+import theme from 'assets/jss/theme';
 
-import pageRoutes from './pages.jsx';
-import footerRoutes from './footer.jsx';
-import mainRoutes from './main.jsx';
-import userRoutes from './user.jsx';
+import pageRoutes from './pages';
+import footerRoutes from './footer';
+import mainRoutes from './main';
+import userRoutes from './user';
 
 import { MuiThemeProvider } from '@material-ui/core';
 import brand from 'brand';

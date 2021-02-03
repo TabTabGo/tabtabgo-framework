@@ -1,7 +1,7 @@
 import React, { ReactElement } from 'react';
 import { withStyles, createMuiTheme, MuiThemeProvider } from '@material-ui/core/styles';
 import { makeStyles } from '@material-ui/core';
-import styles from './styles/contentViewerStyle.jsx';
+import styles from './styles/contentViewerStyle';
 import MUIRichTextEditor from 'mui-rte';
 
 const useStyle = makeStyles(styles);

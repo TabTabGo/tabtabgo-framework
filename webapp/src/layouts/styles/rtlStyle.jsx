@@ -2,7 +2,7 @@
 // // // App styles
 // #############################
 
-import { transition, containerFluid } from 'assets/jss/themeHelpers.jsx';
+import { transition, containerFluid } from 'assets/jss/themeHelpers';
 
 const appStyle = (theme) => ({
   wrapper: {

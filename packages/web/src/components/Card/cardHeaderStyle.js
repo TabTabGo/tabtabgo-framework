@@ -4,7 +4,7 @@ import {
   getErrorCardHeader,
   getInfoCardHeader,
   getPrimaryCardHeader,
-} from 'assets/jss/themeHelpers.jsx';
+} from 'assets/jss/themeHelpers';
 const cardHeaderStyle = (theme) => ({
   cardHeader: {
     padding: '0.75rem 1.25rem',

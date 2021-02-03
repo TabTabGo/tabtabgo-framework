@@ -5,7 +5,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { createBrowserHistory } from 'history';
 import { Router } from 'react-router-dom';
-import { AppSettings } from '@tabtabgo/core/appsettings';
+import { AppSettings } from '@tabtabgo/core/Appsettings';
 
 import Store from './reducers/stores';
 import { Provider } from 'react-redux';
@@ -19,7 +19,7 @@ import MomentUtils from '@date-io/moment';
 
 import { MuiThemeProvider } from '@material-ui/core/styles';
 import { SnackbarProvider } from 'notistack';
-import theme from 'assets/jss/theme.jsx';
+import theme from 'assets/jss/theme';
 import LoadingPage from './LoadingPage';
 import { setupServices, setupComponents } from './setup';
 import SwitchRoutes from 'ttg-identity/components/Routes/SwitchRoutes';
@@ -32,7 +32,7 @@ import Backend from 'i18next-xhr-backend';
 import LanguageDetector from 'i18next-browser-languagedetector';
 import { initReactI18next } from 'react-i18next';
 import { UserSettingsProvider } from '@tabtabgo/core/contexts/UserSettingsContext';
-import ComponentProvider from '@tabtabgo/core/providers/ComponentProvider';
+import ComponentProvider from '@tabtabgo/web/ComponentProvider';
 import ErrorBoundary from '@tabtabgo/web/components/ErrorBoundary';
 
 const fallbackLng = ['en'];

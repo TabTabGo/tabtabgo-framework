@@ -22,7 +22,7 @@ import Button from '@tabtabgo/web/components/CustomButtons/Button';
 
 // @material-ui/icons
 import Menu from '@material-ui/icons/Menu';
-import pagesHeaderStyle from '../styles/pagesHeaderStyle.jsx';
+import pagesHeaderStyle from '../styles/pagesHeaderStyle';
 
 // eslint-disable-next-line react/display-name
 const RouterNavLink = React.forwardRef((props, ref) => <NavLink innerRef={ref} {...props} />);

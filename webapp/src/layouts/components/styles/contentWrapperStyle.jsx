@@ -1,4 +1,4 @@
-import { containerFluid } from 'assets/jss/themeHelpers.jsx';
+import { containerFluid } from 'assets/jss/themeHelpers';
 
 const contentWrapperStyle = (theme) => ({
   title: {

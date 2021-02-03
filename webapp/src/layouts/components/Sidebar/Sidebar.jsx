@@ -12,7 +12,7 @@ import UserMenuList from './UserMenuList';
 
 import sidebarStyle from '../styles/sidebarStyle';
 
-import { AuthenticationContext } from 'ttg-identity/components/Routes/node_modules/ttg-identity/core/AuthenticationProvider';
+import { AuthenticationContext } from '@tabtabgo/core/providers/AuthenticationProvider';
 
 class SidebarWrapper extends React.Component {
   render() {

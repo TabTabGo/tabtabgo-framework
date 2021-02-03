@@ -4,7 +4,7 @@ import {
   getErrorCardHeader,
   getInfoCardHeader,
   getPrimaryCardHeader,
-} from 'assets/jss/themeHelpers.jsx';
+} from 'assets/jss/themeHelpers';
 const cardIconStyle = (theme) => ({
   cardIcon: {
     '&$warningCardHeader,&$successCardHeader,&$errorCardHeader,&$infoCardHeader,&$primaryCardHeader': {

@@ -2,7 +2,7 @@
 // // // Sidebar styles
 // #############################
 
-import { transition, boxShadow, defaultFont } from 'assets/jss/themeHelpers.jsx';
+import { transition, boxShadow, defaultFont } from 'assets/jss/themeHelpers';
 
 const sidebarStyle = (theme) => ({
   drawerPaper: {

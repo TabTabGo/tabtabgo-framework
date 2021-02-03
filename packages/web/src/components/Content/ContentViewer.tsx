@@ -3,7 +3,7 @@ import { withStyles } from '@material-ui/core/styles';
 import { makeStyles } from '@material-ui/core';
 import draftToHtml from 'draftjs-to-html';
 import {} from 'draft-js';
-import styles from './styles/contentViewerStyle.jsx';
+import styles from './styles/contentViewerStyle';
 const useStyle = makeStyles(styles);
 
 type ContentViewerProps = {

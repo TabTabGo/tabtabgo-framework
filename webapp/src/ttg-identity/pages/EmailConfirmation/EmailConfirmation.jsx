@@ -7,14 +7,14 @@ import { withRouter, Link } from 'react-router-dom';
 import { withStyles, withTheme } from '@material-ui/core/styles';
 import { Collapse, CircularProgress, Typography, Button } from '@material-ui/core';
 
-import GridContainer from '@tabtabgo/web/components/Grid/GridContainer.jsx';
-import GridItem from '@tabtabgo/web/components/Grid/GridItem.jsx';
+import GridContainer from '@tabtabgo/web/components/Grid/GridContainer';
+import GridItem from '@tabtabgo/web/components/Grid/GridItem';
 import SuccessIcon from '@tabtabgo/web/components/SweetAlertIcons/SuccessIcon';
 import ErrorIcon from '@tabtabgo/web/components/SweetAlertIcons/ErrorIcon';
-import emailConfirmationStyle from './EmailConfirmationPageStyle.jsx';
-import withAuthentication from 'ttg-identity/components/Login/node_modules/ttg-identity/core/withAuthentication';
+import emailConfirmationStyle from './EmailConfirmationPageStyle';
+import withAuthentication from '@tabtabgo/core/withAuthentication';
 
-import Title from '@tabtabgo/web/components/Typography/Title.jsx';
+import Title from '@tabtabgo/web/components/Typography/Title';
 
 import { getToken, getSearchParams } from '@tabtabgo/core/utilities';
 

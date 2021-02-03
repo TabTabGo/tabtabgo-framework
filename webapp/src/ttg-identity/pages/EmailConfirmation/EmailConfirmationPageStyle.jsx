@@ -1,4 +1,4 @@
-import { getContainer } from 'assets/jss/themeHelpers.jsx';
+import { getContainer } from 'assets/jss/themeHelpers';
 
 const confirmationPageStyle = (theme) => ({
   container: {

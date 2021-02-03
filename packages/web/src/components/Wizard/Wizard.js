@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 // @material-ui/core components
 import { withStyles } from '@material-ui/core/styles';
 // core components
-import Button from 'components/CustomButtons/Button.jsx';
+import Button from 'components/CustomButtons/Button';
 
 import { Step, Stepper, StepLabel, StepButton, Typography, Grid } from '@material-ui/core';
 import wizardStyle from './wizardStyle';

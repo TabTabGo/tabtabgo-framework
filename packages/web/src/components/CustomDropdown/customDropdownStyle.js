@@ -5,7 +5,7 @@ import {
   getSuccessBoxShadow,
   getWarningBoxShadow,
   getErrorBoxShadow,
-} from 'assets/jss/themeHelpers.jsx';
+} from 'assets/jss/themeHelpers';
 
 const customDropdownStyle = (theme) => ({
   popperClose: {

@@ -6,7 +6,7 @@ import { IconButton, InputAdornment, CircularProgress } from '@material-ui/core'
 
 import CloudDownload from '@material-ui/icons/CloudDownload';
 
-import ValidationInput from '../components/Validations/Input.jsx';
+import ValidationInput from '../components/Validations/Input';
 import FileService from '@tabtabgo/core/Services/FileService';
 import fileUploadInputStyle from './styles/fileUploadInputStyleutStyle';
 

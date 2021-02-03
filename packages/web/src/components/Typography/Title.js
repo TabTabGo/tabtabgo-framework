@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 // @material-ui/core components
 import { withStyles, withTheme } from '@material-ui/core/styles';
 
-import titleStyle from './titleStyle.jsx';
+import titleStyle from './titleStyle';
 
 class Title extends React.Component {
   render() {

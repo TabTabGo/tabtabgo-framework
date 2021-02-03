@@ -9,7 +9,7 @@ import {
   roseColor,
   infoColor,
   warningColor,
-} from 'assets/jss/themeHelpers.jsx';
+} from 'assets/jss/themeHelpers';
 
 const wizardStyle = (theme) => ({
   root: {

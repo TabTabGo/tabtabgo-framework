@@ -5,11 +5,11 @@ import { withRouter } from 'react-router-dom';
 // @material-ui/core components
 import { withStyles, withTheme } from '@material-ui/core/styles';
 
-import GridContainer from '@tabtabgo/web/components/Grid/GridContainer.jsx';
-import GridItem from '@tabtabgo/web/components/Grid/GridItem.jsx';
+import GridContainer from '@tabtabgo/web/components/Grid/GridContainer';
+import GridItem from '@tabtabgo/web/components/Grid/GridItem';
 
-import loginPageStyle from './LoginPageStyle.jsx';
-import Login from '../../components/Login/Login.jsx';
+import loginPageStyle from './LoginPageStyle';
+import Login from '../../components/Login/Login';
 import queryString from 'query-string';
 class LoginPage extends React.Component {
   render() {

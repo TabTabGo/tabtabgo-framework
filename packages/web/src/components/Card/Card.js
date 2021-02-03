@@ -10,7 +10,7 @@ import withStyles from '@material-ui/core/styles/withStyles';
 import LinearProgress from '@material-ui/core/LinearProgress';
 
 // core components
-import cardStyle from './cardStyle.jsx';
+import cardStyle from './cardStyle';
 
 function Card({ ...props }) {
   const {

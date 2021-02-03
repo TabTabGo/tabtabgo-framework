@@ -8,7 +8,7 @@ import {
   defaultBoxShadow,
   boxShadow,
   transition,
-} from 'assets/jss/themeHelpers.jsx';
+} from 'assets/jss/themeHelpers';
 
 const pagesHeaderStyle = (theme) => ({
   appBar: {

@@ -10,7 +10,7 @@ import { Paper, Hidden } from '@material-ui/core';
 
 import { LayoutContext } from '../../LayoutContext';
 
-import contentWrapperStyle from '../styles/contentWrapperStyle.jsx';
+import contentWrapperStyle from '../styles/contentWrapperStyle';
 
 const ContentWrapper = ({
   children,

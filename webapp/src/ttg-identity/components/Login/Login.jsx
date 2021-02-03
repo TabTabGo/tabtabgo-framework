@@ -22,7 +22,7 @@ import ValidationForm from '@tabtabgo/web/components/Validations/Form';
 import ValidationInput from '@tabtabgo/web/components/Validations/Input';
 import FormButton from '@tabtabgo/web/components/Validations/Button';
 
-import withAuthentication from 'ttg-identity/core/withAuthentication';
+import withAuthentication from '@tabtabgo/core/withAuthentication';
 import loginStyle from './loginStyle';
 
 //import logo from "assets/img/logo-white.png";

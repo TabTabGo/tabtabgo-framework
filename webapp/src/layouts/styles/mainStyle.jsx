@@ -2,7 +2,7 @@
 // // // App styles
 // #############################
 
-import { transition } from 'assets/jss/themeHelpers.jsx';
+import { transition } from 'assets/jss/themeHelpers';
 
 const appBarHeight = 70; //accomodate the widget for now
 

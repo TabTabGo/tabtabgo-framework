@@ -2,7 +2,7 @@
 // ResetPasswordPage view styles
 // #############################
 
-import { getContainer, cardTitle } from 'assets/jss/themeHelpers.jsx';
+import { getContainer, cardTitle } from 'assets/jss/themeHelpers';
 
 const resetPasswordPageStyle = (theme) => ({
   container: {

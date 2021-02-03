@@ -11,7 +11,7 @@ import htmlToDraft from 'html-to-draftjs';
 
 import 'react-draft-wysiwyg/dist/react-draft-wysiwyg.css';
 
-import styles from './styles/contentEditorStyle.jsx';
+import styles from './styles/contentEditorStyle';
 import FormatBoldIcon from '@material-ui/icons/FormatBold';
 class ContentEditor extends React.Component {
   constructor(props) {

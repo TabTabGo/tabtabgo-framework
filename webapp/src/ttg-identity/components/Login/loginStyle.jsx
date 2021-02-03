@@ -2,7 +2,7 @@
 // // // LoginPage view styles
 // #############################
 
-import { cardTitle, transition } from 'assets/jss/themeHelpers.jsx';
+import { cardTitle, transition } from 'assets/jss/themeHelpers';
 
 const loginStyle = (theme) => ({
   cardTitle: {

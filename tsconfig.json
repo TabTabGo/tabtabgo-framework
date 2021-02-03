@@ -19,10 +19,11 @@
     "sourceMap": false,
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "noEmit": true,
+    "declaration": true,
     "jsx": "react-jsx"
   },
   "include": [
-    "src"
+    "src",
+    "**/packages/**/src/*"
   ]
 }

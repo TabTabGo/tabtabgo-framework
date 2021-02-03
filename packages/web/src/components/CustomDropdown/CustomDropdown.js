@@ -17,9 +17,9 @@ import {
 } from '@material-ui/core';
 
 // core components
-import Button from 'components/CustomButtons/Button.jsx';
+import Button from 'components/CustomButtons/Button';
 
-import customDropdownStyle from './customDropdownStyle.jsx';
+import customDropdownStyle from './customDropdownStyle';
 
 class CustomDropdown extends React.Component {
   constructor(props) {

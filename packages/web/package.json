@@ -1,6 +1,6 @@
 {
   "name": "@tabtabgo/web",
-  "version": "0.0.12-alpha.0",
+  "version": "0.0.13",
   "description": "TabTabGo web components",
   "keywords": [
     "components"
@@ -11,6 +11,9 @@
   "publishConfig": {
     "access": "public"
   },
+  "files": [
+    "build/*"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/TabTabGo/ttg-framework.git"
@@ -41,6 +44,7 @@
     "draft-js": "^0.11.7",
     "draftjs-to-html": "^0.9.1",
     "immutability-helper": "^3.1.1",
+    "moment": "^2.29.1",
     "mui-rte": "^1.26.2",
     "notistack": "^1.0.3",
     "prop-types": "^15.7.2",

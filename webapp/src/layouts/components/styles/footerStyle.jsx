@@ -2,7 +2,7 @@
 // // // Footer styles
 // #############################
 
-import { defaultFont, getContainer, containerFluid } from 'assets/jss/themeHelpers.jsx';
+import { defaultFont, getContainer, containerFluid } from 'assets/jss/themeHelpers';
 
 const footerStyle = (theme) => ({
   block: {},

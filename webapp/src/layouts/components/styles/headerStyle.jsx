@@ -7,7 +7,7 @@ import {
   defaultFont,
   defaultBoxShadow,
   transition,
-} from 'assets/jss/themeHelpers.jsx';
+} from 'assets/jss/themeHelpers';
 
 import pink from '@material-ui/core/colors/pink';
 

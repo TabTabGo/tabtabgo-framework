@@ -6,6 +6,7 @@
   "private": "true",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "compile": "lerna exec --parallel  tsc",
     "build": "lerna run --parallel --scope \"@tabtabgo/*\" build",
     "publish": "lerna publish from-package --dist-tag next --contents build"
   },

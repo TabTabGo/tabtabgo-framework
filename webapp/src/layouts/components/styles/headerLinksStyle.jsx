@@ -2,7 +2,7 @@
 // // // HeaderLinks styles
 // #############################
 
-import customDropdownStyle from './customDropdownStyle.jsx';
+import customDropdownStyle from './customDropdownStyle';
 
 const headerLinksStyle = (theme) => ({
   ...customDropdownStyle(theme),

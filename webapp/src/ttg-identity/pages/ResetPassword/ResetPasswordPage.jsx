@@ -7,7 +7,7 @@ import { withRouter, Link } from 'react-router-dom';
 import { withStyles, withTheme } from '@material-ui/core/styles';
 
 import GridContainer from '@tabtabgo/web/components/Grid/GridContainer';
-import GridItem from '@tabtabgo/web/components/Grid/GridItem.jsx';
+import GridItem from '@tabtabgo/web/components/Grid/GridItem';
 
 import SuccessIcon from '@tabtabgo/web/components/SweetAlertIcons/SuccessIcon';
 
@@ -25,7 +25,7 @@ import PasswordInput from '@tabtabgo/web/components/Input/PasswordInput';
 
 import { getToken, getSearchParams } from '@tabtabgo/core/utilities';
 import { email } from '@tabtabgo/core/Validations';
-import withAuthentication from 'ttg-identity/components/Login/node_modules/ttg-identity/core/withAuthentication';
+import withAuthentication from '@tabtabgo/core/withAuthentication';
 import { TTGError } from '@tabtabgo/core/types/TTGError';
 import { regex } from '@tabtabgo/core/Validations';
 

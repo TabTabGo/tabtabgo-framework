@@ -19,7 +19,7 @@ import Title from '@tabtabgo/web/components/Typography/Title';
 
 import recoverPasswordStyle from './PasswordRecoveryPageStyle';
 import { Collapse, Button } from '@material-ui/core';
-import withAuthentication from 'ttg-identity/components/Login/node_modules/ttg-identity/core/withAuthentication';
+import withAuthentication from '@tabtabgo/core/withAuthentication';
 import { TTGError } from '@tabtabgo/core/types/TTGError';
 
 // eslint-disable-next-line react/display-name

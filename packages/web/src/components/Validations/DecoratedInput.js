@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 // @material-ui/core components
 import { withStyles, withTheme } from '@material-ui/core/styles';
 
-import decoratedInputStyle from './jss/decoratedInputStyle.jsx';
+import decoratedInputStyle from './jss/decoratedInputStyle';
 
 class DecoratedInput extends React.Component {
   render() {

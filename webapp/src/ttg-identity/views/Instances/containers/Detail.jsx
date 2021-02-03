@@ -7,7 +7,7 @@ import { withRouter } from 'react-router-dom';
 import EntityDetail, { DetailEntityContext } from '@tabtabgo/web/Entity/Components/Detail';
 
 import { InstancesActions } from '../actions';
-import InstanceView from '../components/View.jsx';
+import InstanceView from '../components/View';
 
 import EditModal from './Edit';
 

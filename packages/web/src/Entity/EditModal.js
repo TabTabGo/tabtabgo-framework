@@ -19,14 +19,14 @@ import CloseIcon from '@material-ui/icons/Close';
 
 import { withStyles } from '@material-ui/core/styles';
 
-import ValidationForm from '../components/Validations/Form.jsx';
-import ValidationButton from '../components/Validations/Button.jsx';
+import ValidationForm from '../components/Validations/Form';
+import ValidationButton from '../components/Validations/Button';
 import update from 'immutability-helper';
 import { mergeButtons } from '../components/Buttons/utilities';
 import { getDisplayValue } from '@tabtabgo/core/utilities';
 import _ from 'lodash';
 
-import editModalStyle from './styles/editModalStyle.jsx';
+import editModalStyle from './styles/editModalStyle';
 import EntityActionTypes from '../ActionTypes';
 function Transition(props) {
   return <Slide direction="up" {...props} />;

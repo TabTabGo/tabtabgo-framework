@@ -2,7 +2,7 @@
 // // // LoginPage view styles
 // #############################
 
-import { getContainer } from 'assets/jss/themeHelpers.jsx';
+import { getContainer } from 'assets/jss/themeHelpers';
 
 const loginPageStyle = (theme) => ({
   container: {

@@ -17,9 +17,9 @@ import { LayoutContext } from '../../LayoutContext';
 // core components
 import HeaderLinks from './HeaderLinks';
 
-import Button from '@tabtabgo/web/components/CustomButtons/Button.jsx';
+import Button from '@tabtabgo/web/components/CustomButtons/Button';
 
-import headerStyle from '../styles/headerStyle.jsx';
+import headerStyle from '../styles/headerStyle';
 
 import RecentlyViewedHeader from 'components/RecentlyViewed/RecentlyViewedHeader';
 import { ComponentContext } from '@tabtabgo/core/providers/ComponentProvider';
