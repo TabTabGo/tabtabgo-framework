@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import * as StandardValidations from '@tabtabgo/core/Validations.js';
 import * as StandardValidationsErrors from '@tabtabgo/core/ValidationErrors.js';
 import withValidation from './withValidation';
-import { withComponentProvider } from '../ComponentProvider';
+import { withComponentProvider } from '../../ComponentProvider';
 import { getInputValue, isEmpty, getFriendlyString } from '@tabtabgo/core/utilities';
 import _ from 'lodash';
 
