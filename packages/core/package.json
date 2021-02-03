@@ -1,6 +1,6 @@
 {
   "name": "@tabtabgo/core",
-  "version": "0.0.17",
+  "version": "0.0.18",
   "description": "React core services and utilities ",
   "publishConfig": {
     "access": "public"
@@ -16,7 +16,6 @@
     "type": "git",
     "url": "git+https://github.com/TabTabGo/ttg-framework.git"
   },
-
   "scripts": {
     "test": "echo \"Error: run tests from root\" && exit 1",
     "build": "yarn build:default && yarn build:copy-files",

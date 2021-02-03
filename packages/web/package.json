@@ -1,6 +1,6 @@
 {
   "name": "@tabtabgo/web",
-  "version": "0.0.17",
+  "version": "0.0.18",
   "description": "TabTabGo web components",
   "keywords": [
     "components"
@@ -11,7 +11,6 @@
   "publishConfig": {
     "access": "public"
   },
-
   "repository": {
     "type": "git",
     "url": "git+https://github.com/TabTabGo/ttg-framework.git"
