@@ -1715,10 +1715,10 @@
     "@svgr/plugin-svgo" "^5.4.0"
     loader-utils "^2.0.0"
 
-"@tabtabgo/core@^0.0.24":
-  version "0.0.24"
-  resolved "https://registry.yarnpkg.com/@tabtabgo/core/-/core-0.0.24.tgz#0e6307a2769bd040a60ca362d79cc8497ff4ceea"
-  integrity sha512-JZHMrDZwXmo2BhB2otucMwLaKeQA0WHdvYPpFsOx49He4brPh5H9G/oe6zdP1B7URY0hHX9A0WC48tq6Hf38vw==
+"@tabtabgo/core@^0.0.25":
+  version "0.0.25"
+  resolved "https://registry.yarnpkg.com/@tabtabgo/core/-/core-0.0.25.tgz#30bf093aac6c5de4df6d1a89a11d53e3281519da"
+  integrity sha512-oIrlEFfcaprRXfSK1+41EKd94E4Y/oUdb9TCj7k10urS8enOoxUNrS+ZkMWGF8XrYpb9IfzZQ7tdXkz0z1QINA==
   dependencies:
     fs "^0.0.1-security"
     hoist-non-react-statics "^3.3.2"
@@ -1728,10 +1728,10 @@
     redux "^4.0.5"
     universal-cookie "^4.0.4"
 
-"@tabtabgo/web@^0.0.24":
-  version "0.0.24"
-  resolved "https://registry.yarnpkg.com/@tabtabgo/web/-/web-0.0.24.tgz#3940df19fc42d7538c9fd2b35f19c9c63b6dbb34"
-  integrity sha512-s8XR1GiIGPHuWNP6cidwI9HVPGY/28GMloFYB+wvhs4hniFBNjTDNpsytqvebFczf0fpy6QwEQVjenHdbYw1eQ==
+"@tabtabgo/web@^0.0.25":
+  version "0.0.25"
+  resolved "https://registry.yarnpkg.com/@tabtabgo/web/-/web-0.0.25.tgz#0fe07b29046bcca9c79d88752faf1eec11e6892a"
+  integrity sha512-PlTV68w8Uj1sacTMficzfF8yuYq2fFz6ZCsY7ctcLcxJGrzPmpPtd8P4MuHE2f6f/gimAcMbXiHGOur3fon+Jg==
   dependencies:
     classnames "^2.2.6"
     draft-js "^0.11.7"

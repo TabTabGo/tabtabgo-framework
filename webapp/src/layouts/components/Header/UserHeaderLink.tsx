@@ -15,11 +15,11 @@ import {
 } from '@material-ui/core';
 
 import { makeStyles, createStyles, Theme } from '@material-ui/core/styles';
-import { AuthenticationContext } from '@tabtabgo/core/AuthenticationProvider';
+import { AuthenticationContext } from '@tabtabgo/core/providers/AuthenticationProvider';
 import { UserSettingsContext } from '@tabtabgo/core/contexts/UserSettingsContext';
 
 import Avatar from '@material-ui/core/Avatar';
-import FileService from '@tabtabgo/core/Services/FileService';
+import FileService from '@tabtabgo/core/services/FileService';
 import { getPersonInitials } from '@tabtabgo/core/utilities';
 
 //const RouterNavLink = React.forwardRef((props, ref) => <NavLink innerRef={ref} {...props} />);

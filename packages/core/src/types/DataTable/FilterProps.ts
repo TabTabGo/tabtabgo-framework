@@ -1,4 +1,4 @@
-import { IEntity, Property, Predicate, QueryOperator } from '..';
+import { IEntity, Property, Predicate, QueryOperatorEnum } from '..';
 
 export interface FilterProps<T> extends IEntity<T>, FilterOptions {}
 
@@ -13,7 +13,7 @@ export interface FilterOptions {
 
 export interface QueryProperty extends Property {
   component?: (props: any) => JSX.Element;
-  defaultOperator?: QueryOperator;
+  defaultOperator?: QueryOperatorEnum;
 }
 
 export interface SearchProperty extends QueryProperty {}
@@ -21,5 +21,5 @@ export type OptionsFunc = (data: any) => any;
 
 export interface FilterProperty extends QueryProperty {
   options?: Array<any> | OptionsFunc;
-  operators?: Array<QueryOperator>;
+  operators?: Array<QueryOperatorEnum>;
 }
