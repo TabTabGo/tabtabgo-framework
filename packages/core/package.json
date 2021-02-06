@@ -49,6 +49,7 @@
   },
   "gitHead": "a9e7406a8ba84fde5b2444e79b3579417d0c24e1",
   "devDependencies": {
-    "@types/qs": "^6.9.5"
+    "@types/qs": "^6.9.5",
+    "@types/react-router-dom": "^5.1.7"
   }
 }

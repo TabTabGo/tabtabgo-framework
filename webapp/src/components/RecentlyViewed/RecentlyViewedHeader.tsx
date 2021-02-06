@@ -19,6 +19,7 @@ const useStyles = makeStyles((theme: any) => ({
     marginTop: 16,
     textAlign: 'left',
     color: theme.palette.text.hint,
+    
   },
   loadingContainer: {
     ...theme.custom.styles.flex,
