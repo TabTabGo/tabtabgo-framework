@@ -18,13 +18,15 @@
     "moduleResolution": "node",
     "sourceMap": false,
     "resolveJsonModule": true,
-    "isolatedModules": true,
-    "noEmit": true,
+    "isolatedModules": true,   
     "declaration": true,
-    "jsx": "react-jsx"
+    "jsx": "react-jsx",
+    "outDir": "./build",
+    "emitDeclarationOnly": true,
+
   },
   "include": [
     "src",
-    "**/packages/**/src/*"
+    "**/packages/**/src/**"
   ]
 }

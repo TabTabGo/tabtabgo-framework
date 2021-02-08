@@ -6,7 +6,7 @@ import { currentServiceProvider } from '../../providers/ServiceProvider';
 import * as ActionTypes from './actionTypes';
 import BaseAjaxService from './baseAjaxService';
 import { TTGError } from '../../types/TTGError';
-import { IRestApiService } from '../contractss';
+import { IRestApiService } from '../contracts';
 import { Dispatch } from 'redux';
 export default class Axios extends BaseAjaxService {
   currentAxios: AxiosInstance;
@@ -26,7 +26,7 @@ export default class Axios extends BaseAjaxService {
     this.cancelSource = axios.CancelToken.source();
 
     this.currentAxios.interceptors.request.use(
-      async (requestConfig) => {
+      async (requestConfig : any) => {
         if (!self.appSettings.disableTokenAuthorization) {
           var token = await self.sessionManger.getToken();
           var tokenType = await this.sessionManger.getTokenType();
@@ -64,16 +64,16 @@ export default class Axios extends BaseAjaxService {
         }
         return requestConfig;
       },
-      (error) => {
+      (error : any) => {
         return error;
       },
     );
 
     this.currentAxios.interceptors.response.use(
-      (response) => {
+      (response : any) => {
         return response;
       },
-      async function (error) {
+      async function (error: any) {
         const originalRequest = error.config;
         var tokenType = await self.sessionManger.getTokenType();
         var headerKey = await self.sessionManger.getTokenHeaderKey();

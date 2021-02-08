@@ -15,6 +15,9 @@
     "type": "git",
     "url": "git+https://github.com/TabTabGo/ttg-framework.git"
   },
+  "files": [
+    "build"    
+  ],
   "scripts": {
     "test": "echo \"Error: run tests from root\" && exit 1",
     "storybook": "start-storybook -p 9002",
@@ -37,6 +40,10 @@
     "react-router-dom": "^5.2.0"
   },
   "dependencies": {
+    "@material-ui/icons": "^4.11.2",
+    "@material-ui/lab": "^4.0.0-alpha.57",
+    "@material-ui/pickers": "^3.2.10",
+    "@tabtabgo/core": "workspace:^0.0.26",
     "classnames": "^2.2.6",
     "draft-js": "^0.11.7",
     "draftjs-to-html": "^0.9.1",
@@ -62,6 +69,7 @@
   },
   "gitHead": "a9e7406a8ba84fde5b2444e79b3579417d0c24e1",
   "devDependencies": {
+    "@types/draftjs-to-html": "^0.8.0",
     "@types/qs": "^6.9.5"
   }
 }

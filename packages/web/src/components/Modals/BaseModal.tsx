@@ -2,7 +2,7 @@ import React from 'react';
 
 import { CircularProgress } from '@material-ui/core';
 //import Button from "@material-ui/core/Button";
-import ValidationForm from '../Validations/Form';
+import ValidationForm from '../Validations/Index';
 import ValidationButton from '../Validations/Button';
 
 import Dialog, { DialogProps } from '@material-ui/core/Dialog';

@@ -16,6 +16,11 @@
     "type": "git",
     "url": "git+https://github.com/TabTabGo/ttg-framework.git"
   },
+  "main": "build/index.js",
+  "types": "build/index.d.ts",
+  "files": [
+    "build"    
+  ],
   "scripts": {
     "test": "echo \"Error: run tests from root\" && exit 1",
     "build": "yarn build:default && yarn build:copy-files",
@@ -36,6 +41,7 @@
     "react-router-dom": "^5.2.0"
   },
   "dependencies": {
+    "axois": "^0.0.1-security",
     "fs": "^0.0.1-security",
     "hoist-non-react-statics": "^3.3.2",
     "jwt-decode": "^3.1.2",
@@ -49,6 +55,7 @@
   },
   "gitHead": "a9e7406a8ba84fde5b2444e79b3579417d0c24e1",
   "devDependencies": {
+    "@types/axios": "^0.14.0",
     "@types/qs": "^6.9.5",
     "@types/react-router-dom": "^5.1.7"
   }

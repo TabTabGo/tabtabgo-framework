@@ -5,7 +5,7 @@ import * as ActionTypes from './actionTypes';
 import { TTGError } from '../../types/TTGError';
 import BaseAjaxService from './baseAjaxService';
 import { Dispatch } from 'redux';
-import { HTTPMethod, IRestApiService } from '../contractss';
+import { HTTPMethod, IRestApiService } from '../contracts';
 
 export type ResponseData = {
   statusText: string;

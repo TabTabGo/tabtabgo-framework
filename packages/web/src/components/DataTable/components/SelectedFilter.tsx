@@ -28,7 +28,7 @@ const SelectedFilter = (props: SelectedFilterProps<any>) => {
 
   const handleRemoveSearch = (e: any) => {
     const searchPredicateIndex = predicates
-      ? predicates.findIndex((p) => p.type === PredicateType.Search)
+      ? predicates.findIndex((p:any) => p.type === PredicateType.Search)
       : -1;
     if (searchPredicateIndex > -1) {
       let newPredicates = update(predicates, { $splice: [[searchPredicateIndex, 1]] });
@@ -47,7 +47,7 @@ const SelectedFilter = (props: SelectedFilterProps<any>) => {
     ? predicates.find((p) => p.type === PredicateType.Search)
     : ({} as Predicate);
 
-  const filters = predicates ? predicates.filter((p) => p.type === PredicateType.Filter) : [];
+  const filters = predicates ? predicates.filter((p : any) => p.type === PredicateType.Filter) : [];
   return (
     <div className={classNames(defaultClasses.root, classes && classes.root ? classes.root : {})}>
       {searchPredicate && searchPredicate.value && (

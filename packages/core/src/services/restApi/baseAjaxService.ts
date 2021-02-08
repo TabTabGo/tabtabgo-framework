@@ -3,7 +3,7 @@
 import { currentServiceProvider } from '../../providers/ServiceProvider';
 import { AppSettings } from '../../Appsettings';
 import { TTGError } from '../../types/TTGError';
-import { IRestApiService, IStorageService, RequestProps, HTTPMethod } from '../contractss';
+import { IRestApiService, IStorageService, RequestProps, HTTPMethod } from '../contracts';
 import { Dispatch } from 'redux';
 
 export default class BaseAjaxService implements IRestApiService {

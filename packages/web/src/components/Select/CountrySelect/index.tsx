@@ -30,7 +30,7 @@ type CountrySelectProps = TextFieldProps & {
 const getCountryByCode = (value?: string) => {
   var country = value
     ? allCountries.find((c: any) => c.iso2.toLowerCase() === value.toLowerCase())
-    : null;
+    : undefined;
   //console.log('value', value, country);
   return country;
 };
@@ -43,7 +43,7 @@ export default function CountrySelect({
   ...textFieldProps
 }: CountrySelectProps) {
   const classes = useStyles();
-  const [selectedCountry, setSelectedCountry] = useState<Country>(getCountryByCode(value));
+  const [selectedCountry, setSelectedCountry] = useState<Country | undefined>(getCountryByCode(value));
 
   useEffect(() => {
     //console.log('value', value)
@@ -61,8 +61,8 @@ export default function CountrySelect({
       }}
       autoHighlight
       disabled={disabled}
-      getOptionLabel={(option) => option?.name || ''}
-      renderOption={(option) => (
+      getOptionLabel={(option : any) => option?.name || ''}
+      renderOption={(option: any) => (
         <React.Fragment>
           <span className={`flag ${option?.iso2} margin`} />
           {`${option?.name} (${option?.iso2.toUpperCase()})`}
@@ -74,7 +74,7 @@ export default function CountrySelect({
         setSelectedCountry(newValue);
         onChange(newValue);
       }}
-      renderInput={(params) => (
+      renderInput={(params: any) => (
         <TextField
           {...params}
           {...textFieldProps}
@@ -110,8 +110,8 @@ interface Country {
   name: string;
   regions: Array<string>;
   iso2: string;
-  dialCode?: string;
-  priority?: string;
+  dialCode: string;
   format?: string;
-  hasAreaCodes?: boolean;
+  order?: number; //(if >1 country with same dial code),
+  areaCodes?: Array<string>; // (if >1 country with same dial code)
 }

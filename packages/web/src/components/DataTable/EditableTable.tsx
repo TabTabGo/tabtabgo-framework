@@ -17,8 +17,8 @@ import TablePagination from '@material-ui/core/TablePagination';
 import TablePaginationActions from '@material-ui/core/TablePagination/TablePaginationActions';
 import Tooltip from '@material-ui/core/Tooltip';
 import { useTranslation } from 'react-i18next';
-import { UserSettingsContext } from '@tabtabgo/core/contexts/UserSettingsContext';
-import { AppSettings } from '@tabtabgo/core/Appsettings';
+import { UserSettingsContext } from '@tabtabgo/core/build/contexts/UserSettingsContext';
+import { AppSettings } from '@tabtabgo/core/build/Appsettings';
 import classnames from 'classnames';
 import { grey } from '@material-ui/core/colors';
 

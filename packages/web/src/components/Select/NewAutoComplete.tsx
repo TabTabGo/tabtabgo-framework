@@ -165,7 +165,7 @@ export default function Asynchronous({
       }}
       renderInput={
         autoCompleteProps.renderInput ||
-        ((params) => {
+        ((params : AnalyserNode) => {
           return (
             <TextField
               {...params}
