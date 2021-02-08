@@ -39,7 +39,7 @@ async function run(argv) {
     outDir,
     '--ignore',
     // Need to put these patterns in quotes otherwise they might be evaluated by the used terminal.
-    `"${ignore.join('","')}"`,
+    `"${ignore.join('","')}"`,   
     '--copy-files'
   ].join(' ');
 

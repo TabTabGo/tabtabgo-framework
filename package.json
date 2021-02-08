@@ -9,6 +9,7 @@
   ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "commit" : "git cz -a",
     "rebuild": "lerna run rebuild",
     "build": "lerna run --parallel --scope \"@tabtabgo/*\" build",
     "publish": "git cz -a  && lerna version --conventional-commits --yes && yarn build && lerna publish from-package --contents build -y"

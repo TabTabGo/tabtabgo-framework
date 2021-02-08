@@ -65,12 +65,13 @@
     "react-share": "^4.3.1",
     "sweetalert": "^2.1.2"
   },
-  "engines": {
-    "node": ">=10.0.0"
-  },
-  "gitHead": "a9e7406a8ba84fde5b2444e79b3579417d0c24e1",
   "devDependencies": {
     "@types/draftjs-to-html": "^0.8.0",
     "@types/qs": "^6.9.5"
-  }
+  },
+  "engines": {
+    "node": ">=10.0.0"
+  },
+  "gitHead": "a9e7406a8ba84fde5b2444e79b3579417d0c24e1"
+
 }

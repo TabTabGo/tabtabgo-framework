@@ -5,7 +5,7 @@ const path = require('path');
 
 const defaultAlias = {
   '@tabtabgo/core': './packages/core/src',
-  '@tabtabgo/web': './packages/web/src',  
+  '@tabtabgo/web': './packages/web/src',
 };
 
 const productionPlugins = [
@@ -23,16 +23,7 @@ module.exports = function getBabelConfig(api) {
   const useESModules = api.env(['legacy', 'modern', 'stable', 'rollup']);
 
   const presets = [
-    [
-      '@babel/preset-env',
-      {
-        bugfixes: true,
-        // browserslistEnv: process.env.BABEL_ENV || process.env.NODE_ENV,
-        // debug: process.env.MUI_BUILD_VERBOSE === 'true',
-        // modules: 'commonjs',
-        // shippedProposals: api.env('modern'),
-      },
-    ],
+    '@babel/preset-env',
     '@babel/preset-react',
     '@babel/preset-typescript',
   ];
@@ -77,64 +68,10 @@ module.exports = function getBabelConfig(api) {
     ]);
   }
 
-  return {
+  const babelConfig = {
     presets,
-    plugins,
-    ignore: [/@babel[\\|/]runtime/], // Fix a Windows issue.
-    env: {
-      coverage: {
-        plugins: [
-          'babel-plugin-istanbul',
-          [
-            'babel-plugin-module-resolver',
-            {
-              root: ['./'],
-              alias: defaultAlias,
-            },
-          ],
-        ],
-      },
-      development: {
-        plugins: [
-          [
-            'babel-plugin-module-resolver',
-            {
-              alias: {
-                modules: './modules',
-              },
-            },
-          ],
-        ],
-      },
-      legacy: {
-        plugins: [
-          // IE11 support
-          '@babel/plugin-transform-object-assign',
-        ],
-      },
-      test: {
-        sourceMaps: 'both',
-        plugins: [
-          [
-            'babel-plugin-module-resolver',
-            {
-              root: ['./'],
-              alias: defaultAlias,
-            },
-          ],
-        ],
-      },
-      benchmark: {
-        plugins: [
-          ...productionPlugins,
-          [
-            'babel-plugin-module-resolver',
-            {
-              alias: defaultAlias,
-            },
-          ],
-        ],
-      },
-    },
+    plugins    
   };
+  console.log("babel Config:", babelConfig)
+  return babelConfig;
 };
