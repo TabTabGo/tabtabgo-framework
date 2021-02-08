@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import TextField, { TextFieldProps } from '@material-ui/core/TextField';
 import Autocomplete from '@material-ui/lab/Autocomplete';
 import { makeStyles } from '@material-ui/core/styles';
-import { allCountries } from './country_data';
+import  * as allCountries from './countries';
 import './styles.less';
 import './flags.png';
 import { InputAdornment } from '@material-ui/core';

@@ -1715,11 +1715,12 @@
     "@svgr/plugin-svgo" "^5.4.0"
     loader-utils "^2.0.0"
 
-"@tabtabgo/core@^0.0.26":
-  version "0.0.26"
-  resolved "https://registry.yarnpkg.com/@tabtabgo/core/-/core-0.0.26.tgz#85c4e57fc4c90bdcd8d3a25c803d326bc82d2def"
-  integrity sha512-N4VVuuGPyhFewXFulLCTjz+sug7/GJiEDlog8Vf30AzmYHzKh0urT8pz6DJ5+b0TOrOAYwZGgbtORXz5WtBjoQ==
+"@tabtabgo/core@^0.0.30":
+  version "0.0.30"
+  resolved "https://registry.yarnpkg.com/@tabtabgo/core/-/core-0.0.30.tgz#325c572cc9a579e64b452ffdfe3e10e65e0fa3f1"
+  integrity sha512-uCMn8GC3aeEEf2Zr7WpdOe78hcCgdujN5cUwbrhNLd3XH8MmLW8PuBsgxTpoBKYHpiNtSBbKf5Npxv8Q0YKgWg==
   dependencies:
+    axois "^0.0.1-security"
     fs "^0.0.1-security"
     hoist-non-react-statics "^3.3.2"
     jwt-decode "^3.1.2"
@@ -1728,11 +1729,15 @@
     redux "^4.0.5"
     universal-cookie "^4.0.4"
 
-"@tabtabgo/web@^0.0.26":
-  version "0.0.26"
-  resolved "https://registry.yarnpkg.com/@tabtabgo/web/-/web-0.0.26.tgz#ef3c9ed108822f3f839324cacc310193fb31b469"
-  integrity sha512-QlBr7brIXYGqkzWsPb2KvXaa2or0csps4SpQeV0sxRnJU9bsRLOQ0MH3r8Wm017JC39xlFdZ5Ha9cvpiZo8jtQ==
+"@tabtabgo/web@^0.0.30":
+  version "0.0.30"
+  resolved "https://registry.yarnpkg.com/@tabtabgo/web/-/web-0.0.30.tgz#a8687930f02889d139596665887b5dc3a6d2ad73"
+  integrity sha512-BfgkxROORYqosQlduRTX3ZH8yiIUEH/EjIuRxNed25x4PW+U919mUd/ZEpz8xrK7xIap38P3ZRPDGNSpxHKUDg==
   dependencies:
+    "@material-ui/icons" "^4.11.2"
+    "@material-ui/lab" "^4.0.0-alpha.57"
+    "@material-ui/pickers" "^3.2.10"
+    "@tabtabgo/core" "^0.0.30"
     classnames "^2.2.6"
     draft-js "^0.11.7"
     draftjs-to-html "^0.9.1"
@@ -2835,6 +2840,11 @@ axobject-query@^2.2.0:
   version "2.2.0"
   resolved "https://registry.yarnpkg.com/axobject-query/-/axobject-query-2.2.0.tgz#943d47e10c0b704aa42275e20edf3722648989be"
   integrity sha512-Td525n+iPOOyUQIeBfcASuG6uJsDOITl7Mds5gFyerkWiX7qhUTdYUBlSgNMyVqtSJqwpt1kXGLdUt6SykLMRA==
+
+axois@^0.0.1-security:
+  version "0.0.1-security"
+  resolved "https://registry.yarnpkg.com/axois/-/axois-0.0.1-security.tgz#372b4659c6a059ec4a6c6786f81fbf6cb5f892d2"
+  integrity sha512-8Nui4fwwyxHfjAfpDlg3Jt66EJA4i1D1eJch3D+wM/Oe+qhpyp7yfiszko/O5/adYu20wc37RG9/Eg8QIJHcvA==
 
 babel-eslint@^10.1.0:
   version "10.1.0"

@@ -87,7 +87,7 @@ const Filter = (props: FilterProps<any>) => {
 
   const handleOnSelectSearchType = (e: ChangeEvent<any>, child: ReactNode) => {
     const { searchProperties } = props;
-    var searchOpt = searchProperties.find((sk) => sk.key === e.currentTarget.value);
+    var searchOpt = searchProperties.find((sk : any) => sk.key === e.currentTarget.value);
     if (searchOpt) setActiveSearch(searchOpt);
 
     if (searchControlRef && searchControlRef.current) {
@@ -109,7 +109,7 @@ const Filter = (props: FilterProps<any>) => {
       let samePredicateIndex =
         predicates && predicates.length > 0
           ? predicates.findIndex(
-              (f) => f.field.key === activeSearch.key && f.type === PredicateType.Search,
+              (f : any) => f.field.key === activeSearch.key && f.type === PredicateType.Search,
             )
           : null;
 
@@ -142,10 +142,10 @@ const Filter = (props: FilterProps<any>) => {
   const handleChangeFilter = (filterKey: string, e: any) => {
     const { filters, search, predicates } = props;
     if (search) {
-      let filter = filters && filters.length > 0 ? filters.find((f) => f.key === filterKey) : null;
+      let filter = filters && filters.length > 0 ? filters.find((f:any) => f.key === filterKey) : null;
       let samePredicates =
         filter && predicates && predicates.length > 0
-          ? predicates.filter((f) => f.field.key === filterKey)
+          ? predicates.filter((f: any) => f.field.key === filterKey)
           : null;
 
       let newPredicate = {
