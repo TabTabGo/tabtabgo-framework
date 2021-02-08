@@ -5,7 +5,4 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 ## [0.0.28](https://github.com/TabTabGo/ttg-framework/compare/v0.0.27...v0.0.28) (2021-02-08)
 
-
-### Performance Improvements
-
-* **config:** change publish command ([d70b6e7](https://github.com/TabTabGo/ttg-framework/commit/d70b6e7efee6b3e2439c987ebcb103816979e392))
+**Note:** Version bump only for package @tabtabgo/core

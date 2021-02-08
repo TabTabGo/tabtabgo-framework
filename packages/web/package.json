@@ -1,6 +1,6 @@
 {
   "name": "@tabtabgo/web",
-  "version": "0.0.27",
+  "version": "0.0.28",
   "description": "TabTabGo web components",
   "keywords": [
     "components"
@@ -21,7 +21,7 @@
   "scripts": {
     "test": "echo \"Error: run tests from root\" && exit 1",
     "storybook": "start-storybook -p 9002",
-    "rebuild":"tsc",
+    "rebuild": "tsc",
     "build": "yarn build:default && yarn build:copy-files",
     "build:default": "yarn node ../../scripts/build",
     "build:copy-files": "node ../../scripts/copy-files.js"
@@ -44,7 +44,7 @@
     "@material-ui/icons": "^4.11.2",
     "@material-ui/lab": "^4.0.0-alpha.57",
     "@material-ui/pickers": "^3.2.10",
-    "@tabtabgo/core": "^0.0.27",
+    "@tabtabgo/core": "^0.0.28",
     "classnames": "^2.2.6",
     "draft-js": "^0.11.7",
     "draftjs-to-html": "^0.9.1",
