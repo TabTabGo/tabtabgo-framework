@@ -11,7 +11,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "rebuild": "lerna run rebuild",
     "build": "lerna run --parallel --scope \"@tabtabgo/*\" build",
-    "publish": "git commit -a -m $npm_config_message && lerna version --conventional-commits --yes && yarn build && lerna publish from-package --contents build -y"
+    "publish": "git cz -a  && lerna version --conventional-commits --yes && yarn build && lerna publish from-package --contents build -y"
   },
   "repository": {
     "type": "git",
