@@ -4,11 +4,14 @@
   "description": "Core libraries and functions used for React and React Native project",
   "main": "index.js",
   "private": "true",
+  "workspaces": [
+    "packages/*"
+  ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "compile": "lerna exec --parallel  tsc",
+    "rebuild": "lerna run rebuild",
     "build": "lerna run --parallel --scope \"@tabtabgo/*\" build",
-    "publish": "git commit -a -m $npm_config_message && lerna version && yarn build && lerna publish from-package --contents build -y"
+    "publish": "git commit -a -m $npm_config_message && lerna version --conventional-commits --yes && yarn build && lerna publish from-package --contents build -y"
   },
   "repository": {
     "type": "git",
@@ -72,6 +75,7 @@
     "core-js": "^2.6.11",
     "cpy-cli": "^3.1.1",
     "cross-env": "^7.0.0",
+    "cz-conventional-changelog": "3.3.0",
     "danger": "^10.0.0",
     "dom-accessibility-api": "^0.5.0",
     "dtslint": "^4.0.0",
@@ -114,7 +118,10 @@
     "yargs": "^16.0.3",
     "yarn-deduplicate": "^3.0.0"
   },
-  "workspaces": [
-    "packages/*"
-  ]
+  "config": {
+    "commitizen" :{
+      "path" : "cz-conventional-changelog"
+    }
+  }
+
 }
