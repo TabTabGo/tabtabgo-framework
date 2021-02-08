@@ -53,6 +53,7 @@
   },
   "devDependencies": {
     "@types/axios": "^0.14.0",
+    "@types/hoist-non-react-statics": "^3.3.1",
     "@types/node": "^14.14.25",
     "@types/qs": "^6.9.5",
     "@types/react-router-dom": "^5.1.7"

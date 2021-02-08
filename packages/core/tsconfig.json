@@ -4,7 +4,11 @@
     "rootDir": "src",
     "outDir": "build",
     "declaration": true,
-    "noEmit": true
+    //"noEmit": true
   },  
-  "include": ["src/**/*", "__test__/**/*"],
+  "include": ["src/**/*"],
+  "exclude": [
+    ".build"
+    , "test/**/*"
+  ]
 }
