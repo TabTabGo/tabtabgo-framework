@@ -798,7 +798,7 @@
     core-js "^2.6.5"
     regenerator-runtime "^0.13.4"
 
-"@babel/preset-env@^7.10.2":
+"@babel/preset-env@^7.10.2", "@babel/preset-env@^7.12.13":
   version "7.12.13"
   resolved "https://registry.yarnpkg.com/@babel/preset-env/-/preset-env-7.12.13.tgz#3aa2d09cf7d255177538dff292ac9af29ad46525"
   integrity sha512-JUVlizG8SoFTz4LmVUL8++aVwzwxcvey3N0j1tRbMAXVEy95uQ/cnEkmEKHN00Bwq4voAV3imQGnQvpkLAxsrw==
@@ -881,7 +881,7 @@
     "@babel/types" "^7.4.4"
     esutils "^2.0.2"
 
-"@babel/preset-react@^7.10.1":
+"@babel/preset-react@^7.10.1", "@babel/preset-react@^7.12.13":
   version "7.12.13"
   resolved "https://registry.yarnpkg.com/@babel/preset-react/-/preset-react-7.12.13.tgz#5f911b2eb24277fa686820d5bd81cad9a0602a0a"
   integrity sha512-TYM0V9z6Abb6dj1K7i5NrEhA13oS5ujUYQYDfqIBXYHOc2c2VkFgc+q9kyssIyUfy4/hEwqrgSlJ/Qgv8zJLsA==
@@ -892,7 +892,7 @@
     "@babel/plugin-transform-react-jsx-development" "^7.12.12"
     "@babel/plugin-transform-react-pure-annotations" "^7.12.1"
 
-"@babel/preset-typescript@^7.12.7":
+"@babel/preset-typescript@^7.12.13", "@babel/preset-typescript@^7.12.7":
   version "7.12.13"
   resolved "https://registry.yarnpkg.com/@babel/preset-typescript/-/preset-typescript-7.12.13.tgz#c859c7c075c531d2cc34c2516b214e5d884efe5c"
   integrity sha512-gYry7CeXwD2wtw5qHzrtzKaShEhOfTmKb4i0ZxeYBcBosN5VuAudsNbjX7Oj5EAfQ3K4s4HsVMQRRcqGsPvs2A==

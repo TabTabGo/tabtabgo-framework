@@ -1715,10 +1715,10 @@
     "@svgr/plugin-svgo" "^5.4.0"
     loader-utils "^2.0.0"
 
-"@tabtabgo/core@^0.0.30":
-  version "0.0.30"
-  resolved "https://registry.yarnpkg.com/@tabtabgo/core/-/core-0.0.30.tgz#325c572cc9a579e64b452ffdfe3e10e65e0fa3f1"
-  integrity sha512-uCMn8GC3aeEEf2Zr7WpdOe78hcCgdujN5cUwbrhNLd3XH8MmLW8PuBsgxTpoBKYHpiNtSBbKf5Npxv8Q0YKgWg==
+"@tabtabgo/core@^0.0.31":
+  version "0.0.31"
+  resolved "https://registry.yarnpkg.com/@tabtabgo/core/-/core-0.0.31.tgz#5c43b4520196e589dfedd7ad71b30d1ef933cc2c"
+  integrity sha512-Dx5DIH38cj/DOIDvJdRA4U2/0P6jLAFUsapHKvs32qgXYD14H/cEKpvRR/FVuFYhytDuKNCcO8ePX3b1SCVCyA==
   dependencies:
     axois "^0.0.1-security"
     fs "^0.0.1-security"
@@ -1729,15 +1729,15 @@
     redux "^4.0.5"
     universal-cookie "^4.0.4"
 
-"@tabtabgo/web@^0.0.30":
-  version "0.0.30"
-  resolved "https://registry.yarnpkg.com/@tabtabgo/web/-/web-0.0.30.tgz#a8687930f02889d139596665887b5dc3a6d2ad73"
-  integrity sha512-BfgkxROORYqosQlduRTX3ZH8yiIUEH/EjIuRxNed25x4PW+U919mUd/ZEpz8xrK7xIap38P3ZRPDGNSpxHKUDg==
+"@tabtabgo/web@^0.0.31":
+  version "0.0.31"
+  resolved "https://registry.yarnpkg.com/@tabtabgo/web/-/web-0.0.31.tgz#065dc14fa661593635c293b03fd4c4d9a5066749"
+  integrity sha512-njqGAK6yWKn43kufwPphQGPlHEosLzZ0Z54QhwdQ4exPQkj7rN3R18B1AoKjZZ47abBpxng/0Qymp3ctVGQ8xA==
   dependencies:
     "@material-ui/icons" "^4.11.2"
     "@material-ui/lab" "^4.0.0-alpha.57"
     "@material-ui/pickers" "^3.2.10"
-    "@tabtabgo/core" "^0.0.30"
+    "@tabtabgo/core" "^0.0.31"
     classnames "^2.2.6"
     draft-js "^0.11.7"
     draftjs-to-html "^0.9.1"
@@ -1754,6 +1754,7 @@
     react-i18next "^11.8.5"
     react-image "^4.0.3"
     react-image-gallery "^1.0.8"
+    react-number-format "^4.4.4"
     react-pdf "^5.1.0"
     react-share "^4.3.1"
     sweetalert "^2.1.2"
