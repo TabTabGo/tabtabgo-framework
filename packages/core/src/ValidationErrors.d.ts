@@ -1,0 +1,13 @@
+export declare const required: (name: string) => string;
+export declare const regex: (regex: RegExp, name: string) => string;
+export declare const email: (name: string) => string;
+export declare const maxLength: (length: number, name: string) => string;
+export declare const minLength: (length: number, name: string) => string;
+export declare const equalLength: (length: number, name: string) => string;
+export declare const maxValue: (length: number, name: string) => string;
+export declare const minValue: (length: number, name: string) => string;
+export declare const equalValue: (length: number, name: string) => string;
+export declare const range: (lengths: number[], name: string) => string;
+export declare const equalTo: (string1: string, name: string) => string;
+export declare const number: (name: string) => string;
+export declare const url: (name: string) => string;
