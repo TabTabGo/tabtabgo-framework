@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.0.33](https://github.com/TabTabGo/ttg-framework/compare/v0.0.32...v0.0.33) (2021-02-09)
+
+
+### Bug Fixes
+
+* :bug: Add web .d.ts files ([794c74f](https://github.com/TabTabGo/ttg-framework/commit/794c74f86dcc691d6ecea661c2e5b9528fcaf3a9))
+* fix publish commit script ([fad8ad7](https://github.com/TabTabGo/ttg-framework/commit/fad8ad7b5140c19c527cddb49d70a4c8e337cdee))
+
+
+
+
+
 ## [0.0.32](https://github.com/TabTabGo/ttg-framework/compare/v0.0.31...v0.0.32) (2021-02-09)
 
 **Note:** Version bump only for package @tabtabgo/framework
