@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.0.34](https://github.com/TabTabGo/ttg-framework/compare/v0.0.33...v0.0.34) (2021-02-09)
+
+
+### Bug Fixes
+
+* fix refernces with @ttg/core ([877e2e1](https://github.com/TabTabGo/ttg-framework/commit/877e2e1afa863a24b26d18d67cc7ff11ac329e5b))
+
+
+
+
+
 ## [0.0.33](https://github.com/TabTabGo/ttg-framework/compare/v0.0.32...v0.0.33) (2021-02-09)
 
 
