@@ -13,7 +13,7 @@ import qs from 'qs';
 import _ from 'lodash';
 import DataTable from '../components/DataTable';
 
-import { currentServiceProvider } from '@tabtabgo/core/ServiceProvider';
+import { currentServiceProvider } from '@tabtabgo/core/providers/ServiceProvider';
 
 import { mergeButtonSections } from '../components/Buttons';
 import { PagingList } from '@tabtabgo/core/types/PagingList';

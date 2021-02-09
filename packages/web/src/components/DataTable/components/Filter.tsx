@@ -18,7 +18,7 @@ import SearchIcon from '@material-ui/icons/Search';
 import classNames from 'classnames';
 import update from 'immutability-helper';
 
-import AutoComplete from '../../Select/AutoComplete';
+import AutoComplete from '../../Select/NewAutoComplete';
 import _ from 'lodash';
 import {
   FilterProps,

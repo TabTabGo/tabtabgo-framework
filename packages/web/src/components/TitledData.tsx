@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import { makeStyles } from '@material-ui/core';
 import { useTranslation } from 'react-i18next';
 import { UserSettingsContext } from '@tabtabgo/core/contexts/UserSettingsContext';
-import WrapText from '../WrapText/WrapText';
+import WrapText from './WrapText/WrapText';
 import cx from 'classnames';
 const useStyles = makeStyles((theme: any) => ({
   root: {
@@ -52,12 +52,12 @@ const TitledData = ({
 }: TitledDataProps) => {
   const classes = useStyles();
   const { t } = useTranslation(['information', 'internet', 'economy']);
-  const settings = useContext(UserSettingsContext);
+  const settings : any = useContext(UserSettingsContext);
   //TODO need to refactor it. add param showBasedOnSettings to check status for enable it
   const id = title.toLowerCase();
   const hide = id.indexOf('id') !== -1;
   // console.log('hide :', hide , id);
-  if (!settings.showIds && hide && hideByShowIdSettings) {
+  if (!settings?.showIds && hide && hideByShowIdSettings) {
     return <div style={{ display: 'none' }} />;
   }
   const classNames = cx({

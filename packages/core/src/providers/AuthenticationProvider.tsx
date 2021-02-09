@@ -18,7 +18,7 @@ type AuthStateProps = {
 };
 type AuthenticationContextActions = {
   loadUserData: (instanceId: number) => Promise<void>;
-  changeInstance: (instanceId: number) => Promise<void>;
+  changeInstance: (instanceId: number) => Promise<AuthenticateData>;
   login: (email: string, password: string) => Promise<AuthenticateData>;
   loginByCode: (
     code: string,
@@ -37,7 +37,7 @@ type AuthenticationContextActions = {
 export type AuthenticationContextProps = SessionData &
   AuthStateProps &
   AuthenticationContextActions & {};
-const initialAuthState = {
+const initialAuthState: AuthStateProps = {
   isAuthenticated: false,
   isLoading: false,
   isReadingSession: true,
@@ -45,7 +45,7 @@ const initialAuthState = {
   isSavingProfile: false,
   error: null,
 };
-const initSessionData = {
+const initSessionData: SessionData = {
   user: {
     displayName: '',
   },
@@ -57,7 +57,9 @@ export const AuthenticationContext = React.createContext<AuthenticationContextPr
   ...initialAuthState,
   ...initSessionData,
   loadUserData: async (instanceId: number) => {},
-  changeInstance: async (instanceId: number) => {},
+  changeInstance: async (instanceId: number): Promise<AuthenticateData> => {
+    throw new Error('Function Not implemented');
+  },
   login: async (email: string, password: string): Promise<AuthenticateData> => {
     throw new Error('Function Not implemented');
   },

@@ -4,8 +4,8 @@ import DialogTitle from '@material-ui/core/DialogTitle';
 import DialogContent from '@material-ui/core/DialogContent';
 import DialogActions from '@material-ui/core/DialogActions';
 import CircularProgress from '@material-ui/core/CircularProgress';
-import { Document } from 'react-pdf/dist/entry.webpack';
-import { Page } from 'react-pdf';
+//import { Document } from 'react-pdf/dist/entry.webpack';
+import { Page, Document } from 'react-pdf';
 import Pagination from '@material-ui/lab/Pagination';
 
 import { Grid, IconButton, makeStyles, Typography } from '@material-ui/core';
