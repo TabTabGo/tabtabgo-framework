@@ -16,30 +16,55 @@
     "type": "git",
     "url": "git+https://github.com/TabTabGo/ttg-framework.git"
   },
-  "main": "build/index.js",
-  "typings": "build/index.d.ts",
+  "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
   "files": [
-    "build"
+    "dist",
+    "src"
   ],
+  "module": "dist/tabtabgo_core.esm.js",
+  "engines": {
+    "node": ">=10"
+  },
   "scripts": {
-    "test": "echo \"Error: run tests from root\" && exit 1",
     "rebuild": "tsc",
-    "build": "yarn build:default && yarn build:copy-files",
     "build:default": "yarn node ../../scripts/build",
-    "build:copy-files": "node ../../scripts/copy-files.js"
+    "build:copy-files": "node ../../scripts/copy-files.js",
+    "start": "tsdx watch",
+    "build": "tsdx build",
+    "test": "tsdx test --passWithNoTests",
+    "lint": "tsdx lint",
+    "prepare": "tsdx build",
+    "size": "size-limit",
+    "analyze": "size-limit --why"
   },
   "bugs": {
     "url": "https://github.com/TabTabGo/ttg-framework/issues"
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "tsdx lint"
+    }
+  },
+  "prettier": {
+    "printWidth": 80,
+    "semi": true,
+    "singleQuote": true,
+    "trailingComma": "es5"
+  },
+  "size-limit": [
+    {
+      "path": "dist/tabtabgo_core.cjs.production.min.js",
+      "limit": "10 KB"
+    },
+    {
+      "path": "dist/tabtabgo_core.esm.js",
+      "limit": "10 KB"
+    }
+  ],
   "peerDependencies": {
-    "axios": "^0.21.1",
-    "immutability-helper": "^3.1.1",
-    "lodash": "^4.17.20",
-    "moment": "^2.29.1",
-    "react": "^17.0.1",
-    "react-dom": "^17.0.1",
-    "react-i18next": "^11.8.5",
-    "react-router-dom": "^5.2.0"
+    "react": ">=16",
+    "react-dom": ">=16"
   },
   "dependencies": {
     "axios": "^0.21.1",
@@ -67,10 +92,25 @@
     "@types/node": "^14.14.25",
     "@types/qs": "^6.9.5",
     "@types/react-router-dom": "^5.1.7",
+    "typescript": "^4.1.3",
+    "@babel/core": "^7.12.13",
+    "@size-limit/preset-small-lib": "^4.9.2",
+    "@storybook/addon-essentials": "^6.1.17",
+    "@storybook/addon-info": "^5.3.21",
+    "@storybook/addon-links": "^6.1.17",
+    "@storybook/addons": "^6.1.17",
+    "@storybook/react": "^6.1.17",
+    "@types/react": "^17.0.1",
+    "@types/react-dom": "^17.0.0",
+    "babel-loader": "^8.2.2",
+    "husky": "^5.0.9",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-is": "^17.0.1",
+    "size-limit": "^4.9.2",
+    "tsdx": "^0.14.1",
+    "tslib": "^2.1.0",
     "typescript": "^4.1.3"
-  },
-  "engines": {
-    "node": ">=10.0.0"
   },
   "gitHead": "a9e7406a8ba84fde5b2444e79b3579417d0c24e1"
 }
