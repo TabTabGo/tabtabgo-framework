@@ -1,11 +1,26 @@
 {
-  "extends": "../../tsconfig",
+  //"extends": "../../tsconfig",
   "compilerOptions": {
     "rootDir": "src",
-    "outDir": "build",
-
-    "resolveJsonModule": true,    
-    "esModuleInterop": true
-  },  
-  "include": ["src/**/*"],
+    //  "outDir": "build",
+    "jsx": "react-jsx",
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
+    "allowJs": true,
+    "declaration": true,
+    "noEmit": false,
+    "emitDeclarationOnly": true,
+    "esModuleInterop" : true
+  },
+  "include": [
+    "src/**/*"
+  ],
+  "exclude": [
+    ".build",
+    "test/**/*",
+    "src/*.js"
+  ]
 }
