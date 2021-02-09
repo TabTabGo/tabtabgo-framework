@@ -8,7 +8,7 @@ import {
   createStyles,
   makeStyles,
 } from '@material-ui/core';
-import { getPropertyValue } from '@tabtabgo/core/utilities';
+import { getPropertyValue } from '@tabtabgo/core/Utilities';
 import { ToolbarButtons } from '../../Buttons';
 
 import { RowProps } from '@tabtabgo/core/types/DataTable';

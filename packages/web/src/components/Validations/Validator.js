@@ -5,7 +5,7 @@ import * as StandardValidations from '@tabtabgo/core/Validations.js';
 import * as StandardValidationsErrors from '@tabtabgo/core/ValidationErrors.js';
 import withValidation from './withValidation';
 import { withComponentProvider } from '../../ComponentProvider';
-import { getInputValue, isEmpty, getFriendlyString } from '@tabtabgo/core/utilities';
+import { getInputValue, isEmpty, getFriendlyString } from '@tabtabgo/core/Utilities';
 import _ from 'lodash';
 
 class Validator extends Component {

@@ -4,7 +4,7 @@ import { Route, Switch } from 'react-router-dom';
 import UserDetail from './containers/Detail';
 import UserEdit from './containers/Edit';
 import UsersList from './containers/List';
-import { getPersonName } from '@tabtabgo/core/utilities';
+import { getPersonName } from '@tabtabgo/core/Utilities';
 
 class Users extends React.Component {
   renderList = (props) => {

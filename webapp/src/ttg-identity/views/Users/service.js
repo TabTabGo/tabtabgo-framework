@@ -1,5 +1,5 @@
 import EntityService from '@tabtabgo/core/Entity/Service';
-import { getPersonName } from '@tabtabgo/core/utilities';
+import { getPersonName } from '@tabtabgo/core/Utilities';
 
 export default class UsersService extends EntityService {
   constructor() {

@@ -15,8 +15,8 @@ import {
 } from '@material-ui/core';
 
 import Avatar from '@material-ui/core/Avatar';
-import FileService from '@tabtabgo/core/Services/FileService';
-import { getPersonInitials } from '@tabtabgo/core/utilities';
+import FileService from '@tabtabgo/core/services/FileService';
+import { getPersonInitials } from '@tabtabgo/core/Utilities';
 
 // eslint-disable-next-line react/display-name
 const RouterNavLink = React.forwardRef((props, ref) => <NavLink innerRef={ref} {...props} />);

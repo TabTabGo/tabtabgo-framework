@@ -23,7 +23,7 @@ import resetPasswordStyle from './ResetPasswordPageStyle';
 import { Collapse } from '@material-ui/core';
 import PasswordInput from '@tabtabgo/web/components/Input/PasswordInput';
 
-import { getToken, getSearchParams } from '@tabtabgo/core/utilities';
+import { getToken, getSearchParams } from '@tabtabgo/core/Utilities';
 import { email } from '@tabtabgo/core/Validations';
 import withAuthentication from '@tabtabgo/core/withAuthentication';
 import { TTGError } from '@tabtabgo/core/types/TTGError';

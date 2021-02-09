@@ -7,7 +7,7 @@ import { mergeButtons, ToolbarButtons } from '../components/Buttons';
 import EditIcon from '@material-ui/icons/Edit';
 import DeleteIcon from '@material-ui/icons/Delete';
 import PrintIcon from '@material-ui/icons/Print';
-import { getDisplayValue } from '@tabtabgo/core/utilities';
+import { getDisplayValue } from '@tabtabgo/core/Utilities';
 import { LinearProgress } from '@material-ui/core';
 import { withConfirmation } from '../contexts/ConfirmationContext';
 export const DetailEntityContext = React.createContext();

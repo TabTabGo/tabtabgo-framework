@@ -10,7 +10,7 @@ import {
 } from '@material-ui/core';
 import FileReaderInput from 'react-file-reader-input';
 import RemoveCircle from '@material-ui/icons/RemoveCircle';
-import { isEmpty } from '@tabtabgo/core/utilities';
+import { isEmpty } from '@tabtabgo/core/Utilities';
 import Img from 'react-image';
 
 import FileService from '@tabtabgo/core/Services/FileService';

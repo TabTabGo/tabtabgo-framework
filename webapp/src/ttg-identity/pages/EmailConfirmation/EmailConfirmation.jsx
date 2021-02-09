@@ -16,7 +16,7 @@ import withAuthentication from '@tabtabgo/core/withAuthentication';
 
 import Title from '@tabtabgo/web/components/Typography/Title';
 
-import { getToken, getSearchParams } from '@tabtabgo/core/utilities';
+import { getToken, getSearchParams } from '@tabtabgo/core/Utilities';
 
 // eslint-disable-next-line react/display-name
 const RouterLink = React.forwardRef((props, ref) => <Link innerRef={ref} {...props} />);

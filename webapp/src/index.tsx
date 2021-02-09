@@ -32,7 +32,7 @@ import Backend from 'i18next-xhr-backend';
 import LanguageDetector from 'i18next-browser-languagedetector';
 import { initReactI18next } from 'react-i18next';
 import { UserSettingsProvider } from '@tabtabgo/core/contexts/UserSettingsContext';
-import ComponentProvider from '@tabtabgo/web/ComponentProvider';
+import ComponentProvider from '@tabtabgo/core/providers/ComponentProvider';
 import ErrorBoundary from '@tabtabgo/web/components/ErrorBoundary';
 
 const fallbackLng = ['en'];

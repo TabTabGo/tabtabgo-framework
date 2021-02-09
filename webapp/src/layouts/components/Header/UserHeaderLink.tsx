@@ -20,7 +20,7 @@ import { UserSettingsContext } from '@tabtabgo/core/contexts/UserSettingsContext
 
 import Avatar from '@material-ui/core/Avatar';
 import FileService from '@tabtabgo/core/services/FileService';
-import { getPersonInitials } from '@tabtabgo/core/utilities';
+import { getPersonInitials } from '@tabtabgo/core/Utilities';
 
 //const RouterNavLink = React.forwardRef((props, ref) => <NavLink innerRef={ref} {...props} />);
 
@@ -144,7 +144,7 @@ export default function UserHeaderLink({ userRoutes }: UserHeaderLinkProps) {
           >
             {user.profile && user.profile.avatar ? (
               <Avatar
-                src={fileService.getImageUrl(user.profile.avatar)}
+                src={fileService.getImageUrl(user.profile.avatar) ?? undefined}
                 className={classes.avatarImg}
                 alt="..."
               />

@@ -2,15 +2,17 @@
 import { currentServiceProvider } from '@tabtabgo/core/providers/ServiceProvider';
 import { TTGError } from '@tabtabgo/core/types/TTGError';
 import qs from 'qs';
-import { AuthenticateData, SessionData } from '@tabtabgo/core/types/Identity/SessionData';
-import { AuthenticateResponse } from '@tabtabgo/core/types/Identity/AuthenticateResponse';
-import IAuthService from '@tabtabgo/core/services/IAuthService';
+import { AuthenticateData, SessionData } from '@tabtabgo/core/types/SessionData';
+import { AuthenticateResponse } from '@tabtabgo/core/types/AuthenticateResponse';
+
 import {
   IStorageService,
   IRefreshTokenService,
-  IBasicStorageService,
-} from '@tabtabgo/core/services/StorageServices';
-import INotificationService from '@tabtabgo/core/services/INotificationService';
+  IAuthService,
+  INotificationService
+} from '@tabtabgo/core/services/contracts';
+import BasicStorageService from '@tabtabgo/core/services/storages/BaseStorageService';
+
 import { AppSettings } from '@tabtabgo/core/Appsettings';
 import { SessionUser } from '@tabtabgo/core/types';
 //import { User } from 'types';
@@ -23,14 +25,14 @@ export default class BoligAuthService implements IAuthService {
   notificationService: INotificationService;
   restApi: any; //TODO create interface for restAPI
   restApiWithSession: any; //TODO create interface for restAPI
-  secureStorage: IBasicStorageService;
+  secureStorage: IStorageService;
   constructor(configuration: any) {
     this.configuration = configuration;
-    const secureStorage = currentServiceProvider.getSecureStorage();
+    
     this.notificationService = currentServiceProvider.getNotificationService();
     this.sessionManager = currentServiceProvider.getStorageService();
     this.refreshTokenStorage = currentServiceProvider.getRefreshTokenStorage();
-    this.secureStorage = currentServiceProvider.getSecureStorage();
+    this.secureStorage = currentServiceProvider.getStorageService();
     this.restApi = currentServiceProvider.newAjaxService('oauth', '', {
       disableTokenAuthorization: true,
     });
@@ -81,7 +83,7 @@ export default class BoligAuthService implements IAuthService {
         if (
           body.grant_type === 'password' &&
           AppSettings.enableAutoLogin &&
-          (await this.secureStorage?.isAvailable())
+          true//TODO (await this.secureStorage?.isAvailable())
         ) {
           await this.secureStorage.setItem('username', body.username);
           await this.secureStorage.setItem('password', body.password);
@@ -301,7 +303,7 @@ export default class BoligAuthService implements IAuthService {
 
       console.log(`Failed to refresh Token ${login.message}`);
       //TODO handle error when refresh failed
-      if (AppSettings.enableAutoLogin && (await this.secureStorage?.isAvailable())) {
+      if (AppSettings.enableAutoLogin) {
         var username = await this.secureStorage.getItem('username');
         var password = await this.secureStorage.getItem('password');
 
@@ -331,51 +333,52 @@ export default class BoligAuthService implements IAuthService {
   registerDevice = async (user: SessionUser): Promise<void> => {
     if (!user?.customerId) return;
     if (this.notificationService) {
-      let token = await this.notificationService.getToken();
-      var deviceToken = await this.sessionManager.getItem(device_token_key);
-      var currentUser = await this.sessionManager.getUser();
-      console.log('token', token, deviceToken, user.customerId);
-      if (token) {
-        if (
-          !deviceToken ||
-          !deviceToken.token ||
-          deviceToken.token !== token ||
-          !currentUser ||
-          deviceToken.userId !== user.customerId
-        ) {
-          let provider = this.notificationService.getName();
-          let deviceInfo = await this.notificationService.getDeviceInfo();
-          //console.log('deviceInfo :', deviceInfo);
-          try {
-            // POST the token to your backend server from where you can retrieve it to send push notifications.
-            var result = await this.restApiWithSession.Post({
-              url: `//customers/${user.customerId}/mobile-devices`,
-              parameters: {
-                applicationName: AppSettings.applicationName,
-              },
-              body: {
-                token: token,
-                model: deviceInfo.model,
-                os: deviceInfo.operatorSystem,
-                osVersion: deviceInfo.version,
-                appVersion: '',
-                webAppVersion: '',
-              },
-            });
-            console.log('device register result', result);
-            await this.sessionManager.setItem(device_token_key, {
-              token,
-              userId: user.customerId,
-            });
-          } catch (error) {
-            console.warn('error in device registration:', error);
-          }
-        }
-      } else {
-        console.warn('error in device registration:', {
-          message: 'notification token is empty',
-        });
-      }
+      //TODO
+      // let token = await this.notificationService.getToken();
+      // var deviceToken = await this.sessionManager.getItem(device_token_key);
+      // var currentUser = await this.sessionManager.getUser();
+      // console.log('token', token, deviceToken, user.customerId);
+      // if (token) {
+      //   if (
+      //     !deviceToken ||
+      //     !deviceToken.token ||
+      //     deviceToken.token !== token ||
+      //     !currentUser ||
+      //     deviceToken.userId !== user.customerId
+      //   ) {
+      //     let provider = this.notificationService.getName();
+      //     let deviceInfo = await this.notificationService.getDeviceInfo();
+      //     //console.log('deviceInfo :', deviceInfo);
+      //     try {
+      //       // POST the token to your backend server from where you can retrieve it to send push notifications.
+      //       var result = await this.restApiWithSession.Post({
+      //         url: `//customers/${user.customerId}/mobile-devices`,
+      //         parameters: {
+      //           applicationName: AppSettings.applicationName,
+      //         },
+      //         body: {
+      //           token: token,
+      //           model: deviceInfo.model,
+      //           os: deviceInfo.operatorSystem,
+      //           osVersion: deviceInfo.version,
+      //           appVersion: '',
+      //           webAppVersion: '',
+      //         },
+      //       });
+      //       console.log('device register result', result);
+      //       await this.sessionManager.setItem(device_token_key, {
+      //         token,
+      //         userId: user.customerId,
+      //       });
+      //     } catch (error) {
+      //       console.warn('error in device registration:', error);
+      //     }
+      //   }
+      // } else {
+      //   console.warn('error in device registration:', {
+      //     message: 'notification token is empty',
+      //   });
+      // }
     } else {
       console.warn('error in device registration:', {
         message: 'notification Service is not setup correctly.',

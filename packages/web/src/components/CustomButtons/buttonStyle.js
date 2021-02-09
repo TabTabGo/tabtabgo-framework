@@ -2,7 +2,7 @@
 // // // Button styles
 // #############################
 
-import { hexToRgb } from '@tabtabgo/core/utilities';
+import { hexToRgb } from '@tabtabgo/core/Utilities';
 
 const getButtonBoxShadow = (hexColor) => {
   const rgb = hexToRgb(hexColor);

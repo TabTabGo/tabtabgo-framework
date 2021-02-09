@@ -20,19 +20,19 @@ export const setupServices = (dispatch: any) => {
       .setStorageService(new SessionStorageService())
       .setRefreshTokenStorage(new LocalStorageService())
       
-      .setAjaxService(new Axios())
+      .setAjaxService(new Axios(""))
       .setFileService(new FileService('files'))
-      .setFileSystem(FileService)
-      .setExportService(new ExportService())
+      //TODO .setFileSystem(FileService)
+      .setExportService(new ExportService({} as any))
 
-      .setAuthenticationService(new BoligAuthService({ menus: accessMenus }))
-      .setResetApplication(() => {
-        console.log('inside reset application');
-        dispatch({ type: 'USER_LOGOUT' });
-        //navigate("home");
-        window.location.reload();
-      })
-      ;
+      .setAuthenticationService(new BoligAuthService({ menus: accessMenus }));
+      // .setResetApplication(() => {
+      //   console.log('inside reset application');
+      //   dispatch({ type: 'USER_LOGOUT' });
+      //   //navigate("home");
+      //   window.location.reload();
+      // })
+      // ;
   }
 
 };

@@ -23,7 +23,7 @@ import ValidationForm from '../components/Validations/Form';
 import ValidationButton from '../components/Validations/Button';
 import update from 'immutability-helper';
 import { mergeButtons } from '../components/Buttons/utilities';
-import { getDisplayValue } from '@tabtabgo/core/utilities';
+import { getDisplayValue } from '@tabtabgo/core/Utilities';
 import _ from 'lodash';
 
 import editModalStyle from './styles/editModalStyle';

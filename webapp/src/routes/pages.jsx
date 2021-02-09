@@ -1,7 +1,7 @@
 import React from 'react';
 import authRoutes from 'ttg-identity/routes.js';
 import LoginPage from 'ttg-identity/pages/Login/LoginPage';
-import { arrayUnique } from '@tabtabgo/core/utilities';
+import { arrayUnique } from '@tabtabgo/core/Utilities';
 
 //TODO convert route to object so be easily to merge and override
 var authRoutesArray = authRoutes('/');

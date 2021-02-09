@@ -1,5 +1,5 @@
 import { apiCall } from '../utilities';
-import { populatePageList } from '@tabtabgo/core/utilities';
+import { populatePageList } from '@tabtabgo/core/Utilities';
 export const yesNoList = [
   { value: false, label: 'No' },
   { value: true, label: 'Yes' },
