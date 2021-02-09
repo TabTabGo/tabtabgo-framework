@@ -40,11 +40,14 @@ export const isEqual = (value: any, other: any) => {
       // Else if it's a function, convert to a string and compare
       // Otherwise, just compare
       if (itemType === '[object Function]') {
-        if (item1.toString() !== item2.toString()) return false;
+        if (item1.toString() !== item2.toString())
+          return false;
       } else {
-        if (item1 !== item2) return false;
+        if (item1 !== item2)
+          return false;
       }
     }
+    return true;
   };
 
   // Compare properties
@@ -94,10 +97,10 @@ export const hexToRgb = (hex: string) => {
   var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
   return result
     ? {
-        r: parseInt(result[1], 16),
-        g: parseInt(result[2], 16),
-        b: parseInt(result[3], 16),
-      }
+      r: parseInt(result[1], 16),
+      g: parseInt(result[2], 16),
+      b: parseInt(result[3], 16),
+    }
     : { r: 0, g: 0, b: 0 };
 };
 
@@ -156,9 +159,8 @@ export const getDisplayValue = (entity: any, displayField: string | GetDisplayFi
 
 export const getPersonName = (entity: any) => {
   if (entity && entity.person && (entity.person.firstName || entity.person.lastName)) {
-    return `${entity.person.title ? entity.person.title + ' ' : ''}${
-      entity.person.firstName || ''
-    } ${entity.person.lastName || ''}`;
+    return `${entity.person.title ? entity.person.title + ' ' : ''}${entity.person.firstName || ''
+      } ${entity.person.lastName || ''}`;
   }
   return '';
 };

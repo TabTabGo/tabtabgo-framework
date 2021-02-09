@@ -138,6 +138,7 @@ const AuthenticationProvider = ({
       }
       return result;
     }
+    return null;
   };
 
   const loadUserData = async () => {

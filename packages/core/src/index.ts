@@ -1,5 +1,3 @@
-import { fromPairs } from "lodash"
-
 export * from "./Appsettings"
 export * from "./DateFormats"
 export * from "./DisplayMessages"
