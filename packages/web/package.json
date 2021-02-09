@@ -1,6 +1,6 @@
 {
   "name": "@tabtabgo/web",
-  "version": "0.0.31",
+  "version": "0.0.32",
   "description": "TabTabGo web components",
   "keywords": [
     "components"
@@ -29,13 +29,12 @@
   "bugs": {
     "url": "https://github.com/TabTabGo/ttg-framework/issues"
   },
-  "peerDependencies": {},
   "dependencies": {
     "@material-ui/core": "^4.11.3",
     "@material-ui/icons": "^4.11.2",
     "@material-ui/lab": "^4.0.0-alpha.57",
     "@material-ui/pickers": "^3.2.10",
-    "@tabtabgo/core": "^0.0.31",
+    "@tabtabgo/core": "^0.0.32",
     "@types/react": "^17.0.0",
     "classnames": "^2.2.6",
     "draft-js": "^0.11.7",
