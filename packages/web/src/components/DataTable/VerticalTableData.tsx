@@ -82,6 +82,7 @@ const VerticalTableData = ({
                   if (index !== data.length - 1) {
                     return <CustomDivider className={classes.divider} />;
                   }
+                  return null;
                 })()}
               </React.Fragment>
             ))}

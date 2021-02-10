@@ -16,8 +16,8 @@
     "type": "git",
     "url": "git+https://github.com/TabTabGo/ttg-framework.git"
   },
-  "main": "dist/src/index.js",
-  "typings": "dist/types/index.d.ts",
+  "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
   "files": [
     "dist",
     "src"
@@ -68,6 +68,7 @@
     "immutability-helper": "^3.1.1",
     "jwt-decode": "^3.1.2",
     "lodash": "^4.17.20",
+    "module-alias": "^2.2.2",
     "moment": "^2.29.1",
     "qs": "^6.9.6",
     "react": "^17.0.1",

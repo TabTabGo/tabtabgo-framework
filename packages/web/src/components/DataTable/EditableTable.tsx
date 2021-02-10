@@ -251,6 +251,7 @@ const EditableTable = ({
               </TableFooter>
             );
           }
+          return null;
         })()}
       </Table>
     </Paper>
