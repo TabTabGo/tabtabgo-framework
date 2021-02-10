@@ -1,6 +1,6 @@
 {
   "name": "@tabtabgo/core",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "React core services and utilities ",
   "publishConfig": {
     "access": "public"
@@ -40,7 +40,7 @@
   },
   "peerDependencies": {
     "react": ">=16",
-    "react-dom": ">=16" 
+    "react-dom": ">=16"
   },
   "dependencies": {
     "axios": "^0.21.1",
