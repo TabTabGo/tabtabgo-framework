@@ -64,6 +64,19 @@ async function typescriptCopy({ from, to }) {
   return Promise.all(cmds);
 }
 
+async function copyNonCodeFile({ from, to }) {
+  if (!(await fse.pathExists(to))) {
+    console.warn(`path ${to} does not exists`);
+    return [];
+  }
+  const exst = ["css", "scss", "json", "png", "img"];
+  var fPath = "**";
+  var files = await glob(exst.map(ex => `${fPath}/*.${ex}`), { cwd: from });;
+  //console.log(files);
+  const cmds = files.map((file) => fse.copy(path.resolve(from, file), path.resolve(to, file)));
+  return Promise.all(cmds);
+}
+
 async function createPackageFile() {
   const packageData = await fse.readFile(path.resolve(packagePath, './package.json'), 'utf8');
   const { gitHead, scripts, devDependencies, workspaces, files, ...packageDataOther } = JSON.parse(
@@ -132,14 +145,14 @@ async function run() {
     const packageData = await createPackageFile();
 
     await Promise.all(
-      [        
+      [
         './README.md',
         '../../CHANGELOG.md',
         '../../LICENSE',
       ].map((file) => includeFileInBuild(file)),
     );
-
-    // TODO add license
+    await copyNonCodeFile({ from: srcPath, to: buildPath });
+    // TODO add license    
     //await addLicense(packageData);
     // TypeScript
     //await typescriptCopy({ from: srcPath, to: buildPath });
