@@ -39,8 +39,8 @@
     "url": "https://github.com/TabTabGo/ttg-framework/issues"
   },
   "peerDependencies": {
-    "react": ">=16",
-    "react-dom": ">=16"
+    "react": ">=16.8",
+    "react-dom": ">=16.8"
   },
   "dependencies": {
     "axios": "^0.21.1",
