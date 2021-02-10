@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import * as StandardValidations from '@tabtabgo/core/Validations.js';
 import * as StandardValidationsErrors from '@tabtabgo/core/ValidationErrors.js';
 import withValidation from './withValidation';
-import { withComponentProvider } from '../../ComponentProvider';
+import { withComponentProvider } from '@tabtabgo/core';
 import { getInputValue, isEmpty, getFriendlyString } from '@tabtabgo/core/Utilities';
 import _ from 'lodash';
 
@@ -430,7 +430,7 @@ class Validator extends Component {
         value={currentValue}
         onBlur={handleBlur}
         {...validatorProps}
-        //onFocus={event => this.handleFocus(event, name ? name : id)}
+      //onFocus={event => this.handleFocus(event, name ? name : id)}
       >
         {this.props.children}
       </Component>
