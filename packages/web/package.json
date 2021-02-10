@@ -28,6 +28,7 @@
     "build": "yarn compile && yarn build:copy-files",
     "build:default": "yarn node ../../scripts/build",
     "build:copy-files": "node ../../scripts/copy-files.js",
+    
     "size": "size-limit",
     "analyze": "size-limit --why",
     "storybook": "start-storybook -p 6006",
