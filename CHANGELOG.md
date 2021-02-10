@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.2.5](https://github.com/TabTabGo/ttg-framework/compare/v0.2.4...v0.2.5) (2021-02-10)
+
+
+### Bug Fixes
+
+* fix issue of passing props to getLabel ([a0d6745](https://github.com/TabTabGo/ttg-framework/commit/a0d6745f96f0679425ddd210899039a04ea63ca1))
+
+
+
+
+
 ## [0.2.4](https://github.com/TabTabGo/ttg-framework/compare/v0.2.3...v0.2.4) (2021-02-10)
 
 
