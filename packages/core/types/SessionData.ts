@@ -1,6 +1,6 @@
 import { AuthenticateResponse } from './AuthenticateResponse';
-import { SessionInstance } from '../types/SessionInstance';
-import { SessionUser } from '../types/SessionUser';
+import { SessionInstance } from './SessionInstance';
+import { SessionUser } from './SessionUser';
 
 export interface SessionData {
   user?: SessionUser;

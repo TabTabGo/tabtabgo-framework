@@ -1,6 +1,6 @@
 import update from 'immutability-helper';
 import { IEntityActionTypes } from './ActionTypes';
-import { Action, PagingList } from '../types';
+import { Action, PagingList } from '../../types';
 /**
  * Module Reducer Context
  * @param {EntityActionTypes} actionNames

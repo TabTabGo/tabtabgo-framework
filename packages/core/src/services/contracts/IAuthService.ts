@@ -1,5 +1,5 @@
-import { AuthenticateResponse } from '../../types/AuthenticateResponse';
-import { SessionData, AuthenticateData } from '../../types/SessionData';
+import { AuthenticateResponse } from '../../../types/AuthenticateResponse';
+import { SessionData, AuthenticateData } from '../../../types/SessionData';
 
 export type AuthenticateMode = 'phoneNumber';
 

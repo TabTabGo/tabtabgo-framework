@@ -5,11 +5,11 @@ import { currentServiceProvider } from '../providers/ServiceProvider';
 import { Dispatch } from 'redux';
 import moment from 'moment';
 import { IEntityService } from './Service';
-import { Predicate } from '../types/Predicate';
-import { ActionOptions } from '../types/ActionOptions';
-import { OrderDirection } from '../types/enums/OrderDirection';
-import { JsonPatch } from '../types/JsonPatch';
-import { IActions } from '../types/Actions';
+import { Predicate } from '../../types/Predicate';
+import { ActionOptions } from '../../types/ActionOptions';
+import { OrderDirection } from '../../types/enums/OrderDirection';
+import { JsonPatch } from '../../types/JsonPatch';
+import { IActions } from '../../types/Actions';
 import { INotificationService } from '../services/contracts';
 
 //import moment from "moment";

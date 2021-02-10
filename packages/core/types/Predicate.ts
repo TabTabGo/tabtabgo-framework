@@ -1,4 +1,4 @@
-import { camel2title } from '../Formats';
+import { camel2title } from '../src/Formats';
 import { Property } from './Property';
 export enum PredicateType {
   Search,

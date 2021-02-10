@@ -1,4 +1,4 @@
-import { IEntity, Property, Predicate, QueryOperatorEnum } from '../../types';
+import { IEntity, Property, Predicate, QueryOperatorEnum } from '..';
 
 export interface FilterProps<T> extends IEntity<T>, FilterOptions {}
 

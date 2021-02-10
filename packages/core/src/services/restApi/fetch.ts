@@ -2,7 +2,7 @@
 import { AppSettings } from '../../Appsettings';
 //import { Promise } from "es6-promise";
 import * as ActionTypes from './actionTypes';
-import { TTGError } from '../../types/TTGError';
+import { TTGError } from '../../../types/TTGError';
 import BaseAjaxService from './baseAjaxService';
 import { Dispatch } from 'redux';
 import { HTTPMethod, IRestApiService } from '../contracts';

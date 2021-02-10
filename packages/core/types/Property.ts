@@ -1,4 +1,4 @@
-import { QueryOperator } from '../services/ODataService';
+import { QueryOperator } from '../src/services/ODataService';
 
 export interface Property {
   key: string;

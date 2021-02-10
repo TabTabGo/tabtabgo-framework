@@ -2,10 +2,10 @@
 import { currentServiceProvider } from '../providers/ServiceProvider';
 import { ODataFilterService } from '../services/ODataService';
 import { getDisplayValue } from '../Utilities';
-import { Predicate } from '../types/Predicate';
-import { JsonPatch } from '../types/JsonPatch';
-import { PagingList } from '../types/PagingList';
-import { OrderDirection } from '../types/enums/OrderDirection';
+import { Predicate } from '../../types/Predicate';
+import { JsonPatch } from '../../types/JsonPatch';
+import { PagingList } from '../../types/PagingList';
+import { OrderDirection } from '../../types/enums/OrderDirection';
 //import jiff from "jiff";
 
 export interface ServiceActionProps {

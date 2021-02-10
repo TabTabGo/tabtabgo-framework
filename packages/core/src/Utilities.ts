@@ -1,7 +1,7 @@
 import { AppSettings } from './Appsettings';
 import qs from 'qs';
 import _ from 'lodash';
-import { PagingList } from './types';
+import { PagingList } from '../types';
 
 export const getImageUrl = (mediaFileId: number, imageSize = 'Provided') => {
   return `${AppSettings.baseApiUrl}/mediaFiles/Image/${mediaFileId}/${imageSize}`;

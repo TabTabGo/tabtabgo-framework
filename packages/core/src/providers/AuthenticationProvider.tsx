@@ -5,8 +5,8 @@ import { currentServiceProvider } from './ServiceProvider';
 //import _ from "lodash";
 import update from 'immutability-helper';
 import { AuthenticateMode } from '../services/contracts/IAuthService';
-import { SessionData, AuthenticateData } from '../types/SessionData';
-import { AuthenticateResponse } from '../types/AuthenticateResponse';
+import { SessionData, AuthenticateData } from '../../types/SessionData';
+import { AuthenticateResponse } from '../../types/AuthenticateResponse';
 
 type AuthStateProps = {
   isAuthenticated: boolean;
