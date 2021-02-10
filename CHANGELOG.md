@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.1.1](https://github.com/TabTabGo/ttg-framework/compare/v0.1.0...v0.1.1) (2021-02-10)
+
+
+### Bug Fixes
+
+* add build and copy-files ([d4acf2f](https://github.com/TabTabGo/ttg-framework/commit/d4acf2ff570d072aad43e484bdf9c94a1f243e38))
+* config script fixes ([bb08ad1](https://github.com/TabTabGo/ttg-framework/commit/bb08ad1b94059def3e995fa16c797e4c33569b25))
+
+
+
+
+
 # [0.1.0](https://github.com/TabTabGo/ttg-framework/compare/v0.0.34...v0.1.0) (2021-02-10)
 
 
