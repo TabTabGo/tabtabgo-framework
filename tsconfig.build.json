@@ -10,7 +10,7 @@
       "noUnusedParameters": false,
       "noImplicitReturns": true,
       "noFallthroughCasesInSwitch": true,
-      "moduleResolution": "node",
+      "moduleResolution": "Classic",
       "jsx": "react",
       "esModuleInterop": true
     }
