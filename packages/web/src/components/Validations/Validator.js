@@ -31,29 +31,7 @@ function Validator(props) {
   }, [props.originalValue]);
 
   useEffect(() => {
-    const {
-      name,
-      isRequired,
-    } = props;
-    let newValue = getValue(props);
-    let oldValue = getValue(state);
-    if (!_.isEqual(newValue, oldValue)) {
-      //console.log("validation :", name, newValue, oldValue);
-      await validateInput(newValue, name, validationCtx.setValidationState, isRequired);
-    }
-    //Logically not required
-    if (!_.isEqual(state.originalValue, props.originalValue)) {
-      let newState = {
-        isDirty: !_.isEqual(props.originalValue, newValue),
-        originalValue: props.originalValue,
-      };
-      // console.group("componentDidUpdate");
-      // console.log("value", newValue);
-      // console.log("original", props.originalValue);
-      // console.log("newState :", newState);
-      // console.groupEnd();
-      setState(newState);
-    }
+    onComponentUpdated();
   }, [props, props.name, props.isRequired])
 
   useEffect(() => {
@@ -81,6 +59,31 @@ function Validator(props) {
     }
   }, [])
 
+  const onComponentUpdated = async () => {
+    const {
+      name,
+      isRequired,
+    } = props;
+    let newValue = getValue(props);
+    let oldValue = getValue(state);
+    if (!_.isEqual(newValue, oldValue)) {
+      //console.log("validation :", name, newValue, oldValue);
+      await validateInput(newValue, name, validationCtx.setValidationState, isRequired);
+    }
+    //Logically not required
+    if (!_.isEqual(state.originalValue, props.originalValue)) {
+      let newState = {
+        isDirty: !_.isEqual(props.originalValue, newValue),
+        originalValue: props.originalValue,
+      };
+      // console.group("componentDidUpdate");
+      // console.log("value", newValue);
+      // console.log("original", props.originalValue);
+      // console.log("newState :", newState);
+      // console.groupEnd();
+      setState(newState);
+    }
+  }
   /*
   Get the Value passed to input and can be set directly or by InputProps
   */
