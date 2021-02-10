@@ -1715,10 +1715,10 @@
     "@svgr/plugin-svgo" "^5.4.0"
     loader-utils "^2.0.0"
 
-"@tabtabgo/core@^0.2.0":
-  version "0.2.0"
-  resolved "https://registry.yarnpkg.com/@tabtabgo/core/-/core-0.2.0.tgz#0500ee3017e5739e96056f1497c80fe253b8ce24"
-  integrity sha512-1DJfzX9/rTo4Cjxi2cFiIPmlgLpQE2lx/yciQb03wF2c1mjsTZNCCqXKISP4IFy1Zq/RT1JlKiVYQrQ2afK5uQ==
+"@tabtabgo/core@^0.2.2":
+  version "0.2.2"
+  resolved "https://registry.yarnpkg.com/@tabtabgo/core/-/core-0.2.2.tgz#02e9142aacc2baa0c46fdd26c61eb690d920a2dd"
+  integrity sha512-35u8gTngZvO7ZojMJBDQWM3j7cpk+qUdQZ2r+IQ+zp1Ab/PSMcmA0P4JWWC3hu36GP8+TMcvbcJChI786Xxbtg==
   dependencies:
     axios "^0.21.1"
     fs "^0.0.1-security"
@@ -1738,16 +1738,16 @@
     universal-cookie "^4.0.4"
     utility-types "^3.10.0"
 
-"@tabtabgo/web@^0.2.1":
-  version "0.2.1"
-  resolved "https://registry.yarnpkg.com/@tabtabgo/web/-/web-0.2.1.tgz#3090ccae93635de2981b63dbe92ca4daee177bad"
-  integrity sha512-Xf7KmIzvlUpRCYR/qM0kM6rUNslJBMI7knBPt440Lr/YyRnsumxfiidpo0eR2wJQOl/hRqDI7zpeS1Aslj06Gw==
+"@tabtabgo/web@^0.2.2":
+  version "0.2.2"
+  resolved "https://registry.yarnpkg.com/@tabtabgo/web/-/web-0.2.2.tgz#f0ace9d21abe27185efb067ae2774040b09ac535"
+  integrity sha512-dnrOo53NKlBKkVkHpKVBzfVdkJOY2bMVrQXVaRpmOJAFAC00++TQdWCW374jaBeDsBrFJcphxX++hTe4UFvGQA==
   dependencies:
     "@material-ui/core" "^4.11.3"
     "@material-ui/icons" "^4.11.2"
     "@material-ui/lab" "^4.0.0-alpha.57"
     "@material-ui/pickers" "^3.2.10"
-    "@tabtabgo/core" "^0.2.0"
+    "@tabtabgo/core" "^0.2.2"
     "@types/react" "^17.0.0"
     classnames "^2.2.6"
     draft-js "^0.11.7"

@@ -7,7 +7,7 @@ import { mergeButtons, ToolbarButtons } from '../components/Buttons';
 import EditIcon from '@material-ui/icons/Edit';
 import DeleteIcon from '@material-ui/icons/Delete';
 import PrintIcon from '@material-ui/icons/Print';
-import { getDisplayValue } from '@tabtabgo/core/Utilities';
+import { getDisplayValue } from '@tabtabgo/core';
 import { LinearProgress } from '@material-ui/core';
 import { withConfirmation } from '../contexts/ConfirmationContext';
 export const DetailEntityContext = React.createContext();
@@ -93,8 +93,7 @@ class EntityDetail extends React.Component {
       `Delete ${this.props.nameSingularText ?? this.props.nameSingular} ${this.getDisplayName(
         this.props,
       )}`,
-      `Are you sure you want to delete ${
-        this.props.nameSingularText ?? this.props.nameSingular
+      `Are you sure you want to delete ${this.props.nameSingularText ?? this.props.nameSingular
       } ${this.getDisplayName(this.props)}?`,
       () => {
         this.props.actions.deleteEntity(this.props.entity);
