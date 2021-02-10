@@ -73,6 +73,7 @@ const DropDownMenu = ({
                   if (item.hasDivider) {
                     return <Divider />;
                   }
+                  return null;
                 })()}
               </div>
             );

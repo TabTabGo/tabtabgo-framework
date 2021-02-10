@@ -28,7 +28,7 @@ import {
 } from '@tabtabgo/core/types/DataTable';
 import {
   Predicate,
-  QueryOperator,
+  QueryOperatorEnum,
   PredicateType,
   LogicalOperator,
 } from '@tabtabgo/core/types/Predicate';
@@ -124,7 +124,7 @@ const Filter = (props: FilterProps<any>) => {
           type: PredicateType.Search,
           operator: activeSearch.defaultOperator
             ? activeSearch.defaultOperator
-            : QueryOperator.Equal,
+            : QueryOperatorEnum.Equal,
           value: searchValue,
           index: predicates ? predicates.length : 0,
         } as Predicate;
@@ -150,7 +150,7 @@ const Filter = (props: FilterProps<any>) => {
 
       let newPredicate = {
         type: PredicateType.Filter,
-        operator: filter && filter.defaultOperator ? filter.defaultOperator : QueryOperator.Equal,
+        operator: filter && filter.defaultOperator ? filter.defaultOperator : QueryOperatorEnum.Equal,
         value: { value: e.value, displayValue: e.label },
         index: predicates ? predicates.length : 0,
       } as Predicate;
