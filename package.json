@@ -12,7 +12,7 @@
     "clean" : "lerna clean -y && lerna run --scope \"@tabtabgo/*\" \"yarn run clean\"",
     "compile": "lerna run compile",
     "build": "yarn clean && lerna run --scope \"@tabtabgo/*\" build",
-    "publish" :" lerna version --conventional-commits --yes && yarn build && lerna publish from-package --contents build -y",
+    "publish" :" lerna version --conventional-commits --yes && yarn build && lerna publish from-package --contents dist -y",
     "publish:commit": "git cz -a  && yarn run publish"
   },
   "repository": {
