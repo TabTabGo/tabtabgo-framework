@@ -24,13 +24,9 @@
   },
   "scripts": {
     "clean": "rm -rf ./dist",
-    "build": "tsc -p tsconfig.build.json",
-    "build:tsdx": "tsdx build",
+    "build": "tsc -p tsconfig.build.json",    
     "build:default": "yarn node ../../scripts/build",
     "build:copy-files": "node ../../scripts/copy-files.js",
-    "test": "tsdx test --passWithNoTests",
-    "lint": "tsdx lint",
-    "prepare": "tsdx build",
     "size": "size-limit",
     "analyze": "size-limit --why",
     "storybook": "start-storybook -p 6006",
@@ -96,15 +92,9 @@
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-is": "^17.0.1",
-    "size-limit": "^4.9.2",
-    "tsdx": "^0.14.1",
+    "size-limit": "^4.9.2",    
     "tslib": "^2.1.0",
     "typescript": "^4.1.3"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "tsdx lint"
-    }
-  },
-  "gitHead": "d4acf2ff570d072aad43e484bdf9c94a1f243e38"
+  },  
+  "gitHead": "d4d39b5c73bd56f918f5c353319d83f35efa1952"
 }
