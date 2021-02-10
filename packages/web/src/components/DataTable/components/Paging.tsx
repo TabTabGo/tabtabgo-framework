@@ -1,6 +1,6 @@
 import React from 'react';
 import { TablePagination } from '@material-ui/core';
-import { PagingProps } from '@tabtabgo/core/types/DataTable';
+import { PagingProps } from '@tabtabgo/core/src/types/DataTable';
 
 const defaultRowsPerPageOptions = [25, 50, 100];
 

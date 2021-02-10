@@ -1,7 +1,7 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 //TODO link not working
-import { AppSettings } from '@tabtabgo/core/build/Appsettings';
+import { AppSettings } from '@tabtabgo/core';
 import {
   Button,
   Dialog,
@@ -12,7 +12,7 @@ import {
 } from '@material-ui/core';
 import useMediaQuery from '@material-ui/core/useMediaQuery';
 import { useTheme, makeStyles } from '@material-ui/core/styles';
-import { TTGError } from '@tabtabgo/core/build/types/TTGError';
+import { TTGError } from '@tabtabgo/core/src/types/TTGError';
 import { grey } from '@material-ui/core/colors';
 
 export type ErrorModalProps = {

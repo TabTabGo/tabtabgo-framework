@@ -11,8 +11,8 @@ const SwitchRoutes = (routes) => (
     {routes.map((prop, key) => {
       if (prop.redirect) return <Redirect from={prop.path} to={prop.pathTo} key={key} />;
       if (prop.collapse && prop.views)
-        return prop.views.map((prop, key) => {
-          return routeTypes(prop, key);
+        return prop.views.map((cProp, cKey) => {
+          return routeTypes(cProp, cKey);
         });
       return routeTypes(prop, key);
     })}

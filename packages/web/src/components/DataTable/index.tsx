@@ -24,9 +24,9 @@ import {
   SelectionToolbarProps,
   PagingProps,
   RowButtons,
-} from '@tabtabgo/core/types/DataTable';
+} from '@tabtabgo/core/src/types/DataTable';
 import classNames from 'classnames';
-import { Predicate } from '@tabtabgo/core/types';
+import { Predicate } from '@tabtabgo/core/src/types';
 
 export const useDataTableStyles = makeStyles((theme: Theme) =>
   createStyles({

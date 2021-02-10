@@ -106,6 +106,7 @@ export default class Axios extends BaseAjaxService {
               } else {
                 console.warn('failed to get token from refresh token;', error?.message, error);
                 self.resetPage();
+                return undefined;
               }
             })
             .catch((refreshError) => {

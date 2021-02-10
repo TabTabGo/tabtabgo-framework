@@ -13,12 +13,12 @@ import qs from 'qs';
 import _ from 'lodash';
 import DataTable from '../components/DataTable';
 
-import { currentServiceProvider } from '@tabtabgo/core/providers/ServiceProvider';
+import { currentServiceProvider } from '@tabtabgo/core';
 
 import { mergeButtonSections } from '../components/Buttons';
-import { PagingList } from '@tabtabgo/core/types/PagingList';
-import { Predicate, PredicateType, IActions, IEntity, ActionOptions } from '@tabtabgo/core/types';
-import { OrderDirection } from '@tabtabgo/core/types/enums';
+import { PagingList } from '@tabtabgo/core/src/types/PagingList';
+import { Predicate, PredicateType, IActions, IEntity, ActionOptions } from '@tabtabgo/core/src/types';
+import { OrderDirection } from '@tabtabgo/core/src/types/enums';
 import {
   Actions,
   Buttons,
@@ -28,7 +28,7 @@ import {
   DataTableComponents,
   Column,
   SelectionMode,
-} from '@tabtabgo/core/types/DataTable';
+} from '@tabtabgo/core/src/types/DataTable';
 
 /**
  * DataTable handle binding search , sorting and paging function with entity actions
@@ -200,7 +200,7 @@ const EntityDataTable = forwardRef<EntityDataTableRef, EntityDataTableProps<any>
       if (searchParams.predicates && !Array.isArray(searchParams.predicates)) {
         let predicates = [{} as any];
         Object.keys(searchParams.predicates).forEach((p) => {
-          var prop = searchParams.predicates[p];
+          var prop = (searchParams.predicates as any)[p];
           if (_.isArray(prop)) {
             prop.forEach((pValue, i) => {
               while (i >= predicates.length) {

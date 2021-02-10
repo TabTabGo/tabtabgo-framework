@@ -15,6 +15,7 @@ class ToolbarButtons extends Component {
     namePluralText: PropTypes.string,
     buttons: PropTypes.object,
     defaultColor: PropTypes.string,
+    selected: PropTypes.any,
     data: PropTypes.any,
   };
 

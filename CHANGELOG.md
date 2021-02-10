@@ -3,6 +3,171 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.2.5](https://github.com/TabTabGo/ttg-framework/compare/v0.2.4...v0.2.5) (2021-02-10)
+
+
+### Bug Fixes
+
+* fix issue of passing props to getLabel ([a0d6745](https://github.com/TabTabGo/ttg-framework/commit/a0d6745f96f0679425ddd210899039a04ea63ca1))
+
+
+
+
+
+## [0.2.4](https://github.com/TabTabGo/ttg-framework/compare/v0.2.3...v0.2.4) (2021-02-10)
+
+
+### Bug Fixes
+
+* fix validator ([90b9017](https://github.com/TabTabGo/ttg-framework/commit/90b901758e0855fce63be0e677ae233e8f4f02e2))
+
+
+
+
+
+## [0.2.3](https://github.com/TabTabGo/ttg-framework/compare/v0.2.2...v0.2.3) (2021-02-10)
+
+
+### Bug Fixes
+
+* define useState ([bb479c1](https://github.com/TabTabGo/ttg-framework/commit/bb479c11068b23b52252434c569b634fbabed91b))
+
+
+
+
+
+## [0.2.2](https://github.com/TabTabGo/ttg-framework/compare/v0.2.1...v0.2.2) (2021-02-10)
+
+
+### Bug Fixes
+
+* fix useAuthentication and withValidation ([fb5ccfe](https://github.com/TabTabGo/ttg-framework/commit/fb5ccfee4a4644272c5e846dc7838db2783ccb7b))
+
+
+
+
+
+## [0.2.1](https://github.com/TabTabGo/ttg-framework/compare/v0.2.0...v0.2.1) (2021-02-10)
+
+
+### Bug Fixes
+
+* **web:** move validateInput out useEffect ([abaceb3](https://github.com/TabTabGo/ttg-framework/commit/abaceb314fc934f1f7ddd395e927da7cebf2417a))
+
+
+
+
+
+# [0.2.0](https://github.com/TabTabGo/ttg-framework/compare/v0.1.6...v0.2.0) (2021-02-10)
+
+
+### Bug Fixes
+
+* **web:** convert Validator to function component ([e1ffa67](https://github.com/TabTabGo/ttg-framework/commit/e1ffa670c1b44cf4752552a0b648d93ac6ec38a3))
+
+
+### BREAKING CHANGES
+
+* **web:** convert Validator to functional component
+
+
+
+
+
+## [0.1.6](https://github.com/TabTabGo/ttg-framework/compare/v0.1.5...v0.1.6) (2021-02-10)
+
+
+### Bug Fixes
+
+* **web:** withComponentProvider from provider ([d24e04d](https://github.com/TabTabGo/ttg-framework/commit/d24e04da373dd11a3569b2124491463a84858388))
+
+
+
+
+
+## [0.1.5](https://github.com/TabTabGo/ttg-framework/compare/v0.1.4...v0.1.5) (2021-02-10)
+
+
+### Bug Fixes
+
+* retry publish ([1f67e17](https://github.com/TabTabGo/ttg-framework/commit/1f67e17cd7b7cd310309a2fa80d2825c337ac7d6))
+* **web:** withComponentProvider using @tabtabgo/core ([66fd1fd](https://github.com/TabTabGo/ttg-framework/commit/66fd1fd83704bc23939d38db2c2f6339aa62ccad))
+
+
+
+
+
+## [0.1.4](https://github.com/TabTabGo/ttg-framework/compare/v0.1.3...v0.1.4) (2021-02-10)
+
+
+### Bug Fixes
+
+* add log to copy files ([1e05bc7](https://github.com/TabTabGo/ttg-framework/commit/1e05bc7db669f4ef7f7e45fa8f44cd5831e452f2))
+* **scripts:** copy non code files (css, scss, img, png) ([2647fbf](https://github.com/TabTabGo/ttg-framework/commit/2647fbf985575ad174a2ebc4a1f3d77e70ddd162))
+* rename example from rca to cra ([4825bc0](https://github.com/TabTabGo/ttg-framework/commit/4825bc0e40056989d79976e7932389092929706a))
+
+
+
+
+
+## [0.1.3](https://github.com/TabTabGo/ttg-framework/compare/v0.1.2...v0.1.3) (2021-02-10)
+
+
+### Bug Fixes
+
+* script call ([10573cb](https://github.com/TabTabGo/ttg-framework/commit/10573cbc27a959e79572573fee1d687ddceae131))
+
+
+
+
+
+## [0.1.2](https://github.com/TabTabGo/ttg-framework/compare/v0.1.1...v0.1.2) (2021-02-10)
+
+
+### Bug Fixes
+
+* remive tsdx ([5f10488](https://github.com/TabTabGo/ttg-framework/commit/5f10488967cfb202bd5805fbb2bb624b86c68e4f))
+
+
+
+
+
+## [0.1.1](https://github.com/TabTabGo/ttg-framework/compare/v0.1.0...v0.1.1) (2021-02-10)
+
+
+### Bug Fixes
+
+* add build and copy-files ([d4acf2f](https://github.com/TabTabGo/ttg-framework/commit/d4acf2ff570d072aad43e484bdf9c94a1f243e38))
+* config script fixes ([bb08ad1](https://github.com/TabTabGo/ttg-framework/commit/bb08ad1b94059def3e995fa16c797e4c33569b25))
+
+
+
+
+
+# [0.1.0](https://github.com/TabTabGo/ttg-framework/compare/v0.0.34...v0.1.0) (2021-02-10)
+
+
+### Bug Fixes
+
+* add enum index ([48f8ebf](https://github.com/TabTabGo/ttg-framework/commit/48f8ebfc52889a7304d874f8f43c95739362bc50))
+* empty modules ([94f583b](https://github.com/TabTabGo/ttg-framework/commit/94f583b85ee4274a01756986a2d3347abf4a768b))
+* few typescript fixes ([b536031](https://github.com/TabTabGo/ttg-framework/commit/b536031ec40ff9a1466b18d05c47b35780bf2a30))
+* fix autoComplete types  and withValidation HOC ([e0592f8](https://github.com/TabTabGo/ttg-framework/commit/e0592f8823c4c589d9b9da4478408e20f4ad8bec))
+* not check node_modules library ([42e7f82](https://github.com/TabTabGo/ttg-framework/commit/42e7f8214b23867e2c028d4e09f8b8d23e35c886))
+* remove types outside src ([014f638](https://github.com/TabTabGo/ttg-framework/commit/014f63865c06f250462a2bcf1ccaed9a85978811))
+* temprory fix refrenacses to [@tabtabgo](https://github.com/tabtabgo) modules ([8218bd0](https://github.com/TabTabGo/ttg-framework/commit/8218bd011235888edf014496eb6a7b60287490e6))
+* update lib referenaces ([e2ac54d](https://github.com/TabTabGo/ttg-framework/commit/e2ac54d4c87c620be612596300e801b7ed11a0ee))
+* update tsconfig ([216e2b8](https://github.com/TabTabGo/ttg-framework/commit/216e2b8733695493f3ef7166963f521c6d737059))
+
+
+### Features
+
+* remove .d.ts and support tsdx ([faa303d](https://github.com/TabTabGo/ttg-framework/commit/faa303d36e8c50f7d34be74f281b9929fc52bfe5))
+
+
+
+
+
 ## [0.0.34](https://github.com/TabTabGo/ttg-framework/compare/v0.0.33...v0.0.34) (2021-02-09)
 
 

@@ -1,6 +1,6 @@
 import { RowButtons } from './Buttons';
 import { Padding } from '@material-ui/core';
-import { OrderDirection } from '../enums';
+import { OrderDirection } from '../enums/OrderDirection';
 import { Property, Column } from '..';
 
 export interface HeaderProps<T> {

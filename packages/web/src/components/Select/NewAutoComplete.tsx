@@ -5,6 +5,7 @@ import TextField from '@material-ui/core/TextField';
 import Autocomplete, {
   AutocompleteProps,
   AutocompleteCloseReason,
+  AutocompleteRenderInputParams,
 } from '@material-ui/lab/Autocomplete';
 import { TextFieldProps } from '@material-ui/core/TextField';
 import CircularProgress from '@material-ui/core/CircularProgress';
@@ -15,7 +16,7 @@ import { makeStyles } from '@material-ui/core';
 
 const useStyles = makeStyles((theme: any) => {});
 
-type AsynchronousProps<T> = Partial<AutocompleteProps<T>> & {
+type AsynchronousProps<T> = Partial<AutocompleteProps<T, false, false, false>> & {
   loadOptions?: (inputValue: string) => Promise<T[]>;
   getOptionValue: (option: T) => any;
   textFieldProps?: TextFieldProps;
@@ -163,31 +164,29 @@ export default function Asynchronous({
           autoCompleteProps.onInputChange(e, value, reason);
         }
       }}
-      renderInput={
-        autoCompleteProps.renderInput ||
-        ((params : AnalyserNode) => {
-          return (
-            <TextField
-              {...params}
-              {...validationTextFieldProps}
-              {...textFieldProps}
-              fullWidth
-              InputProps={{
-                ...params.InputProps,
-                ...textFieldProps?.InputProps,
-                endAdornment: (
-                  <React.Fragment>
-                    <InputAdornment position="end">
-                      {loading && <CircularProgress size={16} color="secondary" />}
-                    </InputAdornment>
-                    {params.InputProps.endAdornment}
-                  </React.Fragment>
-                ),
-              }}
-            />
-          );
-        })
-      }
+      renderInput={(params: AutocompleteRenderInputParams) => {
+        if (autoCompleteProps.renderInput) return autoCompleteProps.renderInput(params);
+        return (
+          <TextField
+            {...params}
+            {...validationTextFieldProps}
+            {...textFieldProps}
+            fullWidth
+            InputProps={{
+              ...params.InputProps,
+              ...textFieldProps?.InputProps,
+              endAdornment: (
+                <React.Fragment>
+                  <InputAdornment position="end">
+                    {loading && <CircularProgress size={16} color="secondary" />}
+                  </InputAdornment>
+                  {params.InputProps.endAdornment}
+                </React.Fragment>
+              ),
+            }}
+          />
+        );
+      }}
     />
   );
 }

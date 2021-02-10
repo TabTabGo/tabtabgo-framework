@@ -2,7 +2,8 @@ import React, { useState, useEffect } from 'react';
 import TextField, { TextFieldProps } from '@material-ui/core/TextField';
 import Autocomplete from '@material-ui/lab/Autocomplete';
 import { makeStyles } from '@material-ui/core/styles';
-import  * as allCountries from './countries';
+import { Countries } from './countries';
+import { Country } from './Country';
 import './styles.less';
 import './flags.png';
 import { InputAdornment } from '@material-ui/core';
@@ -29,7 +30,7 @@ type CountrySelectProps = TextFieldProps & {
 
 const getCountryByCode = (value?: string) => {
   var country = value
-    ? allCountries.find((c: any) => c.iso2.toLowerCase() === value.toLowerCase())
+    ? Countries.find((c: any) => c.iso2.toLowerCase() === value.toLowerCase())
     : undefined;
   //console.log('value', value, country);
   return country;
@@ -43,7 +44,9 @@ export default function CountrySelect({
   ...textFieldProps
 }: CountrySelectProps) {
   const classes = useStyles();
-  const [selectedCountry, setSelectedCountry] = useState<Country | undefined>(getCountryByCode(value));
+  const [selectedCountry, setSelectedCountry] = useState<Country | undefined>(
+    getCountryByCode(value),
+  );
 
   useEffect(() => {
     //console.log('value', value)
@@ -55,13 +58,13 @@ export default function CountrySelect({
   return (
     <Autocomplete
       id="country-select"
-      options={allCountries}
+      options={Countries}
       classes={{
         option: classes.option,
       }}
       autoHighlight
       disabled={disabled}
-      getOptionLabel={(option : any) => option?.name || ''}
+      getOptionLabel={(option: any) => option?.name || ''}
       renderOption={(option: any) => (
         <React.Fragment>
           <span className={`flag ${option?.iso2} margin`} />
@@ -104,14 +107,4 @@ export default function CountrySelect({
       )}
     />
   );
-}
-
-interface Country {
-  name: string;
-  regions: Array<string>;
-  iso2: string;
-  dialCode: string;
-  format?: string;
-  order?: number; //(if >1 country with same dial code),
-  areaCodes?: Array<string>; // (if >1 country with same dial code)
 }

@@ -4,16 +4,19 @@ const fse = require('fs-extra');
 const glob = require('fast-glob');
 
 const packagePath = process.cwd();
-const buildPath = path.join(packagePath, './build');
+const buildPath = path.join(packagePath, './dist');
 const srcPath = path.join(packagePath, './src');
 
 async function includeFileInBuild(file) {
   const sourcePath = path.resolve(packagePath, file);
   const targetPath = path.resolve(buildPath, path.basename(file));
+  await copyFile(sourcePath, targetPath)
+}
+
+async function copyFile(sourcePath, targetPath) {
   await fse.copy(sourcePath, targetPath);
   console.log(`Copied ${sourcePath} to ${targetPath}`);
 }
-
 /**
  * Puts a package.json into every immediate child directory of rootDir.
  * That package.json contains information about esm for bundlers so that imports
@@ -61,6 +64,23 @@ async function typescriptCopy({ from, to }) {
 
   const files = await glob('**/*.d.ts', { cwd: from });
   const cmds = files.map((file) => fse.copy(path.resolve(from, file), path.resolve(to, file)));
+  return Promise.all(cmds);
+}
+
+async function copyNonCodeFile({ from, to }) {
+  if (!(await fse.pathExists(to))) {
+    console.warn(`path ${to} does not exists`);
+    return [];
+  }
+  const exst = ["css", "scss", "json", "png", "img"];
+  var fPath = "**";
+  var files = await glob(exst.map(ex => `${fPath}/*.${ex}`), { cwd: from });;
+  //console.log(files);
+  const cmds = files.map((file) => ({
+    source: path.resolve(from, file),
+    target: path.resolve(to, file)
+  })).map((file) => copyFile(file.source, file.target));
+
   return Promise.all(cmds);
 }
 
@@ -132,14 +152,14 @@ async function run() {
     const packageData = await createPackageFile();
 
     await Promise.all(
-      [        
+      [
         './README.md',
         '../../CHANGELOG.md',
         '../../LICENSE',
       ].map((file) => includeFileInBuild(file)),
     );
-
-    // TODO add license
+    await copyNonCodeFile({ from: srcPath, to: buildPath });
+    // TODO add license    
     //await addLicense(packageData);
     // TypeScript
     //await typescriptCopy({ from: srcPath, to: buildPath });

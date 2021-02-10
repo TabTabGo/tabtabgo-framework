@@ -1,12 +1,12 @@
-import { getPropertyValue } from './Utilities';
+import { getPropertyValue } from "./Utilities";
 import { AppSettings } from './Appsettings';
 
 export const camel2title = (camelCase?: string) =>
   camelCase
     ? camelCase
-        .replace(/([A-Z])/g, (match) => ` ${match}`)
-        .replace(/^./, (match) => match.toUpperCase())
-        .replace(/_/g, () => ' ')
+      .replace(/([A-Z])/g, (match) => ` ${match}`)
+      .replace(/^./, (match) => match.toUpperCase())
+      .replace(/_/g, () => ' ')
     : '';
 
 export const numberFormat = (locale?: string, decimalFixed?: number) => (value: any) => {

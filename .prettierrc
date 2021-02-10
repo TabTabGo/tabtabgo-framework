@@ -1,4 +1,5 @@
 {
+  "semi": true,
   "requirePragma": false,
   "insertPragma": false,
   "singleQuote": true,

@@ -13,8 +13,8 @@ async function run(argv) {
     NODE_ENV: 'production',    
     MUI_BUILD_VERBOSE: verbose,
   };
- // const babelConfigPath = path.resolve(__dirname, '../babel.config.js');
-  const babelConfigPath = path.resolve(__dirname, '../.babelrc');
+  const babelConfigPath = path.resolve(__dirname, '../babel.config.js');
+ // const babelConfigPath = path.resolve(__dirname, '../.babelrc');
   const srcDir = path.resolve('./src');
   const extensions = ['.js', '.ts', '.tsx', '.jsx'];
   const ignore = [
@@ -66,7 +66,7 @@ yargs
     description: 'build package',
     builder: (command) => {
       return command
-        .option('out-dir', { default: './build', type: 'string' })
+        .option('out-dir', { default: './dist', type: 'string' })
         .option('verbose', { type: 'boolean' });
     },
     handler: run,
