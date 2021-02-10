@@ -16,8 +16,8 @@
     "type": "git",
     "url": "git+https://github.com/TabTabGo/ttg-framework.git"
   },
-  "main": "dist/index.js",
-  "typings": "dist/index.d.ts",
+  "main": "dist/index",
+  "typings": "dist/index",
   "files": [
     "dist",
     "src"

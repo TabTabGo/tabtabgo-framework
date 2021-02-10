@@ -6,21 +6,23 @@
     "scripts",
     "example"
   ],
-  "exclude": [
-    "node_modules",
-    "dist"
-  ],
   "compilerOptions": {
     "allowJs": true,
     "baseUrl": "./packages",
     //"outDir": "dist",
-    "typeRoots": ["./node_modules/@types", "./types"],
+    "typeRoots": [
+      "./node_modules/@types",
+      "./types"
+    ],
     "paths": {
       "@tabtabgo/core": [
-        "packages/core"
+        "core/src"
       ],
       "@tabtabgo/web": [
-        "packages/web"
+        "web/src"
+      ],
+      "@tabtabgo/*": [
+        "*/src"
       ],
       "$test/*": [
         "test/*"
