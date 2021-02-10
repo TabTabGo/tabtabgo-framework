@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.2.2](https://github.com/TabTabGo/ttg-framework/compare/v0.2.1...v0.2.2) (2021-02-10)
+
+
+### Bug Fixes
+
+* fix useAuthentication and withValidation ([fb5ccfe](https://github.com/TabTabGo/ttg-framework/commit/fb5ccfee4a4644272c5e846dc7838db2783ccb7b))
+
+
+
+
+
 # [0.2.0](https://github.com/TabTabGo/ttg-framework/compare/v0.1.6...v0.2.0) (2021-02-10)
 
 **Note:** Version bump only for package @tabtabgo/core

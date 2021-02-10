@@ -1,6 +1,6 @@
 {
   "name": "@tabtabgo/web",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "TabTabGo web components",
   "keywords": [
     "components"
@@ -45,7 +45,7 @@
     "@material-ui/icons": "^4.11.2",
     "@material-ui/lab": "^4.0.0-alpha.57",
     "@material-ui/pickers": "^3.2.10",
-    "@tabtabgo/core": "^0.2.0",
+    "@tabtabgo/core": "^0.2.2",
     "@types/react": "^17.0.0",
     "classnames": "^2.2.6",
     "draft-js": "^0.11.7",
