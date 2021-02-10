@@ -1,6 +1,6 @@
 ﻿/* eslint-disable no-console */
 import _ from 'lodash';
-import { Predicate, QueryOperatorEnum } from '../../types';
+import { Predicate, QueryOperatorEnum } from '../types';
 type PropertyPathFunc<T> = (operator: QueryOperator, value: T, type: string) => string;
 
 export class PropertyMetaData {

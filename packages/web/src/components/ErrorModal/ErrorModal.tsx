@@ -12,7 +12,7 @@ import {
 } from '@material-ui/core';
 import useMediaQuery from '@material-ui/core/useMediaQuery';
 import { useTheme, makeStyles } from '@material-ui/core/styles';
-import { TTGError } from '@tabtabgo/core/types/TTGError';
+import { TTGError } from '@tabtabgo/core/src/types/TTGError';
 import { grey } from '@material-ui/core/colors';
 
 export type ErrorModalProps = {

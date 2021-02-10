@@ -1,5 +1,5 @@
 import { IStorageService, IRefreshTokenService } from '../contracts';
-import { SessionUser } from '../../../types/SessionUser';
+import { SessionUser } from '../../types/SessionUser';
 
 abstract class BaseStorageService implements IStorageService, IRefreshTokenService {
   protected token_name = 'access_token';

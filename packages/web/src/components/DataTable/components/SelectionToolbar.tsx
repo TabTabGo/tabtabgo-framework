@@ -5,7 +5,7 @@ import { Toolbar, Typography, makeStyles, createStyles, Theme } from '@material-
 
 import { lighten } from '@material-ui/core/styles/colorManipulator';
 import { ToolbarButtons } from '../../Buttons';
-import { SelectionToolbarProps } from '@tabtabgo/core/types/DataTable';
+import { SelectionToolbarProps } from '@tabtabgo/core/src/types/DataTable';
 
 const DataTableSelectionToolbar = (props: SelectionToolbarProps<any>) => {
   const classes = useToolbarStyles(props);

@@ -2,7 +2,7 @@
 /* eslint-disable no-console */
 import { currentServiceProvider } from '../../providers/ServiceProvider';
 import { AppSettings } from '../../Appsettings';
-import { TTGError } from '../../../types/TTGError';
+import { TTGError } from '../../types/TTGError';
 import { IRestApiService, IStorageService, RequestProps, HTTPMethod } from '../contracts';
 import { Dispatch } from 'redux';
 

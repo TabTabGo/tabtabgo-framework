@@ -1,7 +1,7 @@
 import React from 'react';
 import { Toolbar, Typography, makeStyles, Theme, createStyles } from '@material-ui/core';
 import { ToolbarButtons } from '../../Buttons';
-import { ToolbarProps } from '@tabtabgo/core/types/DataTable';
+import { ToolbarProps } from '@tabtabgo/core/src/types/DataTable';
 import classNames from 'classnames';
 
 const usToolbarStyles = makeStyles((theme: Theme) =>

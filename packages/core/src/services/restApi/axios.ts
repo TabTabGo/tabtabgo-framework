@@ -5,7 +5,7 @@ import * as fs from 'fs';
 import { currentServiceProvider } from '../../providers/ServiceProvider';
 import * as ActionTypes from './actionTypes';
 import BaseAjaxService from './baseAjaxService';
-import { TTGError } from '../../../types/TTGError';
+import { TTGError } from '../../types/TTGError';
 import { IRestApiService } from '../contracts';
 import { Dispatch } from 'redux';
 export default class Axios extends BaseAjaxService {

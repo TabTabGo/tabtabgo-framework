@@ -3,8 +3,8 @@ import jwtDecode from 'jwt-decode';
 import { currentServiceProvider } from '../../providers/ServiceProvider';
 import { IStorageService } from '../contracts';
 import { IAuthService } from '../contracts';
-import { SessionData, AuthenticateData } from '../../../types/SessionData';
-import { AuthenticateResponse } from '../../../types/AuthenticateResponse';
+import { SessionData, AuthenticateData } from '../../types/SessionData';
+import { AuthenticateResponse } from '../../types/AuthenticateResponse';
 class JwtAuthService implements IAuthService {
   configuration: any;
   sessionManager: IStorageService;

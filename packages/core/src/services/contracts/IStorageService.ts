@@ -1,4 +1,4 @@
-import { SessionUser } from '../../../types/SessionUser';
+import { SessionUser } from '../../types/SessionUser';
 
 export interface IStorageService {
   setToken: (

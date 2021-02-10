@@ -11,7 +11,7 @@ import {
 import { getPropertyValue } from '@tabtabgo/core/Utilities';
 import { ToolbarButtons } from '../../Buttons';
 
-import { RowProps } from '@tabtabgo/core/types/DataTable';
+import { RowProps } from '@tabtabgo/core/src/types/DataTable';
 import cx from 'classnames';
 
 export const useRowStyles = makeStyles((theme: Theme) =>

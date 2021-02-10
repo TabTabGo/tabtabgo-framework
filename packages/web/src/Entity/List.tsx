@@ -8,8 +8,8 @@ import DataTable, { EntityDataTableProps, EntityDataTableRef } from './DataTable
 import { mergeButtons, mergeButtonSections, ToolbarButtons } from '../components/Buttons';
 
 import Add from '@material-ui/icons/Add';
-import { IActions, IEntity } from '@tabtabgo/core/types';
-import { Buttons } from '@tabtabgo/core/types/DataTable';
+import { IActions, IEntity } from '@tabtabgo/core/src/types';
+import { Buttons } from '@tabtabgo/core/src/types/DataTable';
 
 export type ModalModeType = 'Edit' | 'Add';
 type EntityListProps<T> = IEntity<T> &

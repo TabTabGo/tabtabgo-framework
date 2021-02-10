@@ -1,7 +1,7 @@
 import moment from 'moment';
 import { datetimeFormat } from '../DateFormats';
 import { IExportService } from '../services/contracts';
-import { ExportConfiguration, ExportColumnConfiguration } from '../../types/ExportConfiguration';
+import { ExportConfiguration, ExportColumnConfiguration } from '../types/ExportConfiguration';
 
 //TODO user lazy loading
 //import pdfMake from "pdfmake/build/pdfmake";

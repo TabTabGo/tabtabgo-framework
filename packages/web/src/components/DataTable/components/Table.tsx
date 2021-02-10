@@ -1,5 +1,5 @@
 import React from 'react';
-import { TableProps, Column } from '@tabtabgo/core/types/DataTable';
+import { TableProps, Column } from '@tabtabgo/core/src/types/DataTable';
 import DefaultHeader from './Header';
 import DefaultRow from './Row';
 import { getRowButtons } from '../Buttons';

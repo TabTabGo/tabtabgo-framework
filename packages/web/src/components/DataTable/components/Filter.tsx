@@ -25,13 +25,13 @@ import {
   SearchProperty,
   FilterProperty,
   OptionsFunc,
-} from '@tabtabgo/core/types/DataTable';
+} from '@tabtabgo/core/src/types/DataTable';
 import {
   Predicate,
   QueryOperatorEnum,
   PredicateType,
   LogicalOperator,
-} from '@tabtabgo/core/types/Predicate';
+} from '@tabtabgo/core/src/types/Predicate';
 
 const useFilterStyles = makeStyles((theme: Theme) =>
   createStyles({
