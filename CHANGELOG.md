@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.1.6](https://github.com/TabTabGo/ttg-framework/compare/v0.1.5...v0.1.6) (2021-02-10)
+
+
+### Bug Fixes
+
+* **web:** withComponentProvider from provider ([d24e04d](https://github.com/TabTabGo/ttg-framework/commit/d24e04da373dd11a3569b2124491463a84858388))
+
+
+
+
+
 ## [0.1.5](https://github.com/TabTabGo/ttg-framework/compare/v0.1.4...v0.1.5) (2021-02-10)
 
 
