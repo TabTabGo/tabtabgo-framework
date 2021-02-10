@@ -20,7 +20,7 @@
   ],
   "module": "dist/web.esm.js",
   "engines": {
-    "node": ">=10"
+    "node": ">=10" 
   },
   "scripts": {
     "clean": "rm -rf ./dist",
