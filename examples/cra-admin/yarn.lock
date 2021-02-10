@@ -1738,10 +1738,10 @@
     universal-cookie "^4.0.4"
     utility-types "^3.10.0"
 
-"@tabtabgo/web@^0.2.2":
-  version "0.2.2"
-  resolved "https://registry.yarnpkg.com/@tabtabgo/web/-/web-0.2.2.tgz#f0ace9d21abe27185efb067ae2774040b09ac535"
-  integrity sha512-dnrOo53NKlBKkVkHpKVBzfVdkJOY2bMVrQXVaRpmOJAFAC00++TQdWCW374jaBeDsBrFJcphxX++hTe4UFvGQA==
+"@tabtabgo/web@^0.2.3":
+  version "0.2.3"
+  resolved "https://registry.yarnpkg.com/@tabtabgo/web/-/web-0.2.3.tgz#c638870eb25cb795eacf9541e09410ea2969f740"
+  integrity sha512-e2gHiaDNz70O/GpubZEJolHK2FZaIdRm/UeNxIIH6q4LTp+W39oy2lbyCAb8haVtjOWjfPb2dlV6JY9CXcw76A==
   dependencies:
     "@material-ui/core" "^4.11.3"
     "@material-ui/icons" "^4.11.2"

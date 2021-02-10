@@ -1,9 +1,8 @@
 /* eslint-disable no-console */
-import React, { useContext, useState } from 'react';
+import React, { useContext, useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import * as StandardValidations from '@tabtabgo/core/Validations.js';
 import * as StandardValidationsErrors from '@tabtabgo/core/ValidationErrors.js';
-import withValidation from './withValidation';
 import { ValidationFormContext } from './Form';
 import { ComponentContext } from '@tabtabgo/core';
 import { getInputValue, isEmpty, getFriendlyString } from '@tabtabgo/core/Utilities';
@@ -20,8 +19,106 @@ const iniValidatorState = {
   validationError: '',
 }
 
+const setInitValidationState = (internalState, internalProps) => {
+  let validations = parseValidations(internalProps);
+  let validationErrors = parseValidationErrors(internalProps);
+  return Object.assign({}, internalState, { validations, validationErrors });
+};
+
+const parseValidations = (props) => {
+  var newValidations = {};
+  const { validations, isRequired } = props;
+
+  if (validations)
+    for (let key in validations) {
+      if (validations[key]) {
+        var validation = validations[key];
+        if (typeof validation === 'function') {
+          newValidations[key] = validation;
+        } else if (StandardValidations[key]) {
+          if (typeof validation === 'boolean' && validation === true) {
+            newValidations[key] = StandardValidations[key].bind(this);
+          } else if (typeof validation !== 'boolean') {
+            newValidations[key] = StandardValidations[key].bind(this, validation);
+          }
+        } else {
+          console.error(
+            `${key} is not valid validator please pass valid standard validation or set validation function`,
+          );
+        }
+      }
+    }
+  if (isRequired && !newValidations.required) {
+    newValidations = {
+      ...newValidations,
+      required: StandardValidations.required,
+    };
+  }
+
+  return newValidations;
+};
+
+const parseValidationErrors = (props) => {
+  var newValidationsErrors = {};
+  const { validations, validationErrors, isRequired } = props;
+
+  if (validations) {
+    for (let key in validations) {
+      if (validations[key]) {
+        var validation = validations[key];
+
+        if (validationErrors && validationErrors[key])
+          newValidationsErrors[key] = validationErrors[key];
+        else {
+          if (typeof validation !== 'boolean') {
+            newValidationsErrors[key] = StandardValidationsErrors[key](
+              validation,
+              getPlaceholder(props),
+            );
+          } else {
+            newValidationsErrors[key] = StandardValidationsErrors[key](
+              getPlaceholder(props),
+            );
+          }
+        }
+      }
+    }
+  }
+
+  if (isRequired && validationErrors && validationErrors.required) {
+    newValidationsErrors = {
+      ...newValidationsErrors,
+      required: validationErrors.required,
+    };
+  } else {
+    newValidationsErrors = {
+      ...newValidationsErrors,
+      required: StandardValidationsErrors.required(getPlaceholder(props)),
+    };
+  }
+  return newValidationsErrors;
+};
+
+/*
+ Get the Value passed to input and can be set directly or by InputProps
+ */
+const getValue = (props) => {
+  const { value } = props;
+  return value;
+};
+
+const getPlaceholder = (props) => {
+  const { name, id } = props;
+
+  //if (placeholder) return placeholder;
+  if (name) return getFriendlyString(name);
+  if (id) getFriendlyString(id);
+
+  return 'This ';
+};
+
 function Validator(props) {
-  const [state, setState] = useState(setInitValidationState(initState, props));
+  const [state, setState] = useState(setInitValidationState(iniValidatorState, props));
   const validationCtx = useContext(ValidationFormContext);
   const componentContext = useContext(ComponentContext);
   useEffect(() => {
@@ -84,103 +181,7 @@ function Validator(props) {
       setState(newState);
     }
   }
-  /*
-  Get the Value passed to input and can be set directly or by InputProps
-  */
-  const getValue = (privateProps) => {
-    const { value } = privateProps;
-    return value;
-  };
 
-  const getPlaceholder = (privateProps) => {
-    const { name, id } = privateProps;
-
-    //if (placeholder) return placeholder;
-    if (name) return getFriendlyString(name);
-    if (id) getFriendlyString(id);
-
-    return 'This ';
-  };
-
-  const parseValidations = (privateProps) => {
-    var newValidations = {};
-    const { validations, isRequired } = privateProps;
-
-    if (validations)
-      for (let key in validations) {
-        if (validations[key]) {
-          var validation = validations[key];
-          if (typeof validation === 'function') {
-            newValidations[key] = validation;
-          } else if (StandardValidations[key]) {
-            if (typeof validation === 'boolean' && validation === true) {
-              newValidations[key] = StandardValidations[key].bind(this);
-            } else if (typeof validation !== 'boolean') {
-              newValidations[key] = StandardValidations[key].bind(this, validation);
-            }
-          } else {
-            console.error(
-              `${key} is not valid validator please pass valid standard validation or set validation function`,
-            );
-          }
-        }
-      }
-    if (isRequired && !newValidations.required) {
-      newValidations = {
-        ...newValidations,
-        required: StandardValidations.required,
-      };
-    }
-
-    return newValidations;
-  };
-
-  const parseValidationErrors = (privateProps) => {
-    var newValidationsErrors = {};
-    const { validations, validationErrors, isRequired } = privateProps;
-
-    if (validations) {
-      for (let key in validations) {
-        if (validations[key]) {
-          var validation = validations[key];
-
-          if (validationErrors && validationErrors[key])
-            newValidationsErrors[key] = validationErrors[key];
-          else {
-            if (typeof validation !== 'boolean') {
-              newValidationsErrors[key] = StandardValidationsErrors[key](
-                validation,
-                getPlaceholder(props),
-              );
-            } else {
-              newValidationsErrors[key] = StandardValidationsErrors[key](
-                getPlaceholder(props),
-              );
-            }
-          }
-        }
-      }
-    }
-
-    if (isRequired && validationErrors && validationErrors.required) {
-      newValidationsErrors = {
-        ...newValidationsErrors,
-        required: validationErrors.required,
-      };
-    } else {
-      newValidationsErrors = {
-        ...newValidationsErrors,
-        required: StandardValidationsErrors.required(getPlaceholder(props)),
-      };
-    }
-    return newValidationsErrors;
-  };
-
-  const setInitValidationState = (internalState, internalProps) => {
-    let validations = parseValidations(internalProps);
-    let validationErrors = parseValidationErrors(internalProps);
-    return Object.assign({}, internalState, { validations, validationErrors });
-  };
 
   const handleChange = (newValue, event, sname) => {
     const { onChange } = props;
@@ -336,6 +337,8 @@ function Validator(props) {
   }
 
   const render = (internalProps) => {
+    if (!internalProps) internalProps = {};
+
     const {
       name,
       id,
@@ -393,7 +396,7 @@ function Validator(props) {
     );
   }
 
-  return render();
+  return render(props);
 }
 
 Validator.propTypes = {
