@@ -317,7 +317,7 @@ function Validator(props) {
   };
 
   const getLabel = (internalProps) => {
-    const { label, textFieldProps } = internalProps;
+    const { label, textFieldProps, isRequired, ignoreLabelSuffix } = internalProps;
     let strLabel = label;
 
     if (textFieldProps && textFieldProps.label) {
@@ -381,7 +381,7 @@ function Validator(props) {
         {...rest}
         //success={state.isValid && state.isDirty}
         error={!state.isValid}
-        label={getLabel()}
+        label={finalLabel}
         helperText={state.validationError ? state.validationError : helperText}
         id={id}
         name={name}
