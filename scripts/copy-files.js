@@ -10,10 +10,13 @@ const srcPath = path.join(packagePath, './src');
 async function includeFileInBuild(file) {
   const sourcePath = path.resolve(packagePath, file);
   const targetPath = path.resolve(buildPath, path.basename(file));
+  await copyFile(sourcePath, targetPath)
+}
+
+async function copyFile(sourcePath, targetPath) {
   await fse.copy(sourcePath, targetPath);
   console.log(`Copied ${sourcePath} to ${targetPath}`);
 }
-
 /**
  * Puts a package.json into every immediate child directory of rootDir.
  * That package.json contains information about esm for bundlers so that imports
@@ -73,7 +76,11 @@ async function copyNonCodeFile({ from, to }) {
   var fPath = "**";
   var files = await glob(exst.map(ex => `${fPath}/*.${ex}`), { cwd: from });;
   //console.log(files);
-  const cmds = files.map((file) => fse.copy(path.resolve(from, file), path.resolve(to, file)));
+  const cmds = files.map((file) => ({
+    source: path.resolve(from, file),
+    target: path.resolve(to, file)
+  })).map((file) => copyFile(file.source, file.target));
+
   return Promise.all(cmds);
 }
 
