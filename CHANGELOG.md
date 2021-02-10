@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.1.4](https://github.com/TabTabGo/ttg-framework/compare/v0.1.3...v0.1.4) (2021-02-10)
+
+
+### Bug Fixes
+
+* add log to copy files ([1e05bc7](https://github.com/TabTabGo/ttg-framework/commit/1e05bc7db669f4ef7f7e45fa8f44cd5831e452f2))
+* **scripts:** copy non code files (css, scss, img, png) ([2647fbf](https://github.com/TabTabGo/ttg-framework/commit/2647fbf985575ad174a2ebc4a1f3d77e70ddd162))
+* rename example from rca to cra ([4825bc0](https://github.com/TabTabGo/ttg-framework/commit/4825bc0e40056989d79976e7932389092929706a))
+
+
+
+
+
 ## [0.1.3](https://github.com/TabTabGo/ttg-framework/compare/v0.1.2...v0.1.3) (2021-02-10)
 
 
