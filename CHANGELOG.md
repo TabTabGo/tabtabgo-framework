@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.2.1](https://github.com/TabTabGo/ttg-framework/compare/v0.2.0...v0.2.1) (2021-02-10)
+
+
+### Bug Fixes
+
+* **web:** move validateInput out useEffect ([abaceb3](https://github.com/TabTabGo/ttg-framework/commit/abaceb314fc934f1f7ddd395e927da7cebf2417a))
+
+
+
+
+
 # [0.2.0](https://github.com/TabTabGo/ttg-framework/compare/v0.1.6...v0.2.0) (2021-02-10)
 
 
