@@ -1,6 +1,6 @@
 {
   "name": "@tabtabgo/web",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "TabTabGo web components",
   "keywords": [
     "components"
@@ -24,7 +24,7 @@
   },
   "scripts": {
     "clean": "rm -rf ./dist",
-    "build": "tsc -p tsconfig.build.json",    
+    "build": "tsc -p tsconfig.build.json",
     "build:default": "yarn node ../../scripts/build",
     "build:copy-files": "node ../../scripts/copy-files.js",
     "size": "size-limit",
@@ -44,7 +44,7 @@
     "@material-ui/icons": "^4.11.2",
     "@material-ui/lab": "^4.0.0-alpha.57",
     "@material-ui/pickers": "^3.2.10",
-    "@tabtabgo/core": "^0.1.1",
+    "@tabtabgo/core": "^0.1.2",
     "@types/react": "^17.0.0",
     "classnames": "^2.2.6",
     "draft-js": "^0.11.7",
@@ -92,9 +92,9 @@
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-is": "^17.0.1",
-    "size-limit": "^4.9.2",    
+    "size-limit": "^4.9.2",
     "tslib": "^2.1.0",
     "typescript": "^4.1.3"
-  },  
+  },
   "gitHead": "d4d39b5c73bd56f918f5c353319d83f35efa1952"
 }
