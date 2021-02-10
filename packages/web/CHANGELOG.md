@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.2.0](https://github.com/TabTabGo/ttg-framework/compare/v0.1.6...v0.2.0) (2021-02-10)
+
+
+### Bug Fixes
+
+* **web:** convert Validator to function component ([e1ffa67](https://github.com/TabTabGo/ttg-framework/commit/e1ffa670c1b44cf4752552a0b648d93ac6ec38a3))
+
+
+### BREAKING CHANGES
+
+* **web:** convert Validator to functional component
+
+
+
+
+
 ## [0.1.6](https://github.com/TabTabGo/ttg-framework/compare/v0.1.5...v0.1.6) (2021-02-10)
 
 
