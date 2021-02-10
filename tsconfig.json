@@ -3,7 +3,8 @@
   "include": ["packages", "types", "scripts", "example"],
   "compilerOptions": {
     "allowJs": true,
-    "baseUrl": ".",
+    "baseUrl": "./src",
+    "outDir": "./dist",
     "typeRoots": ["./node_modules/@types", "./types"],
     "paths": {
       "@tabtabgo/core": ["packages/core/src"],
