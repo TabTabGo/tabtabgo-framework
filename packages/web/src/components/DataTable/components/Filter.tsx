@@ -87,7 +87,7 @@ const Filter = (props: FilterProps<any>) => {
 
   const handleOnSelectSearchType = (e: ChangeEvent<any>, child: ReactNode) => {
     const { searchProperties } = props;
-    var searchOpt = searchProperties.find((sk : any) => sk.key === e.currentTarget.value);
+    var searchOpt = searchProperties.find((sk: any) => sk.key === e.currentTarget.value);
     if (searchOpt) setActiveSearch(searchOpt);
 
     if (searchControlRef && searchControlRef.current) {
@@ -109,7 +109,7 @@ const Filter = (props: FilterProps<any>) => {
       let samePredicateIndex =
         predicates && predicates.length > 0
           ? predicates.findIndex(
-              (f : any) => f.field.key === activeSearch.key && f.type === PredicateType.Search,
+              (f: any) => f.field.key === activeSearch.key && f.type === PredicateType.Search,
             )
           : null;
 
@@ -142,7 +142,8 @@ const Filter = (props: FilterProps<any>) => {
   const handleChangeFilter = (filterKey: string, e: any) => {
     const { filters, search, predicates } = props;
     if (search) {
-      let filter = filters && filters.length > 0 ? filters.find((f:any) => f.key === filterKey) : null;
+      let filter =
+        filters && filters.length > 0 ? filters.find((f: any) => f.key === filterKey) : null;
       let samePredicates =
         filter && predicates && predicates.length > 0
           ? predicates.filter((f: any) => f.field.key === filterKey)
@@ -150,7 +151,8 @@ const Filter = (props: FilterProps<any>) => {
 
       let newPredicate = {
         type: PredicateType.Filter,
-        operator: filter && filter.defaultOperator ? filter.defaultOperator : QueryOperatorEnum.Equal,
+        operator:
+          filter && filter.defaultOperator ? filter.defaultOperator : QueryOperatorEnum.Equal,
         value: { value: e.value, displayValue: e.label },
         index: predicates ? predicates.length : 0,
       } as Predicate;
@@ -251,8 +253,11 @@ const Filter = (props: FilterProps<any>) => {
                 value={selectedFilterGroup ? selectedFilterGroup[filter.key] : null}
                 //value={this.state.filtersValue[filter.key]}
                 placeholder={filter.label}
-                onChange={handleChangeFilter.bind(filter.key)}
+                onChange={(value: any, event?: any) => handleChangeFilter(filter.key, event)}
                 {...filterProps}
+                label=""
+                name="tablePredicate"
+                getOptionValue={(option) => option} //TODO pass getOptionValue
               />
             );
           })}

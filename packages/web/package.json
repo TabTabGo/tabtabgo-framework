@@ -23,9 +23,9 @@
     "node": ">=10"
   },
   "scripts": {
-    "rebuild": "tsc --outDir dist",
-    "start": "tsdx watch",
-    "build": "tsdx build",
+    "clean": "rm -rf ./dist",
+    "build": "tsc -p tsconfig.build.json",    
+    "build:tsdx": "tsdx build",
     "build:default": "yarn node ../../scripts/build",
     "build:copy-files": "node ../../scripts/copy-files.js",
     "test": "tsdx test --passWithNoTests",

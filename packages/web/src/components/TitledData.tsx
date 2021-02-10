@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { makeStyles } from '@material-ui/core';
 import { useTranslation } from 'react-i18next';
-import { UserSettingsContext } from '@tabtabgo/core/contexts/UserSettingsContext';
+import { UserSettingsContext } from '@tabtabgo/core';
 import WrapText from './WrapText/WrapText';
 import cx from 'classnames';
 const useStyles = makeStyles((theme: any) => ({

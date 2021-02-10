@@ -13,7 +13,7 @@ import qs from 'qs';
 import _ from 'lodash';
 import DataTable from '../components/DataTable';
 
-import { currentServiceProvider } from '@tabtabgo/core/providers/ServiceProvider';
+import { currentServiceProvider } from '@tabtabgo/core';
 
 import { mergeButtonSections } from '../components/Buttons';
 import { PagingList } from '@tabtabgo/core/src/types/PagingList';
@@ -200,7 +200,7 @@ const EntityDataTable = forwardRef<EntityDataTableRef, EntityDataTableProps<any>
       if (searchParams.predicates && !Array.isArray(searchParams.predicates)) {
         let predicates = [{} as any];
         Object.keys(searchParams.predicates).forEach((p) => {
-          var prop = searchParams.predicates[p];
+          var prop = (searchParams.predicates as any)[p];
           if (_.isArray(prop)) {
             prop.forEach((pValue, i) => {
               while (i >= predicates.length) {

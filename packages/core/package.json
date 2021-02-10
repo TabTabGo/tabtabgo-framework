@@ -27,11 +27,12 @@
     "node": ">=10"
   },
   "scripts": {
-    "rebuild": "tsc --outDir dist",
+    "clean": "rm -rf ./dist",
+    "build": "tsc -p tsconfig.build.json",
     "build:default": "yarn node ../../scripts/build",
     "build:copy-files": "node ../../scripts/copy-files.js",
     "start": "tsdx watch",
-    "build": "tsdx build",
+    "build:tsdx": "tsdx build",
     "test": "tsdx test --passWithNoTests",
     "lint": "tsdx lint",
     "prepare": "tsdx build",

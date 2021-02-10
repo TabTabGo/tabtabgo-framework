@@ -3,7 +3,7 @@ import { makeStyles } from '@material-ui/core';
 import CustomDivider from '../Divider';
 import { useTranslation } from 'react-i18next';
 import WrapText from '../WrapText/WrapText';
-import { AppSettings } from '@tabtabgo/core/Appsettings';
+import { AppSettings } from '@tabtabgo/core';
 
 const useStyles = makeStyles((theme: any) => ({
   base: {

@@ -11,6 +11,25 @@ import Add from '@material-ui/icons/Add';
 import { IActions, IEntity } from '@tabtabgo/core/src/types';
 import { Buttons } from '@tabtabgo/core/src/types/DataTable';
 
+export type ContentWrapperProps = {
+  children: any;
+  title: string;
+  subtitle?: string;
+  showHeader?: boolean;
+  flatten?: boolean;
+  plain?: boolean;
+  actionComponent?: JSX.Element;
+  contextButtons?: JSX.Element;
+  showFab?: boolean;
+  fabProps?: any;
+  fabIcon?: JSX.Element;
+  fabLabel?: string;
+  classes?: any;
+  layout?: {
+    setLayoutProperties: () => void;
+  };
+};
+
 export type ModalModeType = 'Edit' | 'Add';
 type EntityListProps<T> = IEntity<T> &
   EntityDataTableProps<T> & {
@@ -20,7 +39,7 @@ type EntityListProps<T> = IEntity<T> &
     onAddButtonClicked?: (event?: any) => void;
     openEditInNewPage?: boolean;
     refreshListAfterEdit?: boolean;
-    ContentWrapper: React.ReactElement<any>;
+    ContentWrapper: React.ComponentType<ContentWrapperProps>;
   };
 
 const EntityList = (props: EntityListProps<any>) => {

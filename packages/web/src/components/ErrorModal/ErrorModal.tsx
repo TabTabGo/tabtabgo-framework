@@ -1,7 +1,7 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 //TODO link not working
-import { AppSettings } from '@tabtabgo/core/Appsettings';
+import { AppSettings } from '@tabtabgo/core';
 import {
   Button,
   Dialog,

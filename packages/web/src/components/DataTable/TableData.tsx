@@ -12,7 +12,7 @@ import {
   CircularProgress,
 } from '@material-ui/core';
 import { useTranslation } from 'react-i18next';
-import { UserSettingsContext } from '@tabtabgo/core/contexts/UserSettingsContext';
+import { UserSettingsContext } from '@tabtabgo/core';
 import classnames from 'classnames';
 import TablePaginationActions from '@material-ui/core/TablePagination/TablePaginationActions';
 
